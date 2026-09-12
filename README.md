@@ -2,83 +2,23 @@
 
 [中文版](README.zh.md)
 
-An attribution dashboard and decision loop for **small teams acquiring users with Google Ads whose product has a signup → activation → key-action funnel**: GA4 and Google Ads data in one place, cost and conversion split by landing type, reconciliation against first-party data, and every change run as diagnose → hypothesis → small budget → compare → kill or scale. All sample data is synthetic.
+An ad-spend dashboard and decision log for **small teams acquiring users with Google Ads**.
 
-**What problem it solves.** Paid acquisition produces two kinds of waste: money
-spent without knowing where the users went, and an ad algorithm trained on
-the wrong conversion goal. This repo is a small, self-hosted loop that closes
-both gaps: a tracking plan that is written before the first dollar is spent,
-a daily pull from the GA4 Data API and the Google Ads API into one static
-JSON, a dashboard that splits campaigns by landing type and scenario, a
-reconciliation check between GA4 and your own database, and an experiment
-log that turns every budget decision into a record with a kill or scale rule.
+**When it applies.** Your product has a signup → activation → key-action funnel, you run Google Ads, and you may work with an agency or a media buyer. The two usual kinds of waste are money spent without knowing where the users went, and an ad algorithm learning from the wrong conversion goal. This repository chains a tracking plan written before spending, a daily pull from GA4 and Google Ads merged into one file, cost and conversion split by landing-page type, a reconciliation against your own database, and every budget decision recorded as an experiment, into one closed loop.
 
-**Who it is for.** A founder, growth lead or product marketer who runs Google
-Ads for a product with a real funnel (signup, activation, publish), works
-with an agency or a media buyer, and wants the weekly conversation to be about
-numbers both sides can reproduce. Everything runs from a laptop with Python
-3.9, no database, no server framework. The sample data is synthetic and the
-event names, scenario dimensions and experiment records are all config, so
-the structure transfers to your own product.
+**Who it is for.** Founders, growth leads and product marketers who want the weekly review with the agency to be about numbers both sides can reproduce. It runs on a laptop with Python 3.9, no database.
 
-## Core logic
+**Scope and limits.** Google Ads + GA4 only, no Meta or TikTok; the sample data is synthetic, and event names, scenario dimensions and experiment records are all configuration, so the structure transfers to your own product.
 
-I did not build this dashboard to have one more chart page. I built it so
-that every paid-acquisition decision has data behind it that can be checked.
+## Five things the built-in GA4 reports do not do
 
-**Purpose.** Two things go wrong most often with paid acquisition: money is
-spent and nobody knows where the users went, and the ad algorithm is trained
-on the wrong conversion goal. So the order is fixed: instrument first, spend
-second. Before any spend I wrote a complete event specification: two funnels,
-creator and consumer; every event labelled as an impression, a click or a
-business action; every event carrying the three utm parameters; and a
-requirement that both the production and the staging environment are
-deployed. Without this step the dashboard, the reviews and the scaling that
-come later are empty talk.
+GA4 and Google Ads each have their own reports, and Looker Studio can stitch them together. What this repository adds is five things at the decision level:
 
-**Architecture.** Data comes from two ends: the GA4 Data API for events and
-users, the Google Ads API for cost, clicks and conversions. Both are first
-aligned to the same timezone, otherwise the spend and the signups of the same
-day do not match. A script runs on a schedule every day, merges everything
-into one static JSON, and the page renders it directly with no database. The
-validation layer has two jobs: is the file fresh and complete, and do the
-GA4 event counts agree with our own database. In a real project I hit a case
-where server-side reporting was missing the session parameters and GA4 came
-in 10 to 15% below the database; the ad algorithm therefore had "nothing to
-learn from". That hole has to be plugged with a reconciliation mechanism.
-
-**Why each step.** The dashboard splits campaigns by landing-page type
-instead of looking only at totals, because my core experiment was a
-comparison of landing strategies: the homepage or a skill page, a template
-page that aggregates content by use case, or a single content page. The
-conclusion is clear: a single content page depends heavily on content
-quality, and on the same budget results can differ by 50% to 100%; sending a
-scenario's traffic to one page that aggregates that scenario's content makes
-the campaign more stable and the cost lowest. In numbers, the aggregated-page
-series had a signup cost of 7 to 9 dollars while Performance Max in the same
-period sat at 19 to 21 dollars; the aggregated pages' click-through rate was
-about 2.3 times PMax's, and the overall blended CPA was about 15 dollars (the
-30-day snapshot of my original dashboard).
-
-**Decision flow.** Every change walks the same path: find something in the
-data that does not add up (for example, the search terms are all trading and
-quant while the landing page cannot speak to either), state a hypothesis,
-verify with a small budget (in the order of 100 dollars a day) that the
-conversion event really arrives, compare several landing strategies, stop
-what does not work, and add budget to what does. Pausing is not scary; the
-learning-phase data is still there. What is scary is continuing to burn money
-with the wrong landing page and the wrong keywords.
-
-**Working with the agency.** The agency owns the foundations: account
-structure, keyword expansion, bidding. I own the landing pages, the keyword
-direction and the definition of the conversion goal, with a fixed weekly
-review: cost, conversions, trend of the core events, search terms, landing
-page status, next budget moves. The service fee and the monthly fee
-structure were negotiated too, not accepted by default.
-
-This repository generalises the logic above: event names, scenario dimensions
-and experiment records are configurable, the sample data is synthetic, but
-the structure is the one I actually used.
+1. **Landing-page type is a first-class dimension.** Campaign names are parsed into homepage / skill page / use-case page / single page / PMax plus a use case, and cost and conversions are split by both, instead of account totals only.
+2. **Reconciliation between GA4 and your own database.** The same conversion event is compared day by day in GA4 and in your database; a gap over the threshold raises a warning. A persistently negative gap is the classic symptom of server-side events missing session parameters, which leaves the ad algorithm with nothing to learn from.
+3. **Every budget decision is an experiment record with rules.** Hypothesis, landing type, daily budget, conversion event, kill rule, scale rule, conclusion; the script joins the record to actual metrics and says whether today's verdict is KILL, SCALE or HOLD.
+4. **The conversion goal is chosen by the "about 50% step conversion" rule.** Too shallow an event (page view) means nothing; too deep an event (publish) is too sparse to train on. The rule is written into the config and the docs.
+5. **Instrument first, spend second; fully static, no database.** The tracking plan is machine-readable config, and the fetch warns on any event not in the plan; each day's data is merged into one JSON that the page renders directly, on a laptop.
 
 ## Quick start
 
@@ -151,7 +91,7 @@ launchctl unload ~/Library/LaunchAgents/com.example.dashboard-refresh.plist   # 
 Never commit `.env`, `credentials/`, `data/`, `backups/`, `logs/` or
 `dashboard/data.json`; all of them are in `.gitignore`.
 
-## Data flow and dashboard definitions
+## How it works
 
 ```
 launchd (09:00 / 14:00 local)
@@ -165,6 +105,41 @@ launchd (09:00 / 14:00 local)
        └─ [4/4] scripts/validate_data.py     fail -> restore backup + macOS notification
                                              unknown events -> WARN (config/tracking_plan.yaml)
 ```
+
+| Step | What it does | Files |
+|---|---|---|
+| Fetch | GA4 Data API for events and users, Google Ads API for cost, clicks and conversions; both aligned to one timezone first | `scripts/fetch_ga4.py`, `scripts/fetch_google_ads.py` |
+| Tag | Parse every campaign name into `landing_type` and `use_case` with ordered regexes | `config/campaign_taxonomy.yaml`, `scripts/taxonomy.py` |
+| Merge and validate | One static JSON; freshness and completeness checks, a warning for any event not in the tracking plan; restore the backup on failure | `scripts/run_all.py`, `scripts/validate_data.py` |
+| Dashboard | A static page reads the JSON and shows CPA / CTR / CVR by landing type and by use case | `dashboard/index.html`, `scripts/kpi.py` |
+| Reconcile | GA4 event counts against your own export, day by day; warn when the gap exceeds the threshold | `scripts/reconcile.py` |
+| Experiments | Join the experiment log to campaign metrics and print kill / scale verdicts | `config/experiments.yaml`, `scripts/experiments.py` |
+
+## Design decisions
+
+I did not build this dashboard to have one more chart page. I built it so that every paid-acquisition decision has data behind it that can be checked. These are the decisions that matter and where they came from in real campaigns.
+
+**Instrument first, spend second.** Before any spend I wrote a complete event specification: two funnels, creator and consumer; every event labelled as an impression, a click or a business action; every event carrying the three utm parameters; and both production and staging deployed. Without this step the dashboard, the reviews and the scaling that come later are empty talk.
+
+**Align timezones before trusting any daily number.** GA4 reports in the property's timezone, Google Ads in the account's; compute dates with different zones and one day's spend gets compared with another day's signups, and daily CPA becomes noise. Both fetchers therefore share one timezone offset.
+
+**Reconciliation is not optional.** In a real project server-side reporting was missing the session parameters and GA4 came in 10 to 15% below the database, so the ad algorithm had nothing to learn from. The validation layer's two jobs, is the file fresh and complete and do the GA4 counts agree with our database, exist to plug that hole.
+
+**How the conversion goal is chosen.** Pick an event whose step conversion from the previous funnel step is about 50%: deep enough to mean something, frequent enough for the algorithm to learn from. In the sample funnel that step is `settings_view → signup`, so `signup` is the conversion event and `feature_use` is the key action.
+
+**The landing-page comparison: my core experiment.** The dashboard splits campaigns by landing type because the central experiment was a comparison of landing strategies. Conclusion: a single content page depends heavily on content quality, and on the same budget results differ by 50% to 100%; sending a use case's traffic to one page that aggregates that use case's content makes the campaign more stable and the cost lowest. Numbers from the 30-day snapshot of my original dashboard:
+
+| Landing strategy | Signup cost | Click-through rate |
+|---|---|---|
+| Use-case aggregation pages | $7 to $9 | about 2.3× PMax |
+| Performance Max (same period) | $19 to $21 | baseline |
+| Blended CPA overall | about $15 | |
+
+**Decision flow.** Every change walks the same path: find something in the data that does not add up (the search terms are all trading and quant while the landing page cannot speak to either), state a hypothesis, verify with a small budget (in the order of $100 a day) that the conversion event really arrives, compare several landing strategies, stop what does not work, add budget to what does. Pausing is not scary; the learning-phase data is still there. Burning money with the wrong landing page and the wrong keywords is.
+
+**Working with the agency.** The agency owns the foundations: account structure, keyword expansion, bidding. I own the landing pages, the keyword direction and the definition of the conversion goal, with a fixed weekly review: cost, conversions, trend of the core events, search terms, landing page status, next budget moves. The service fee and the monthly fee structure were negotiated too, not accepted by default.
+
+## Data flow and dashboard definitions
 
 | Source | What is pulled |
 |---|---|
@@ -291,6 +266,13 @@ agency: cost / conversions / key-event trends, search terms and negatives,
 landing-page status, creatives and new scenarios, budget moves, whether to
 add Performance Max, and tracking / data health, with a short template table.
 Decisions from the review go into `config/experiments.yaml` the same day.
+
+## Out of scope
+
+- Google Ads and GA4 only; Meta, TikTok and other channels need their own fetch scripts.
+- Attribution is what Google Ads reports plus GA4's paid-channel users; there is no multi-touch attribution model.
+- Runs on one machine; scheduling uses macOS launchd, and on Linux cron does the same job, the scripts do not depend on the OS.
+- The sample data is synthetic; its numbers only demonstrate the definitions and represent no real account.
 
 ## Layout
 
