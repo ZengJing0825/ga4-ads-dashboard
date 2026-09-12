@@ -1,3 +1,5 @@
+# Only needed to pull real data. The offline quickstart, the CLIs and the tests
+# use the standard library; PyYAML is optional (config/ has a built-in reader).
 google-analytics-data>=0.18.0
 google-ads>=25.0.0
 google-auth>=2.20.0
