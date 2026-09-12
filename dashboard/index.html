@@ -214,9 +214,21 @@
   <div class="crow">
     <div class="cbox full"><div class="ct"><h3>Daily Spend & Clicks</h3><span class="tag">Google Ads API</span></div><canvas id="c-ads" height="100"></canvas></div>
   </div>
+  <div class="crow">
+    <div class="cbox">
+      <div class="ct"><h3>CPA / CTR / CVR by landing_type</h3><span class="tag">config/campaign_taxonomy.yaml</span></div>
+      <div style="overflow-x:auto"><table class="dtable" id="lt-tbl"><thead><tr><th>landing_type</th><th>Camps</th><th>Cost</th><th>Clicks</th><th>Conv.</th><th>CTR</th><th>CVR</th><th>CPA</th></tr></thead><tbody></tbody></table></div>
+      <div class="fn-note">Landing types are parsed from campaign names. CPA here is Ads cost / Ads conversions per bucket; the lowest CPA is highlighted.</div>
+    </div>
+    <div class="cbox">
+      <div class="ct"><h3>CPA / CTR / CVR by use_case</h3><span class="tag">config/campaign_taxonomy.yaml</span></div>
+      <div style="overflow-x:auto"><table class="dtable" id="uc-tbl"><thead><tr><th>use_case</th><th>Camps</th><th>Cost</th><th>Clicks</th><th>Conv.</th><th>CTR</th><th>CVR</th><th>CPA</th></tr></thead><tbody></tbody></table></div>
+      <div class="fn-note">Compare scenarios before comparing pages: a scenario whose search terms the landing page cannot answer will not convert on any page.</div>
+    </div>
+  </div>
   <div class="cbox">
     <div class="ct"><h3>Campaign Performance</h3><span class="tag">Google Ads API / GAQL</span></div>
-    <table class="dtable" id="camp-tbl"><thead><tr><th>Campaign</th><th>Status</th><th>Spend</th><th>Clicks</th><th>Imp.</th><th>CTR</th><th>CPC</th><th>Conv.</th></tr></thead><tbody></tbody></table>
+    <div style="overflow-x:auto"><table class="dtable" id="camp-tbl"><thead><tr><th>Campaign</th><th>Status</th><th>Landing</th><th>Use case</th><th>Spend</th><th>Clicks</th><th>Imp.</th><th>CTR</th><th>CPC</th><th>Conv.</th><th>CVR</th><th>CPA</th></tr></thead><tbody></tbody></table></div>
   </div>
 </div>
 
@@ -253,6 +265,22 @@
       <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">generated_at</span><br>Local machine time<br><span style="color:var(--text3);font-size:10px">datetime.now()</span></div>
     </div>
     <div class="fn-note" style="margin-top:10px">Keep both sources on the same timezone offset so that a given day&#39;s GA4 events and Ads spend cover the same real-world period</div>
+  </div>
+  <div class="cbox" style="margin-top:10px">
+    <div class="ct"><h3>KPI Definitions</h3><span class="tag">scripts/kpi.py</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:11px;color:var(--text2);line-height:1.9">
+      <div>
+        <div><b>Cost</b> &mdash; Google Ads spend in the selected window</div>
+        <div><b>Conversions</b> &mdash; conversions as reported by Google Ads (the conversion action the campaigns optimise for)</div>
+        <div><b>CPA (cost / conversions)</b> &mdash; Ads-side, available per campaign, landing_type and use_case</div>
+        <div><b>CPA (cost / paid signups)</b> &mdash; cost divided by GA4 users on the paid channel who fired the conversion event (<span style="font-family:monospace">signup</span>); the number the business actually pays for</div>
+      </div>
+      <div>
+        <div><b>Activation rate</b> &mdash; paid users who reached the key action (<span style="font-family:monospace">feature_use</span>) / paid signups</div>
+        <div><b>CTR</b> = clicks / impressions &nbsp;&middot;&nbsp; <b>CVR</b> = conversions / clicks</div>
+        <div><b>Conversion goal rule</b> &mdash; pick an event whose step conversion from the previous funnel step is roughly 50%: deep enough to mean something, frequent enough for the bidding algorithm to learn from. In the sample funnel that is <span style="font-family:monospace">settings_view &rarr; signup</span>.</div>
+      </div>
+    </div>
   </div>
   <div class="cbox" style="margin-top:10px">
     <div class="ct"><h3>Data Refresh Pipeline</h3></div>
@@ -400,6 +428,36 @@ const NAME_MAP = {
   'upgrade_click':'Click Upgrade','upgrade_plan_click':'Select plan','upgrade_success':'Upgrade success',
 };
 function fmtEv(n) { return NAME_MAP[n] || n; }
+
+// Conversion goal used for CPA (cost / paid users who fired it) and the key
+// action used for activation rate. Keep in sync with config/tracking_plan.yaml.
+const CONVERSION_EVENT='signup';
+const KEY_ACTION_EVENT='feature_use';
+const LANDING_ORDER=['usecase_page','single_page','skill_page','homepage','pmax','unknown'];
+
+// Aggregate tagged campaign_daily rows by landing_type / use_case (mirrors scripts/taxonomy.py)
+function summarizeBy(rows, dim) {
+  const m={};
+  rows.forEach(r=>{
+    const k=r[dim]||'unknown';
+    if(!m[k]) m[k]={key:k,campaigns:new Set(),impressions:0,clicks:0,cost:0,conversions:0};
+    const b=m[k]; b.campaigns.add(r.campaign_name); b.impressions+=r.impressions; b.clicks+=r.clicks; b.cost+=r.cost; b.conversions+=(r.conversions||0);
+  });
+  return Object.values(m).map(b=>({
+    key:b.key,campaigns:b.campaigns.size,impressions:b.impressions,clicks:b.clicks,
+    cost:Math.round(b.cost*100)/100,conversions:Math.round(b.conversions*10)/10,
+    ctr:b.impressions>0?Math.round(b.clicks/b.impressions*10000)/100:0,
+    cvr:b.clicks>0?Math.round(b.conversions/b.clicks*10000)/100:0,
+    cpa:b.conversions>0?Math.round(b.cost/b.conversions*100)/100:null,
+  })).sort((a,b)=>b.cost-a.cost);
+}
+
+function renderDimTable(tblId, rows, dim) {
+  const tbody=document.querySelector(`#${tblId} tbody`);
+  if(!rows.length){tbody.innerHTML=`<tr><td colspan="8" style="text-align:center;color:var(--text3)">No data</td></tr>`;return;}
+  const best=Math.min(...rows.filter(r=>r.cpa!=null).map(r=>r.cpa));
+  tbody.innerHTML=rows.map(r=>`<tr><td style="font-weight:600;font-family:monospace">${r.key}</td><td>${r.campaigns}</td><td>$${r.cost.toLocaleString()}</td><td>${r.clicks.toLocaleString()}</td><td>${r.conversions}</td><td>${r.ctr}%</td><td>${r.cvr}%</td><td style="font-weight:700;color:${r.cpa==null?'var(--text3)':r.cpa===best?'var(--green)':'var(--text)'}">${r.cpa==null?'-':'$'+r.cpa}</td></tr>`).join('');
+}
 
 function autoScale(datasets) {
   let v=[]; datasets.forEach(d=>{if(d.data)v.push(...d.data.filter(x=>x!=null))});
@@ -582,15 +640,26 @@ function renderAll() {
   const paidHome=getPaid('homepage_view'), paidLogin=getPaid('login_success'), paidInstall=getPaid('install_copy'), paidSignup=getPaid('signup');
   const paidTag=(n,total)=>n>0?`<span style="color:#dc2626;font-weight:600">Paid ${n}</span><span style="opacity:.5">(${Math.round(n/total*100)}%)</span>`:'';
 
+  // Paid-side KPIs. Conversion event / key action are configurable (see docs/tracking-plan.md).
+  const adsConv=Math.round(adsDt.reduce((s,d)=>s+(d.conversions||0),0)*10)/10;
+  const paidKeyAction=getPaid(KEY_ACTION_EVENT);
+  const paidSignupsK=getPaid(CONVERSION_EVENT);
+  const cpaPaid=paidSignupsK>0?Math.round(adsSpend/paidSignupsK*100)/100:null;
+  const cpaAds=adsConv>0?Math.round(adsSpend/adsConv*100)/100:null;
+  const activation=paidSignupsK>0?Math.round(paidKeyAction/paidSignupsK*1000)/10:null;
+  const money=v=>`$${v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`;
+
   document.getElementById('kpi-cards').innerHTML=[
-    {l:'Google Ads',v:`$${adsSpend.toLocaleString(undefined,{minimumFractionDigits:2})}`,c:'var(--orange)',s:`${adsClicks} clicks / CPC $${adsCpc}`,src:'Ads API',u:''},
+    {l:'Cost',v:money(adsSpend),c:'var(--orange)',s:`${adsClicks.toLocaleString()} clicks · CPC $${adsCpc} · CTR ${adsCtr}%`,src:'Ads API',u:''},
+    {l:'Conversions',v:adsConv.toLocaleString(),c:'var(--orange)',s:`Ads-reported · CPA ${cpaAds==null?'-':'$'+cpaAds} (cost / conversions)`,src:'Ads API',u:''},
+    {l:'CPA · cost / paid signups',v:cpaPaid==null?'-':money(cpaPaid),c:'var(--red)',s:`${paidSignupsK.toLocaleString()} paid ${CONVERSION_EVENT} users`,src:'Ads + GA4',u:''},
+    {l:'Activation rate',v:activation==null?'-':`${activation}%`,c:'var(--pink)',s:`paid ${KEY_ACTION_EVENT} ${paidKeyAction.toLocaleString()} / paid ${CONVERSION_EVENT} ${paidSignupsK.toLocaleString()}`,src:'GA4',u:''},
     {l:'homepage_view · Homepage view',v:totHomepage.toLocaleString(),c:'var(--accent2)',s:`${getPV('homepage_view').toLocaleString()} events · DAU ${avgDAU}`,s2:paidTag(paidHome,totHomepage),src:'GA4',u:'UV'},
     {l:'login_success · Logged in',v:totLogin.toLocaleString(),c:'var(--green)',s:`${getPV('login_success').toLocaleString()} events · ${totNew>0?Math.round(totLogin/totNew*100):0}% of new`,s2:paidTag(paidLogin,totLogin),src:'GA4',u:'Users'},
     {l:'install_copy · Copy install command',v:totInstall.toLocaleString(),c:'var(--teal)',s:`${getPV('install_copy').toLocaleString()} events · ${totLogin>0?Math.round(totInstall/totLogin*100):0}% of login`,s2:paidTag(paidInstall,totInstall),src:'GA4',u:'Users'},
-    {l:'signup · Signup complete',v:totSignup.toLocaleString(),c:'var(--blue)',s:`${getPV('signup').toLocaleString()} events · ${totInstall>0?Math.round(totSignup/totInstall*100):0}% of install`,s2:paidTag(paidSignup,totSignup),src:'GA4',u:'Users'},
-    {l:'content_publish · Content published',v:totPB.toLocaleString(),c:'var(--pink)',s:'Core conversion goal',src:'GA4',u:'Users'},
+    {l:'signup · Signup complete',v:totSignup.toLocaleString(),c:'var(--blue)',s:`${getPV('signup').toLocaleString()} events · ${totInstall>0?Math.round(totSignup/totInstall*100):0}% of install · conversion goal`,s2:paidTag(paidSignup,totSignup),src:'GA4',u:'Users'},
+    {l:'content_publish · Content published',v:totPB.toLocaleString(),c:'var(--pink)',s:'Creator north-star',src:'GA4',u:'Users'},
     {l:'New Users',v:totNew.toLocaleString(),c:'var(--green)',s:`Sessions ${totSess.toLocaleString()}`,src:'GA4',u:''},
-    {l:'Impressions',v:adsImp.toLocaleString(),c:'var(--text)',s:`CPC $${adsCpc} / CTR ${adsCtr}%`,src:'Ads API',u:''},
   ].map(c=>`<div class="kpi"><div class="src">${c.src}</div><div class="l">${c.l}</div><div class="v" style="color:${c.c||'var(--text)'}">${c.v}${c.u?` <span style="font-size:11px;color:var(--text3);font-weight:400">${c.u}</span>`:''}</div><div class="s">${c.s||''}</div>${c.s2?`<div class="s" style="margin-top:2px;font-size:10px">${c.s2}</div>`:''}</div>`).join('');
 
   // Overview daily chart (full date range, missing days shown as 0)
@@ -693,14 +762,21 @@ function renderAll() {
   // ---- ADS PAGE ----
   if(adsDt.length||adsCd.length){
     document.getElementById('ads-kpis').innerHTML=[
-      {l:'Total Spend',v:`$${adsSpend.toLocaleString(undefined,{minimumFractionDigits:2})}`,c:'var(--orange)',src:'Ads API'},
-      {l:'Total Clicks',v:adsClicks.toLocaleString(),c:'var(--blue)',src:'Ads API'},
-      {l:'Impressions',v:adsImp.toLocaleString(),src:'Ads API'},
-      {l:'CTR',v:`${adsCtr}%`,c:'var(--green)',src:'Ads API'},
-      {l:'Avg CPC',v:`$${adsCpc}`,src:'Ads API'},
-      {l:'Conversions',v:`${adsDt.reduce((s,d)=>s+(d.conversions||0),0)}`,src:'Ads API'},
-    ].map(c=>`<div class="kpi"><div class="src">${c.src||''}</div><div class="l">${c.l}</div><div class="v" style="color:${c.c||'var(--text)'}">${c.v}</div></div>`).join('');
+      {l:'Cost',v:money(adsSpend),c:'var(--orange)',src:'Ads API'},
+      {l:'Conversions',v:adsConv.toLocaleString(),c:'var(--orange)',s:'Ads-reported',src:'Ads API'},
+      {l:'CPA · cost / conversions',v:cpaAds==null?'-':money(cpaAds),src:'Ads API'},
+      {l:'CPA · cost / paid signups',v:cpaPaid==null?'-':money(cpaPaid),c:'var(--red)',s:`${paidSignupsK.toLocaleString()} paid ${CONVERSION_EVENT} users`,src:'Ads + GA4'},
+      {l:'Activation rate',v:activation==null?'-':`${activation}%`,c:'var(--pink)',s:`${KEY_ACTION_EVENT} / ${CONVERSION_EVENT} (paid)`,src:'GA4'},
+      {l:'CVR',v:adsClicks>0?`${Math.round(adsConv/adsClicks*10000)/100}%`:'-',c:'var(--green)',s:'conversions / clicks',src:'Ads API'},
+      {l:'CTR',v:`${adsCtr}%`,c:'var(--green)',s:`${adsImp.toLocaleString()} impressions`,src:'Ads API'},
+      {l:'Avg CPC',v:`$${adsCpc}`,s:`${adsClicks.toLocaleString()} clicks`,src:'Ads API'},
+    ].map(c=>`<div class="kpi"><div class="src">${c.src||''}</div><div class="l">${c.l}</div><div class="v" style="color:${c.c||'var(--text)'}">${c.v}</div><div class="s">${c.s||''}</div></div>`).join('');
   }
+
+  // Scenario tables: CPA / CTR / CVR by landing_type and by use_case (from taxonomy-tagged campaign_daily)
+  const ltRows=summarizeBy(adsCd,'landing_type').sort((a,b)=>LANDING_ORDER.indexOf(a.key)-LANDING_ORDER.indexOf(b.key));
+  renderDimTable('lt-tbl',ltRows,'landing_type');
+  renderDimTable('uc-tbl',summarizeBy(adsCd,'use_case'),'use_case');
 
   if(adsDt.length){
     const dates=adsDt.map(d=>d.date.slice(5));
@@ -712,13 +788,13 @@ function renderAll() {
   // Campaign table (recalculated from filtered daily data)
   const campMap={};
   adsCd.forEach(r=>{
-    if(!campMap[r.campaign_name])campMap[r.campaign_name]={campaign_name:r.campaign_name,status:r.status,impressions:0,clicks:0,cost:0,conversions:0};
+    if(!campMap[r.campaign_name])campMap[r.campaign_name]={campaign_name:r.campaign_name,status:r.status,landing_type:r.landing_type||'unknown',use_case:r.use_case||'unknown',impressions:0,clicks:0,cost:0,conversions:0};
     const c=campMap[r.campaign_name]; c.impressions+=r.impressions; c.clicks+=r.clicks; c.cost+=r.cost; c.conversions+=(r.conversions||0);
   });
   const camps=Object.values(campMap).sort((a,b)=>b.cost-a.cost);
-  camps.forEach(c=>{c.ctr=c.impressions>0?Math.round(c.clicks/c.impressions*10000)/100:0;c.avg_cpc=c.clicks>0?Math.round(c.cost/c.clicks*100)/100:0;c.cost=Math.round(c.cost*100)/100;});
+  camps.forEach(c=>{c.ctr=c.impressions>0?Math.round(c.clicks/c.impressions*10000)/100:0;c.avg_cpc=c.clicks>0?Math.round(c.cost/c.clicks*100)/100:0;c.cost=Math.round(c.cost*100)/100;c.conversions=Math.round(c.conversions*10)/10;c.cvr=c.clicks>0?Math.round(c.conversions/c.clicks*10000)/100:0;c.cpa=c.conversions>0?Math.round(c.cost/c.conversions*100)/100:null;});
   const tbody=document.querySelector('#camp-tbl tbody');
-  tbody.innerHTML=camps.length?camps.map(c=>`<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.campaign_name}">${c.campaign_name}</td><td><span class="st st-${c.status==='ENABLED'?'a':'p'}">${c.status==='ENABLED'?'Active':'Paused'}</span></td><td style="font-weight:700">$${c.cost.toLocaleString()}</td><td>${c.clicks.toLocaleString()}</td><td>${c.impressions.toLocaleString()}</td><td>${c.ctr}%</td><td>$${c.avg_cpc}</td><td>${c.conversions}</td></tr>`).join(''):'<tr><td colspan="8" style="text-align:center;color:var(--text3)">No data</td></tr>';
+  tbody.innerHTML=camps.length?camps.map(c=>`<tr><td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.campaign_name}">${c.campaign_name}</td><td><span class="st st-${c.status==='ENABLED'?'a':'p'}">${c.status==='ENABLED'?'Active':'Paused'}</span></td><td style="font-family:monospace;font-size:10px">${c.landing_type}</td><td style="font-family:monospace;font-size:10px">${c.use_case}</td><td style="font-weight:700">$${c.cost.toLocaleString()}</td><td>${c.clicks.toLocaleString()}</td><td>${c.impressions.toLocaleString()}</td><td>${c.ctr}%</td><td>$${c.avg_cpc}</td><td>${c.conversions}</td><td>${c.cvr}%</td><td style="font-weight:700">${c.cpa==null?'-':'$'+c.cpa}</td></tr>`).join(''):'<tr><td colspan="12" style="text-align:center;color:var(--text3)">No data</td></tr>';
 
   // ---- DATA SOURCES PAGE ----
   if(data.data_sources){
