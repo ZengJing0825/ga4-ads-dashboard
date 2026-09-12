@@ -1,0 +1,169 @@
+# Tracking plan: the single source of truth for GA4 event names.
+#
+# scripts/validate_data.py loads this file and warns about any event that
+# appears in fetched data but is not listed here (typos, events shipped
+# without a plan entry). Edit the event names to match your product, then
+# keep scripts/fetch_ga4.py and dashboard/index.html in sync.
+#
+# type      view   = an impression of a page / component
+#           click  = a user clicked something
+#           action = a business action completed (server-confirmed where possible)
+# trigger   where in the product the event fires
+# params    event parameters on top of the required ones below
+
+environments:
+  - name: prod
+    measurement_id: G-XXXXXXXXXX        # placeholder
+    notes: Ads conversions are imported from this property only.
+  - name: staging
+    measurement_id: G-YYYYYYYYYY        # placeholder
+    notes: Same plan deployed here first; QA every new event before prod.
+
+required_params:
+  - utm_source
+  - utm_medium
+  - utm_campaign
+
+server_side:
+  transport: GA4 Measurement Protocol
+  required:
+    - client_id      # the _ga cookie value of the browser session
+    - session_id     # ga_session_id from the _ga_<container> cookie
+  notes: Without client_id and session_id the hit does not join the user's session, so it carries no source / medium / campaign and Google Ads cannot learn from it.
+
+# Conversion events: mark these as key events / conversions in the GA4 admin
+# UI by hand, then import them into Google Ads. Nothing here does that for you.
+conversions:
+  - signup
+key_action: feature_use
+
+funnels:
+  creator:
+    - step: 1
+      event: ad_click
+      type: click
+      trigger: landing with gclid or utm params
+      params: [landing_type, use_case]
+    - step: 2
+      event: homepage_view
+      type: view
+      trigger: homepage rendered
+      params: [landing_type]
+    - step: 3
+      event: login_click
+      type: click
+      trigger: Log in button
+      params: []
+    - step: 4
+      event: login_success
+      type: action
+      trigger: auth callback succeeded
+      params: [method]
+    - step: 5
+      event: docs_click
+      type: click
+      trigger: docs / repository link
+      params: [target]
+    - step: 6
+      event: install_copy
+      type: click
+      trigger: copy button on the install command
+      params: [os]
+    - step: 7
+      event: settings_view
+      type: view
+      trigger: settings / credentials page rendered
+      params: []
+    - step: 8
+      event: signup
+      type: action
+      trigger: credential created (server-side)
+      params: [plan]
+    - step: 9
+      event: feature_use
+      type: action
+      trigger: first successful use of the core feature (server-side)
+      params: [feature]
+    - step: 10
+      event: content_publish
+      type: action
+      trigger: content published (server-side)
+      params: [content_type]
+    - step: 11
+      event: ask_send
+      type: action
+      trigger: question submitted from the homepage
+      params: []
+  consumer:
+    - step: 1
+      event: ad_click
+      type: click
+      trigger: landing with gclid or utm params
+      params: [landing_type, use_case]
+    - step: 2
+      event: homepage_view
+      type: view
+      trigger: homepage rendered
+      params: [landing_type]
+    - step: 3
+      event: login_click
+      type: click
+      trigger: Log in button
+      params: []
+    - step: 4
+      event: featured_click
+      type: click
+      trigger: featured card on the homepage
+      params: [item_id]
+    - step: 5
+      event: explore_view
+      type: view
+      trigger: explore page rendered
+      params: [filter]
+    - step: 6
+      event: explore_item_click
+      type: click
+      trigger: card inside explore
+      params: [item_id, position]
+    - step: 7
+      event: feature_view
+      type: view
+      trigger: item detail page rendered
+      params: [item_id]
+    - step: 8
+      event: item_favorite
+      type: action
+      trigger: favourite toggled on
+      params: [item_id]
+    - step: 9
+      event: item_share
+      type: action
+      trigger: share sheet confirmed
+      params: [item_id, channel]
+
+# Secondary funnels that are also reported on the dashboard.
+extra_events:
+  - event: clone_click
+    type: click
+    trigger: Clone button on an item
+    params: [item_id]
+  - event: clone_copy
+    type: action
+    trigger: clone created
+    params: [item_id]
+  - event: clone_publish
+    type: action
+    trigger: clone published
+    params: [item_id]
+  - event: upgrade_click
+    type: click
+    trigger: Upgrade button
+    params: [placement]
+  - event: upgrade_plan_click
+    type: click
+    trigger: plan selected on the pricing page
+    params: [plan]
+  - event: upgrade_success
+    type: action
+    trigger: payment confirmed (server-side)
+    params: [plan]
