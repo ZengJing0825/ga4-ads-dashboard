@@ -9,17 +9,20 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-from google.analytics.data_v1beta import BetaAnalyticsDataClient
-from google.analytics.data_v1beta.types import (
-    DateRange,
-    Dimension,
-    Filter,
-    FilterExpression,
-    FilterExpressionList,
-    Metric,
-    RunReportRequest,
-    OrderBy,
-)
+try:
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    from google.analytics.data_v1beta.types import (
+        DateRange,
+        Dimension,
+        Filter,
+        FilterExpression,
+        FilterExpressionList,
+        Metric,
+        RunReportRequest,
+        OrderBy,
+    )
+except ImportError:  # SDK not installed: pure helpers below stay importable
+    BetaAnalyticsDataClient = None
 
 
 def report_tz() -> timezone:
@@ -87,6 +90,8 @@ ALL_EVENTS = list(set(
 
 def get_client():
     """Create the GA4 Data API client (REST transport for broader compatibility)."""
+    if BetaAnalyticsDataClient is None:
+        raise ImportError("google-analytics-data is not installed (pip install -r requirements.txt)")
     return BetaAnalyticsDataClient(transport="rest")
 
 

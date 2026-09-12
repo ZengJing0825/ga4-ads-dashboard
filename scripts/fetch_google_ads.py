@@ -12,7 +12,10 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-from google.ads.googleads.client import GoogleAdsClient
+try:
+    from google.ads.googleads.client import GoogleAdsClient
+except ImportError:  # SDK not installed: pure aggregation helpers stay importable
+    GoogleAdsClient = None
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from taxonomy import Taxonomy, summarize_by  # noqa: E402
@@ -28,8 +31,10 @@ def report_tz() -> timezone:
     return timezone(timedelta(hours=float(os.environ.get("REPORT_TZ_OFFSET_HOURS", "-7"))))
 
 
-def get_client() -> GoogleAdsClient:
+def get_client():
     """Create the Google Ads API client from environment variables."""
+    if GoogleAdsClient is None:
+        raise ImportError("google-ads is not installed (pip install -r requirements.txt)")
     config = {
         "developer_token": os.environ["GOOGLE_ADS_DEVELOPER_TOKEN"],
         "client_id": os.environ["GOOGLE_ADS_CLIENT_ID"],
@@ -43,7 +48,7 @@ def get_client() -> GoogleAdsClient:
     return GoogleAdsClient.load_from_dict(config)
 
 
-def fetch_campaign_daily(client: GoogleAdsClient, customer_id: str, days: int = 30) -> list[dict]:
+def fetch_campaign_daily(client, customer_id: str, days: int = 30) -> list[dict]:
     """
     Daily campaign-level metrics.
     Returns: [{"date": "2026-04-01", "campaign_name": "...", "impressions": 100, ...}, ...]
