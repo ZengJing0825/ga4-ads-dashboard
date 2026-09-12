@@ -202,14 +202,14 @@
       {
         "date": "2026-08-15",
         "event_name": "content_publish",
-        "event_count": 26,
-        "users": 23
+        "event_count": 27,
+        "users": 24
       },
       {
         "date": "2026-08-15",
         "event_name": "docs_click",
-        "event_count": 507,
-        "users": 383
+        "event_count": 510,
+        "users": 385
       },
       {
         "date": "2026-08-15",
@@ -220,14 +220,14 @@
       {
         "date": "2026-08-15",
         "event_name": "explore_view",
-        "event_count": 444,
-        "users": 288
+        "event_count": 445,
+        "users": 289
       },
       {
         "date": "2026-08-15",
         "event_name": "feature_use",
-        "event_count": 57,
-        "users": 49
+        "event_count": 58,
+        "users": 50
       },
       {
         "date": "2026-08-15",
@@ -238,8 +238,8 @@
       {
         "date": "2026-08-15",
         "event_name": "featured_click",
-        "event_count": 455,
-        "users": 359
+        "event_count": 456,
+        "users": 360
       },
       {
         "date": "2026-08-15",
@@ -250,8 +250,8 @@
       {
         "date": "2026-08-15",
         "event_name": "install_copy",
-        "event_count": 277,
-        "users": 240
+        "event_count": 278,
+        "users": 241
       },
       {
         "date": "2026-08-15",
@@ -268,26 +268,26 @@
       {
         "date": "2026-08-15",
         "event_name": "login_click",
-        "event_count": 808,
-        "users": 625
+        "event_count": 809,
+        "users": 626
       },
       {
         "date": "2026-08-15",
         "event_name": "login_success",
-        "event_count": 622,
-        "users": 539
+        "event_count": 624,
+        "users": 541
       },
       {
         "date": "2026-08-15",
         "event_name": "settings_view",
-        "event_count": 271,
-        "users": 179
+        "event_count": 273,
+        "users": 180
       },
       {
         "date": "2026-08-15",
         "event_name": "signup",
-        "event_count": 107,
-        "users": 99
+        "event_count": 108,
+        "users": 100
       },
       {
         "date": "2026-08-15",
@@ -316,8 +316,8 @@
       {
         "date": "2026-08-16",
         "event_name": "ask_send",
-        "event_count": 17,
-        "users": 15
+        "event_count": 18,
+        "users": 16
       },
       {
         "date": "2026-08-16",
@@ -346,20 +346,20 @@
       {
         "date": "2026-08-16",
         "event_name": "docs_click",
-        "event_count": 559,
-        "users": 432
+        "event_count": 561,
+        "users": 434
       },
       {
         "date": "2026-08-16",
         "event_name": "explore_item_click",
-        "event_count": 238,
-        "users": 188
+        "event_count": 239,
+        "users": 189
       },
       {
         "date": "2026-08-16",
         "event_name": "explore_view",
-        "event_count": 460,
-        "users": 309
+        "event_count": 461,
+        "users": 310
       },
       {
         "date": "2026-08-16",
@@ -370,14 +370,14 @@
       {
         "date": "2026-08-16",
         "event_name": "feature_view",
-        "event_count": 433,
-        "users": 286
+        "event_count": 434,
+        "users": 287
       },
       {
         "date": "2026-08-16",
         "event_name": "featured_click",
-        "event_count": 496,
-        "users": 400
+        "event_count": 497,
+        "users": 401
       },
       {
         "date": "2026-08-16",
@@ -388,44 +388,44 @@
       {
         "date": "2026-08-16",
         "event_name": "install_copy",
-        "event_count": 315,
-        "users": 281
+        "event_count": 316,
+        "users": 282
       },
       {
         "date": "2026-08-16",
         "event_name": "item_favorite",
-        "event_count": 46,
-        "users": 43
+        "event_count": 47,
+        "users": 44
       },
       {
         "date": "2026-08-16",
         "event_name": "item_share",
-        "event_count": 18,
-        "users": 16
+        "event_count": 19,
+        "users": 17
       },
       {
         "date": "2026-08-16",
         "event_name": "login_click",
-        "event_count": 904,
-        "users": 730
+        "event_count": 906,
+        "users": 731
       },
       {
         "date": "2026-08-16",
         "event_name": "login_success",
-        "event_count": 707,
-        "users": 626
+        "event_count": 709,
+        "users": 628
       },
       {
         "date": "2026-08-16",
         "event_name": "settings_view",
-        "event_count": 317,
-        "users": 213
+        "event_count": 318,
+        "users": 214
       },
       {
         "date": "2026-08-16",
         "event_name": "signup",
-        "event_count": 131,
-        "users": 120
+        "event_count": 132,
+        "users": 121
       },
       {
         "date": "2026-08-16",
@@ -484,8 +484,8 @@
       {
         "date": "2026-08-17",
         "event_name": "docs_click",
-        "event_count": 453,
-        "users": 358
+        "event_count": 455,
+        "users": 360
       },
       {
         "date": "2026-08-17",
@@ -502,8 +502,8 @@
       {
         "date": "2026-08-17",
         "event_name": "feature_use",
-        "event_count": 56,
-        "users": 50
+        "event_count": 57,
+        "users": 51
       },
       {
         "date": "2026-08-17",
@@ -526,8 +526,8 @@
       {
         "date": "2026-08-17",
         "event_name": "install_copy",
-        "event_count": 269,
-        "users": 233
+        "event_count": 271,
+        "users": 235
       },
       {
         "date": "2026-08-17",
@@ -544,26 +544,26 @@
       {
         "date": "2026-08-17",
         "event_name": "login_click",
-        "event_count": 764,
-        "users": 603
+        "event_count": 765,
+        "users": 604
       },
       {
         "date": "2026-08-17",
         "event_name": "login_success",
-        "event_count": 584,
-        "users": 510
+        "event_count": 585,
+        "users": 511
       },
       {
         "date": "2026-08-17",
         "event_name": "settings_view",
-        "event_count": 254,
-        "users": 175
+        "event_count": 255,
+        "users": 176
       },
       {
         "date": "2026-08-17",
         "event_name": "signup",
-        "event_count": 107,
-        "users": 99
+        "event_count": 108,
+        "users": 100
       },
       {
         "date": "2026-08-17",
@@ -730,8 +730,8 @@
       {
         "date": "2026-08-19",
         "event_name": "ask_send",
-        "event_count": 15,
-        "users": 13
+        "event_count": 16,
+        "users": 14
       },
       {
         "date": "2026-08-19",
@@ -760,38 +760,38 @@
       {
         "date": "2026-08-19",
         "event_name": "docs_click",
-        "event_count": 512,
-        "users": 387
+        "event_count": 515,
+        "users": 389
       },
       {
         "date": "2026-08-19",
         "event_name": "explore_item_click",
-        "event_count": 224,
-        "users": 174
+        "event_count": 225,
+        "users": 175
       },
       {
         "date": "2026-08-19",
         "event_name": "explore_view",
-        "event_count": 458,
-        "users": 306
+        "event_count": 460,
+        "users": 307
       },
       {
         "date": "2026-08-19",
         "event_name": "feature_use",
-        "event_count": 57,
-        "users": 54
+        "event_count": 58,
+        "users": 55
       },
       {
         "date": "2026-08-19",
         "event_name": "feature_view",
-        "event_count": 423,
-        "users": 284
+        "event_count": 424,
+        "users": 285
       },
       {
         "date": "2026-08-19",
         "event_name": "featured_click",
-        "event_count": 488,
-        "users": 395
+        "event_count": 489,
+        "users": 396
       },
       {
         "date": "2026-08-19",
@@ -802,8 +802,8 @@
       {
         "date": "2026-08-19",
         "event_name": "install_copy",
-        "event_count": 279,
-        "users": 252
+        "event_count": 281,
+        "users": 254
       },
       {
         "date": "2026-08-19",
@@ -820,44 +820,44 @@
       {
         "date": "2026-08-19",
         "event_name": "login_click",
-        "event_count": 884,
-        "users": 684
+        "event_count": 886,
+        "users": 686
       },
       {
         "date": "2026-08-19",
         "event_name": "login_success",
-        "event_count": 633,
-        "users": 561
+        "event_count": 635,
+        "users": 563
       },
       {
         "date": "2026-08-19",
         "event_name": "settings_view",
-        "event_count": 281,
-        "users": 190
+        "event_count": 282,
+        "users": 191
       },
       {
         "date": "2026-08-19",
         "event_name": "signup",
-        "event_count": 119,
-        "users": 105
+        "event_count": 120,
+        "users": 106
       },
       {
         "date": "2026-08-19",
         "event_name": "upgrade_click",
-        "event_count": 32,
-        "users": 25
+        "event_count": 33,
+        "users": 26
       },
       {
         "date": "2026-08-19",
         "event_name": "upgrade_plan_click",
-        "event_count": 20,
-        "users": 15
+        "event_count": 21,
+        "users": 16
       },
       {
         "date": "2026-08-19",
         "event_name": "upgrade_success",
-        "event_count": 5,
-        "users": 4
+        "event_count": 6,
+        "users": 5
       },
       {
         "date": "2026-08-20",
@@ -1036,20 +1036,20 @@
       {
         "date": "2026-08-21",
         "event_name": "docs_click",
-        "event_count": 516,
-        "users": 397
+        "event_count": 519,
+        "users": 399
       },
       {
         "date": "2026-08-21",
         "event_name": "explore_item_click",
-        "event_count": 226,
-        "users": 180
+        "event_count": 227,
+        "users": 181
       },
       {
         "date": "2026-08-21",
         "event_name": "explore_view",
-        "event_count": 429,
-        "users": 284
+        "event_count": 431,
+        "users": 285
       },
       {
         "date": "2026-08-21",
@@ -1060,14 +1060,14 @@
       {
         "date": "2026-08-21",
         "event_name": "feature_view",
-        "event_count": 427,
-        "users": 279
+        "event_count": 429,
+        "users": 280
       },
       {
         "date": "2026-08-21",
         "event_name": "featured_click",
-        "event_count": 459,
-        "users": 360
+        "event_count": 461,
+        "users": 361
       },
       {
         "date": "2026-08-21",
@@ -1078,8 +1078,8 @@
       {
         "date": "2026-08-21",
         "event_name": "install_copy",
-        "event_count": 278,
-        "users": 263
+        "event_count": 279,
+        "users": 264
       },
       {
         "date": "2026-08-21",
@@ -1096,26 +1096,26 @@
       {
         "date": "2026-08-21",
         "event_name": "login_click",
-        "event_count": 821,
-        "users": 651
+        "event_count": 822,
+        "users": 652
       },
       {
         "date": "2026-08-21",
         "event_name": "login_success",
-        "event_count": 579,
-        "users": 553
+        "event_count": 580,
+        "users": 554
       },
       {
         "date": "2026-08-21",
         "event_name": "settings_view",
-        "event_count": 285,
-        "users": 195
+        "event_count": 287,
+        "users": 196
       },
       {
         "date": "2026-08-21",
         "event_name": "signup",
-        "event_count": 120,
-        "users": 109
+        "event_count": 121,
+        "users": 110
       },
       {
         "date": "2026-08-21",
@@ -1174,8 +1174,8 @@
       {
         "date": "2026-08-22",
         "event_name": "docs_click",
-        "event_count": 526,
-        "users": 418
+        "event_count": 528,
+        "users": 420
       },
       {
         "date": "2026-08-22",
@@ -1216,8 +1216,8 @@
       {
         "date": "2026-08-22",
         "event_name": "install_copy",
-        "event_count": 307,
-        "users": 266
+        "event_count": 309,
+        "users": 268
       },
       {
         "date": "2026-08-22",
@@ -1240,26 +1240,26 @@
       {
         "date": "2026-08-22",
         "event_name": "login_success",
-        "event_count": 662,
-        "users": 579
+        "event_count": 664,
+        "users": 580
       },
       {
         "date": "2026-08-22",
         "event_name": "settings_view",
-        "event_count": 310,
-        "users": 198
+        "event_count": 313,
+        "users": 200
       },
       {
         "date": "2026-08-22",
         "event_name": "signup",
-        "event_count": 123,
-        "users": 112
+        "event_count": 124,
+        "users": 113
       },
       {
         "date": "2026-08-22",
         "event_name": "upgrade_click",
-        "event_count": 35,
-        "users": 28
+        "event_count": 36,
+        "users": 29
       },
       {
         "date": "2026-08-22",
@@ -1312,20 +1312,20 @@
       {
         "date": "2026-08-23",
         "event_name": "docs_click",
-        "event_count": 534,
-        "users": 396
+        "event_count": 537,
+        "users": 398
       },
       {
         "date": "2026-08-23",
         "event_name": "explore_item_click",
-        "event_count": 242,
-        "users": 185
+        "event_count": 243,
+        "users": 186
       },
       {
         "date": "2026-08-23",
         "event_name": "explore_view",
-        "event_count": 476,
-        "users": 308
+        "event_count": 478,
+        "users": 309
       },
       {
         "date": "2026-08-23",
@@ -1336,14 +1336,14 @@
       {
         "date": "2026-08-23",
         "event_name": "feature_view",
-        "event_count": 471,
-        "users": 307
+        "event_count": 475,
+        "users": 309
       },
       {
         "date": "2026-08-23",
         "event_name": "featured_click",
-        "event_count": 494,
-        "users": 372
+        "event_count": 495,
+        "users": 373
       },
       {
         "date": "2026-08-23",
@@ -1354,8 +1354,8 @@
       {
         "date": "2026-08-23",
         "event_name": "install_copy",
-        "event_count": 292,
-        "users": 262
+        "event_count": 294,
+        "users": 264
       },
       {
         "date": "2026-08-23",
@@ -1372,26 +1372,26 @@
       {
         "date": "2026-08-23",
         "event_name": "login_click",
-        "event_count": 834,
-        "users": 662
+        "event_count": 835,
+        "users": 663
       },
       {
         "date": "2026-08-23",
         "event_name": "login_success",
-        "event_count": 612,
-        "users": 557
+        "event_count": 613,
+        "users": 558
       },
       {
         "date": "2026-08-23",
         "event_name": "settings_view",
-        "event_count": 307,
-        "users": 200
+        "event_count": 310,
+        "users": 202
       },
       {
         "date": "2026-08-23",
         "event_name": "signup",
-        "event_count": 124,
-        "users": 110
+        "event_count": 125,
+        "users": 111
       },
       {
         "date": "2026-08-23",
@@ -1450,8 +1450,8 @@
       {
         "date": "2026-08-24",
         "event_name": "docs_click",
-        "event_count": 523,
-        "users": 406
+        "event_count": 526,
+        "users": 408
       },
       {
         "date": "2026-08-24",
@@ -1492,8 +1492,8 @@
       {
         "date": "2026-08-24",
         "event_name": "install_copy",
-        "event_count": 274,
-        "users": 258
+        "event_count": 275,
+        "users": 259
       },
       {
         "date": "2026-08-24",
@@ -1510,26 +1510,26 @@
       {
         "date": "2026-08-24",
         "event_name": "login_click",
-        "event_count": 823,
-        "users": 665
+        "event_count": 824,
+        "users": 666
       },
       {
         "date": "2026-08-24",
         "event_name": "login_success",
-        "event_count": 639,
-        "users": 562
+        "event_count": 640,
+        "users": 563
       },
       {
         "date": "2026-08-24",
         "event_name": "settings_view",
-        "event_count": 297,
-        "users": 189
+        "event_count": 300,
+        "users": 191
       },
       {
         "date": "2026-08-24",
         "event_name": "signup",
-        "event_count": 117,
-        "users": 104
+        "event_count": 118,
+        "users": 105
       },
       {
         "date": "2026-08-24",
@@ -1720,44 +1720,44 @@
       {
         "date": "2026-08-26",
         "event_name": "content_publish",
-        "event_count": 27,
-        "users": 25
+        "event_count": 28,
+        "users": 26
       },
       {
         "date": "2026-08-26",
         "event_name": "docs_click",
-        "event_count": 529,
-        "users": 400
+        "event_count": 532,
+        "users": 402
       },
       {
         "date": "2026-08-26",
         "event_name": "explore_item_click",
-        "event_count": 251,
-        "users": 189
+        "event_count": 252,
+        "users": 190
       },
       {
         "date": "2026-08-26",
         "event_name": "explore_view",
-        "event_count": 492,
-        "users": 319
+        "event_count": 493,
+        "users": 320
       },
       {
         "date": "2026-08-26",
         "event_name": "feature_use",
-        "event_count": 57,
-        "users": 54
+        "event_count": 58,
+        "users": 55
       },
       {
         "date": "2026-08-26",
         "event_name": "feature_view",
-        "event_count": 430,
-        "users": 299
+        "event_count": 433,
+        "users": 301
       },
       {
         "date": "2026-08-26",
         "event_name": "featured_click",
-        "event_count": 495,
-        "users": 392
+        "event_count": 497,
+        "users": 393
       },
       {
         "date": "2026-08-26",
@@ -1768,8 +1768,8 @@
       {
         "date": "2026-08-26",
         "event_name": "install_copy",
-        "event_count": 291,
-        "users": 261
+        "event_count": 292,
+        "users": 262
       },
       {
         "date": "2026-08-26",
@@ -1786,26 +1786,26 @@
       {
         "date": "2026-08-26",
         "event_name": "login_click",
-        "event_count": 876,
-        "users": 704
+        "event_count": 878,
+        "users": 705
       },
       {
         "date": "2026-08-26",
         "event_name": "login_success",
-        "event_count": 623,
-        "users": 584
+        "event_count": 625,
+        "users": 586
       },
       {
         "date": "2026-08-26",
         "event_name": "settings_view",
-        "event_count": 289,
-        "users": 191
+        "event_count": 292,
+        "users": 193
       },
       {
         "date": "2026-08-26",
         "event_name": "signup",
-        "event_count": 112,
-        "users": 106
+        "event_count": 113,
+        "users": 107
       },
       {
         "date": "2026-08-26",
@@ -1864,8 +1864,8 @@
       {
         "date": "2026-08-27",
         "event_name": "docs_click",
-        "event_count": 485,
-        "users": 384
+        "event_count": 488,
+        "users": 386
       },
       {
         "date": "2026-08-27",
@@ -1882,8 +1882,8 @@
       {
         "date": "2026-08-27",
         "event_name": "feature_use",
-        "event_count": 58,
-        "users": 52
+        "event_count": 59,
+        "users": 53
       },
       {
         "date": "2026-08-27",
@@ -1906,8 +1906,8 @@
       {
         "date": "2026-08-27",
         "event_name": "install_copy",
-        "event_count": 271,
-        "users": 255
+        "event_count": 273,
+        "users": 257
       },
       {
         "date": "2026-08-27",
@@ -1924,32 +1924,32 @@
       {
         "date": "2026-08-27",
         "event_name": "login_click",
-        "event_count": 808,
-        "users": 647
+        "event_count": 810,
+        "users": 648
       },
       {
         "date": "2026-08-27",
         "event_name": "login_success",
-        "event_count": 625,
-        "users": 561
+        "event_count": 627,
+        "users": 563
       },
       {
         "date": "2026-08-27",
         "event_name": "settings_view",
-        "event_count": 278,
-        "users": 193
+        "event_count": 280,
+        "users": 195
       },
       {
         "date": "2026-08-27",
         "event_name": "signup",
-        "event_count": 121,
-        "users": 106
+        "event_count": 122,
+        "users": 107
       },
       {
         "date": "2026-08-27",
         "event_name": "upgrade_click",
-        "event_count": 36,
-        "users": 27
+        "event_count": 37,
+        "users": 28
       },
       {
         "date": "2026-08-27",
@@ -1972,8 +1972,8 @@
       {
         "date": "2026-08-28",
         "event_name": "ask_send",
-        "event_count": 15,
-        "users": 13
+        "event_count": 16,
+        "users": 14
       },
       {
         "date": "2026-08-28",
@@ -2002,8 +2002,8 @@
       {
         "date": "2026-08-28",
         "event_name": "docs_click",
-        "event_count": 516,
-        "users": 414
+        "event_count": 519,
+        "users": 416
       },
       {
         "date": "2026-08-28",
@@ -2020,8 +2020,8 @@
       {
         "date": "2026-08-28",
         "event_name": "feature_use",
-        "event_count": 59,
-        "users": 54
+        "event_count": 61,
+        "users": 55
       },
       {
         "date": "2026-08-28",
@@ -2044,8 +2044,8 @@
       {
         "date": "2026-08-28",
         "event_name": "install_copy",
-        "event_count": 286,
-        "users": 268
+        "event_count": 287,
+        "users": 269
       },
       {
         "date": "2026-08-28",
@@ -2062,26 +2062,26 @@
       {
         "date": "2026-08-28",
         "event_name": "login_click",
-        "event_count": 946,
-        "users": 701
+        "event_count": 947,
+        "users": 702
       },
       {
         "date": "2026-08-28",
         "event_name": "login_success",
-        "event_count": 649,
-        "users": 589
+        "event_count": 651,
+        "users": 591
       },
       {
         "date": "2026-08-28",
         "event_name": "settings_view",
-        "event_count": 305,
-        "users": 202
+        "event_count": 308,
+        "users": 204
       },
       {
         "date": "2026-08-28",
         "event_name": "signup",
-        "event_count": 118,
-        "users": 112
+        "event_count": 119,
+        "users": 113
       },
       {
         "date": "2026-08-28",
@@ -2110,8 +2110,8 @@
       {
         "date": "2026-08-29",
         "event_name": "ask_send",
-        "event_count": 15,
-        "users": 13
+        "event_count": 16,
+        "users": 14
       },
       {
         "date": "2026-08-29",
@@ -2134,14 +2134,14 @@
       {
         "date": "2026-08-29",
         "event_name": "content_publish",
-        "event_count": 24,
-        "users": 21
+        "event_count": 25,
+        "users": 22
       },
       {
         "date": "2026-08-29",
         "event_name": "docs_click",
-        "event_count": 506,
-        "users": 397
+        "event_count": 508,
+        "users": 399
       },
       {
         "date": "2026-08-29",
@@ -2158,8 +2158,8 @@
       {
         "date": "2026-08-29",
         "event_name": "feature_use",
-        "event_count": 53,
-        "users": 47
+        "event_count": 54,
+        "users": 48
       },
       {
         "date": "2026-08-29",
@@ -2182,8 +2182,8 @@
       {
         "date": "2026-08-29",
         "event_name": "install_copy",
-        "event_count": 283,
-        "users": 257
+        "event_count": 284,
+        "users": 258
       },
       {
         "date": "2026-08-29",
@@ -2200,26 +2200,26 @@
       {
         "date": "2026-08-29",
         "event_name": "login_click",
-        "event_count": 906,
-        "users": 682
+        "event_count": 908,
+        "users": 683
       },
       {
         "date": "2026-08-29",
         "event_name": "login_success",
-        "event_count": 643,
-        "users": 575
+        "event_count": 645,
+        "users": 577
       },
       {
         "date": "2026-08-29",
         "event_name": "settings_view",
-        "event_count": 272,
-        "users": 185
+        "event_count": 275,
+        "users": 187
       },
       {
         "date": "2026-08-29",
         "event_name": "signup",
-        "event_count": 113,
-        "users": 100
+        "event_count": 114,
+        "users": 101
       },
       {
         "date": "2026-08-29",
@@ -2272,14 +2272,14 @@
       {
         "date": "2026-08-30",
         "event_name": "content_publish",
-        "event_count": 25,
-        "users": 24
+        "event_count": 26,
+        "users": 25
       },
       {
         "date": "2026-08-30",
         "event_name": "docs_click",
-        "event_count": 497,
-        "users": 387
+        "event_count": 499,
+        "users": 389
       },
       {
         "date": "2026-08-30",
@@ -2296,8 +2296,8 @@
       {
         "date": "2026-08-30",
         "event_name": "feature_use",
-        "event_count": 58,
-        "users": 54
+        "event_count": 59,
+        "users": 55
       },
       {
         "date": "2026-08-30",
@@ -2320,8 +2320,8 @@
       {
         "date": "2026-08-30",
         "event_name": "install_copy",
-        "event_count": 281,
-        "users": 254
+        "event_count": 282,
+        "users": 255
       },
       {
         "date": "2026-08-30",
@@ -2338,38 +2338,38 @@
       {
         "date": "2026-08-30",
         "event_name": "login_click",
-        "event_count": 843,
-        "users": 635
+        "event_count": 845,
+        "users": 636
       },
       {
         "date": "2026-08-30",
         "event_name": "login_success",
-        "event_count": 614,
-        "users": 554
+        "event_count": 616,
+        "users": 556
       },
       {
         "date": "2026-08-30",
         "event_name": "settings_view",
-        "event_count": 289,
-        "users": 192
+        "event_count": 292,
+        "users": 194
       },
       {
         "date": "2026-08-30",
         "event_name": "signup",
-        "event_count": 113,
-        "users": 106
+        "event_count": 114,
+        "users": 107
       },
       {
         "date": "2026-08-30",
         "event_name": "upgrade_click",
-        "event_count": 37,
-        "users": 27
+        "event_count": 38,
+        "users": 28
       },
       {
         "date": "2026-08-30",
         "event_name": "upgrade_plan_click",
-        "event_count": 20,
-        "users": 15
+        "event_count": 21,
+        "users": 16
       },
       {
         "date": "2026-08-30",
@@ -2416,8 +2416,8 @@
       {
         "date": "2026-08-31",
         "event_name": "docs_click",
-        "event_count": 536,
-        "users": 408
+        "event_count": 538,
+        "users": 410
       },
       {
         "date": "2026-08-31",
@@ -2458,8 +2458,8 @@
       {
         "date": "2026-08-31",
         "event_name": "install_copy",
-        "event_count": 293,
-        "users": 262
+        "event_count": 296,
+        "users": 264
       },
       {
         "date": "2026-08-31",
@@ -2476,26 +2476,26 @@
       {
         "date": "2026-08-31",
         "event_name": "login_click",
-        "event_count": 925,
-        "users": 698
+        "event_count": 927,
+        "users": 699
       },
       {
         "date": "2026-08-31",
         "event_name": "login_success",
-        "event_count": 625,
-        "users": 590
+        "event_count": 627,
+        "users": 592
       },
       {
         "date": "2026-08-31",
         "event_name": "settings_view",
-        "event_count": 315,
-        "users": 201
+        "event_count": 318,
+        "users": 203
       },
       {
         "date": "2026-08-31",
         "event_name": "signup",
-        "event_count": 115,
-        "users": 110
+        "event_count": 116,
+        "users": 111
       },
       {
         "date": "2026-08-31",
@@ -2692,8 +2692,8 @@
       {
         "date": "2026-09-02",
         "event_name": "docs_click",
-        "event_count": 530,
-        "users": 400
+        "event_count": 532,
+        "users": 402
       },
       {
         "date": "2026-09-02",
@@ -2704,8 +2704,8 @@
       {
         "date": "2026-09-02",
         "event_name": "explore_view",
-        "event_count": 440,
-        "users": 297
+        "event_count": 442,
+        "users": 298
       },
       {
         "date": "2026-09-02",
@@ -2722,8 +2722,8 @@
       {
         "date": "2026-09-02",
         "event_name": "featured_click",
-        "event_count": 483,
-        "users": 379
+        "event_count": 484,
+        "users": 380
       },
       {
         "date": "2026-09-02",
@@ -2734,8 +2734,8 @@
       {
         "date": "2026-09-02",
         "event_name": "install_copy",
-        "event_count": 287,
-        "users": 255
+        "event_count": 289,
+        "users": 257
       },
       {
         "date": "2026-09-02",
@@ -2752,26 +2752,26 @@
       {
         "date": "2026-09-02",
         "event_name": "login_click",
-        "event_count": 897,
-        "users": 677
+        "event_count": 899,
+        "users": 678
       },
       {
         "date": "2026-09-02",
         "event_name": "login_success",
-        "event_count": 611,
-        "users": 559
+        "event_count": 613,
+        "users": 561
       },
       {
         "date": "2026-09-02",
         "event_name": "settings_view",
-        "event_count": 296,
-        "users": 192
+        "event_count": 299,
+        "users": 194
       },
       {
         "date": "2026-09-02",
         "event_name": "signup",
-        "event_count": 117,
-        "users": 102
+        "event_count": 119,
+        "users": 103
       },
       {
         "date": "2026-09-02",
@@ -2806,20 +2806,20 @@
       {
         "date": "2026-09-03",
         "event_name": "clone_click",
-        "event_count": 33,
-        "users": 25
+        "event_count": 34,
+        "users": 26
       },
       {
         "date": "2026-09-03",
         "event_name": "clone_copy",
-        "event_count": 20,
-        "users": 18
+        "event_count": 21,
+        "users": 19
       },
       {
         "date": "2026-09-03",
         "event_name": "clone_publish",
-        "event_count": 7,
-        "users": 6
+        "event_count": 8,
+        "users": 7
       },
       {
         "date": "2026-09-03",
@@ -2830,38 +2830,38 @@
       {
         "date": "2026-09-03",
         "event_name": "docs_click",
-        "event_count": 452,
-        "users": 357
+        "event_count": 454,
+        "users": 358
       },
       {
         "date": "2026-09-03",
         "event_name": "explore_item_click",
-        "event_count": 183,
-        "users": 142
+        "event_count": 184,
+        "users": 143
       },
       {
         "date": "2026-09-03",
         "event_name": "explore_view",
-        "event_count": 372,
-        "users": 242
+        "event_count": 373,
+        "users": 243
       },
       {
         "date": "2026-09-03",
         "event_name": "feature_use",
-        "event_count": 49,
-        "users": 44
+        "event_count": 51,
+        "users": 45
       },
       {
         "date": "2026-09-03",
         "event_name": "feature_view",
-        "event_count": 341,
-        "users": 226
+        "event_count": 344,
+        "users": 228
       },
       {
         "date": "2026-09-03",
         "event_name": "featured_click",
-        "event_count": 405,
-        "users": 313
+        "event_count": 407,
+        "users": 314
       },
       {
         "date": "2026-09-03",
@@ -2872,14 +2872,14 @@
       {
         "date": "2026-09-03",
         "event_name": "install_copy",
-        "event_count": 267,
-        "users": 235
+        "event_count": 269,
+        "users": 237
       },
       {
         "date": "2026-09-03",
         "event_name": "item_favorite",
-        "event_count": 40,
-        "users": 35
+        "event_count": 41,
+        "users": 36
       },
       {
         "date": "2026-09-03",
@@ -2890,26 +2890,26 @@
       {
         "date": "2026-09-03",
         "event_name": "login_click",
-        "event_count": 739,
-        "users": 570
+        "event_count": 740,
+        "users": 571
       },
       {
         "date": "2026-09-03",
         "event_name": "login_success",
-        "event_count": 558,
-        "users": 491
+        "event_count": 561,
+        "users": 493
       },
       {
         "date": "2026-09-03",
         "event_name": "settings_view",
-        "event_count": 255,
-        "users": 171
+        "event_count": 256,
+        "users": 172
       },
       {
         "date": "2026-09-03",
         "event_name": "signup",
-        "event_count": 105,
-        "users": 91
+        "event_count": 106,
+        "users": 92
       },
       {
         "date": "2026-09-03",
@@ -2968,8 +2968,8 @@
       {
         "date": "2026-09-04",
         "event_name": "docs_click",
-        "event_count": 425,
-        "users": 327
+        "event_count": 428,
+        "users": 329
       },
       {
         "date": "2026-09-04",
@@ -3010,8 +3010,8 @@
       {
         "date": "2026-09-04",
         "event_name": "install_copy",
-        "event_count": 236,
-        "users": 212
+        "event_count": 237,
+        "users": 213
       },
       {
         "date": "2026-09-04",
@@ -3028,38 +3028,38 @@
       {
         "date": "2026-09-04",
         "event_name": "login_click",
-        "event_count": 740,
-        "users": 565
+        "event_count": 741,
+        "users": 566
       },
       {
         "date": "2026-09-04",
         "event_name": "login_success",
-        "event_count": 507,
-        "users": 471
+        "event_count": 509,
+        "users": 473
       },
       {
         "date": "2026-09-04",
         "event_name": "settings_view",
-        "event_count": 252,
-        "users": 162
+        "event_count": 254,
+        "users": 163
       },
       {
         "date": "2026-09-04",
         "event_name": "signup",
-        "event_count": 92,
-        "users": 87
+        "event_count": 94,
+        "users": 88
       },
       {
         "date": "2026-09-04",
         "event_name": "upgrade_click",
-        "event_count": 29,
-        "users": 22
+        "event_count": 30,
+        "users": 23
       },
       {
         "date": "2026-09-04",
         "event_name": "upgrade_plan_click",
-        "event_count": 16,
-        "users": 13
+        "event_count": 17,
+        "users": 14
       },
       {
         "date": "2026-09-04",
@@ -3106,8 +3106,8 @@
       {
         "date": "2026-09-05",
         "event_name": "docs_click",
-        "event_count": 525,
-        "users": 406
+        "event_count": 528,
+        "users": 408
       },
       {
         "date": "2026-09-05",
@@ -3148,8 +3148,8 @@
       {
         "date": "2026-09-05",
         "event_name": "install_copy",
-        "event_count": 305,
-        "users": 267
+        "event_count": 307,
+        "users": 269
       },
       {
         "date": "2026-09-05",
@@ -3166,32 +3166,32 @@
       {
         "date": "2026-09-05",
         "event_name": "login_click",
-        "event_count": 900,
-        "users": 660
+        "event_count": 902,
+        "users": 661
       },
       {
         "date": "2026-09-05",
         "event_name": "login_success",
-        "event_count": 624,
-        "users": 563
+        "event_count": 626,
+        "users": 565
       },
       {
         "date": "2026-09-05",
         "event_name": "settings_view",
-        "event_count": 290,
-        "users": 195
+        "event_count": 293,
+        "users": 197
       },
       {
         "date": "2026-09-05",
         "event_name": "signup",
-        "event_count": 119,
-        "users": 109
+        "event_count": 120,
+        "users": 110
       },
       {
         "date": "2026-09-05",
         "event_name": "upgrade_click",
-        "event_count": 34,
-        "users": 26
+        "event_count": 35,
+        "users": 27
       },
       {
         "date": "2026-09-05",
@@ -3238,26 +3238,26 @@
       {
         "date": "2026-09-06",
         "event_name": "content_publish",
-        "event_count": 24,
-        "users": 23
+        "event_count": 25,
+        "users": 24
       },
       {
         "date": "2026-09-06",
         "event_name": "docs_click",
-        "event_count": 484,
-        "users": 360
+        "event_count": 487,
+        "users": 362
       },
       {
         "date": "2026-09-06",
         "event_name": "explore_item_click",
-        "event_count": 226,
-        "users": 166
+        "event_count": 227,
+        "users": 167
       },
       {
         "date": "2026-09-06",
         "event_name": "explore_view",
-        "event_count": 411,
-        "users": 268
+        "event_count": 413,
+        "users": 269
       },
       {
         "date": "2026-09-06",
@@ -3268,14 +3268,14 @@
       {
         "date": "2026-09-06",
         "event_name": "feature_view",
-        "event_count": 405,
-        "users": 267
+        "event_count": 408,
+        "users": 269
       },
       {
         "date": "2026-09-06",
         "event_name": "featured_click",
-        "event_count": 466,
-        "users": 347
+        "event_count": 467,
+        "users": 348
       },
       {
         "date": "2026-09-06",
@@ -3286,14 +3286,14 @@
       {
         "date": "2026-09-06",
         "event_name": "install_copy",
-        "event_count": 253,
-        "users": 240
+        "event_count": 254,
+        "users": 241
       },
       {
         "date": "2026-09-06",
         "event_name": "item_favorite",
-        "event_count": 44,
-        "users": 39
+        "event_count": 45,
+        "users": 40
       },
       {
         "date": "2026-09-06",
@@ -3304,38 +3304,38 @@
       {
         "date": "2026-09-06",
         "event_name": "login_click",
-        "event_count": 813,
-        "users": 609
+        "event_count": 814,
+        "users": 610
       },
       {
         "date": "2026-09-06",
         "event_name": "login_success",
-        "event_count": 559,
-        "users": 512
+        "event_count": 561,
+        "users": 514
       },
       {
         "date": "2026-09-06",
         "event_name": "settings_view",
-        "event_count": 248,
-        "users": 174
+        "event_count": 251,
+        "users": 176
       },
       {
         "date": "2026-09-06",
         "event_name": "signup",
-        "event_count": 107,
-        "users": 98
+        "event_count": 108,
+        "users": 99
       },
       {
         "date": "2026-09-06",
         "event_name": "upgrade_click",
-        "event_count": 30,
-        "users": 23
+        "event_count": 31,
+        "users": 24
       },
       {
         "date": "2026-09-06",
         "event_name": "upgrade_plan_click",
-        "event_count": 18,
-        "users": 14
+        "event_count": 19,
+        "users": 15
       },
       {
         "date": "2026-09-06",
@@ -3520,8 +3520,8 @@
       {
         "date": "2026-09-08",
         "event_name": "docs_click",
-        "event_count": 492,
-        "users": 364
+        "event_count": 495,
+        "users": 366
       },
       {
         "date": "2026-09-08",
@@ -3538,8 +3538,8 @@
       {
         "date": "2026-09-08",
         "event_name": "feature_use",
-        "event_count": 54,
-        "users": 47
+        "event_count": 55,
+        "users": 48
       },
       {
         "date": "2026-09-08",
@@ -3562,8 +3562,8 @@
       {
         "date": "2026-09-08",
         "event_name": "install_copy",
-        "event_count": 248,
-        "users": 229
+        "event_count": 249,
+        "users": 230
       },
       {
         "date": "2026-09-08",
@@ -3580,26 +3580,26 @@
       {
         "date": "2026-09-08",
         "event_name": "login_click",
-        "event_count": 812,
-        "users": 646
+        "event_count": 813,
+        "users": 647
       },
       {
         "date": "2026-09-08",
         "event_name": "login_success",
-        "event_count": 563,
-        "users": 528
+        "event_count": 565,
+        "users": 530
       },
       {
         "date": "2026-09-08",
         "event_name": "settings_view",
-        "event_count": 244,
-        "users": 171
+        "event_count": 247,
+        "users": 173
       },
       {
         "date": "2026-09-08",
         "event_name": "signup",
-        "event_count": 106,
-        "users": 95
+        "event_count": 107,
+        "users": 96
       },
       {
         "date": "2026-09-08",
@@ -3658,8 +3658,8 @@
       {
         "date": "2026-09-09",
         "event_name": "docs_click",
-        "event_count": 468,
-        "users": 367
+        "event_count": 471,
+        "users": 369
       },
       {
         "date": "2026-09-09",
@@ -3676,8 +3676,8 @@
       {
         "date": "2026-09-09",
         "event_name": "feature_use",
-        "event_count": 50,
-        "users": 48
+        "event_count": 51,
+        "users": 49
       },
       {
         "date": "2026-09-09",
@@ -3700,8 +3700,8 @@
       {
         "date": "2026-09-09",
         "event_name": "install_copy",
-        "event_count": 254,
-        "users": 240
+        "event_count": 256,
+        "users": 242
       },
       {
         "date": "2026-09-09",
@@ -3718,44 +3718,44 @@
       {
         "date": "2026-09-09",
         "event_name": "login_click",
-        "event_count": 845,
-        "users": 635
+        "event_count": 846,
+        "users": 636
       },
       {
         "date": "2026-09-09",
         "event_name": "login_success",
-        "event_count": 595,
-        "users": 528
+        "event_count": 597,
+        "users": 530
       },
       {
         "date": "2026-09-09",
         "event_name": "settings_view",
-        "event_count": 275,
-        "users": 182
+        "event_count": 278,
+        "users": 184
       },
       {
         "date": "2026-09-09",
         "event_name": "signup",
-        "event_count": 111,
-        "users": 101
+        "event_count": 112,
+        "users": 102
       },
       {
         "date": "2026-09-09",
         "event_name": "upgrade_click",
-        "event_count": 32,
-        "users": 25
+        "event_count": 34,
+        "users": 26
       },
       {
         "date": "2026-09-09",
         "event_name": "upgrade_plan_click",
-        "event_count": 20,
-        "users": 15
+        "event_count": 21,
+        "users": 16
       },
       {
         "date": "2026-09-09",
         "event_name": "upgrade_success",
-        "event_count": 5,
-        "users": 4
+        "event_count": 6,
+        "users": 5
       },
       {
         "date": "2026-09-10",
@@ -3796,8 +3796,8 @@
       {
         "date": "2026-09-10",
         "event_name": "docs_click",
-        "event_count": 500,
-        "users": 369
+        "event_count": 502,
+        "users": 371
       },
       {
         "date": "2026-09-10",
@@ -3826,8 +3826,8 @@
       {
         "date": "2026-09-10",
         "event_name": "featured_click",
-        "event_count": 435,
-        "users": 347
+        "event_count": 437,
+        "users": 348
       },
       {
         "date": "2026-09-10",
@@ -3838,8 +3838,8 @@
       {
         "date": "2026-09-10",
         "event_name": "install_copy",
-        "event_count": 274,
-        "users": 248
+        "event_count": 276,
+        "users": 250
       },
       {
         "date": "2026-09-10",
@@ -3856,44 +3856,44 @@
       {
         "date": "2026-09-10",
         "event_name": "login_click",
-        "event_count": 788,
-        "users": 611
+        "event_count": 790,
+        "users": 612
       },
       {
         "date": "2026-09-10",
         "event_name": "login_success",
-        "event_count": 563,
-        "users": 522
+        "event_count": 565,
+        "users": 524
       },
       {
         "date": "2026-09-10",
         "event_name": "settings_view",
-        "event_count": 261,
-        "users": 182
+        "event_count": 264,
+        "users": 184
       },
       {
         "date": "2026-09-10",
         "event_name": "signup",
-        "event_count": 109,
-        "users": 101
+        "event_count": 110,
+        "users": 102
       },
       {
         "date": "2026-09-10",
         "event_name": "upgrade_click",
-        "event_count": 35,
-        "users": 26
+        "event_count": 36,
+        "users": 27
       },
       {
         "date": "2026-09-10",
         "event_name": "upgrade_plan_click",
-        "event_count": 19,
-        "users": 15
+        "event_count": 21,
+        "users": 16
       },
       {
         "date": "2026-09-10",
         "event_name": "upgrade_success",
-        "event_count": 4,
-        "users": 4
+        "event_count": 5,
+        "users": 5
       },
       {
         "date": "2026-09-11",
@@ -3934,8 +3934,8 @@
       {
         "date": "2026-09-11",
         "event_name": "docs_click",
-        "event_count": 417,
-        "users": 327
+        "event_count": 420,
+        "users": 329
       },
       {
         "date": "2026-09-11",
@@ -3946,14 +3946,14 @@
       {
         "date": "2026-09-11",
         "event_name": "explore_view",
-        "event_count": 387,
-        "users": 267
+        "event_count": 389,
+        "users": 268
       },
       {
         "date": "2026-09-11",
         "event_name": "feature_use",
-        "event_count": 47,
-        "users": 43
+        "event_count": 48,
+        "users": 44
       },
       {
         "date": "2026-09-11",
@@ -3964,8 +3964,8 @@
       {
         "date": "2026-09-11",
         "event_name": "featured_click",
-        "event_count": 440,
-        "users": 332
+        "event_count": 441,
+        "users": 333
       },
       {
         "date": "2026-09-11",
@@ -3976,8 +3976,8 @@
       {
         "date": "2026-09-11",
         "event_name": "install_copy",
-        "event_count": 243,
-        "users": 214
+        "event_count": 245,
+        "users": 216
       },
       {
         "date": "2026-09-11",
@@ -3994,26 +3994,26 @@
       {
         "date": "2026-09-11",
         "event_name": "login_click",
-        "event_count": 773,
-        "users": 577
+        "event_count": 774,
+        "users": 578
       },
       {
         "date": "2026-09-11",
         "event_name": "login_success",
-        "event_count": 517,
-        "users": 482
+        "event_count": 519,
+        "users": 484
       },
       {
         "date": "2026-09-11",
         "event_name": "settings_view",
-        "event_count": 239,
-        "users": 162
+        "event_count": 242,
+        "users": 164
       },
       {
         "date": "2026-09-11",
         "event_name": "signup",
-        "event_count": 100,
-        "users": 89
+        "event_count": 101,
+        "users": 90
       },
       {
         "date": "2026-09-11",
@@ -4072,8 +4072,8 @@
       {
         "date": "2026-09-12",
         "event_name": "docs_click",
-        "event_count": 385,
-        "users": 292
+        "event_count": 388,
+        "users": 294
       },
       {
         "date": "2026-09-12",
@@ -4084,14 +4084,14 @@
       {
         "date": "2026-09-12",
         "event_name": "explore_view",
-        "event_count": 302,
-        "users": 198
+        "event_count": 304,
+        "users": 199
       },
       {
         "date": "2026-09-12",
         "event_name": "feature_use",
-        "event_count": 39,
-        "users": 36
+        "event_count": 40,
+        "users": 37
       },
       {
         "date": "2026-09-12",
@@ -4102,8 +4102,8 @@
       {
         "date": "2026-09-12",
         "event_name": "featured_click",
-        "event_count": 332,
-        "users": 259
+        "event_count": 334,
+        "users": 260
       },
       {
         "date": "2026-09-12",
@@ -4114,8 +4114,8 @@
       {
         "date": "2026-09-12",
         "event_name": "install_copy",
-        "event_count": 209,
-        "users": 190
+        "event_count": 211,
+        "users": 192
       },
       {
         "date": "2026-09-12",
@@ -4132,26 +4132,26 @@
       {
         "date": "2026-09-12",
         "event_name": "login_click",
-        "event_count": 587,
-        "users": 469
+        "event_count": 588,
+        "users": 470
       },
       {
         "date": "2026-09-12",
         "event_name": "login_success",
-        "event_count": 467,
-        "users": 409
+        "event_count": 469,
+        "users": 411
       },
       {
         "date": "2026-09-12",
         "event_name": "settings_view",
-        "event_count": 203,
-        "users": 141
+        "event_count": 204,
+        "users": 142
       },
       {
         "date": "2026-09-12",
         "event_name": "signup",
-        "event_count": 84,
-        "users": 77
+        "event_count": 85,
+        "users": 78
       },
       {
         "date": "2026-09-12",
@@ -4185,21 +4185,21 @@
         "active_users": 1562,
         "new_users": 757,
         "sessions": 2109,
-        "total_events": 11709
+        "total_events": 11731
       },
       {
         "date": "2026-08-16",
         "active_users": 1818,
         "new_users": 929,
         "sessions": 2454,
-        "total_events": 13187
+        "total_events": 13213
       },
       {
         "date": "2026-08-17",
         "active_users": 1500,
         "new_users": 725,
         "sessions": 2025,
-        "total_events": 10997
+        "total_events": 11011
       },
       {
         "date": "2026-08-18",
@@ -4213,7 +4213,7 @@
         "active_users": 1724,
         "new_users": 816,
         "sessions": 2327,
-        "total_events": 12386
+        "total_events": 12419
       },
       {
         "date": "2026-08-20",
@@ -4227,28 +4227,28 @@
         "active_users": 1607,
         "new_users": 759,
         "sessions": 2169,
-        "total_events": 12019
+        "total_events": 12045
       },
       {
         "date": "2026-08-22",
         "active_users": 1699,
         "new_users": 829,
         "sessions": 2294,
-        "total_events": 12362
+        "total_events": 12379
       },
       {
         "date": "2026-08-23",
         "active_users": 1667,
         "new_users": 826,
         "sessions": 2250,
-        "total_events": 12253
+        "total_events": 12283
       },
       {
         "date": "2026-08-24",
         "active_users": 1677,
         "new_users": 877,
         "sessions": 2264,
-        "total_events": 12325
+        "total_events": 12341
       },
       {
         "date": "2026-08-25",
@@ -4262,42 +4262,42 @@
         "active_users": 1759,
         "new_users": 803,
         "sessions": 2375,
-        "total_events": 13008
+        "total_events": 13042
       },
       {
         "date": "2026-08-27",
         "active_users": 1613,
         "new_users": 733,
         "sessions": 2178,
-        "total_events": 11872
+        "total_events": 11894
       },
       {
         "date": "2026-08-28",
         "active_users": 1718,
         "new_users": 938,
         "sessions": 2319,
-        "total_events": 12728
+        "total_events": 12750
       },
       {
         "date": "2026-08-29",
         "active_users": 1678,
         "new_users": 771,
         "sessions": 2265,
-        "total_events": 12374
+        "total_events": 12397
       },
       {
         "date": "2026-08-30",
         "active_users": 1634,
         "new_users": 886,
         "sessions": 2206,
-        "total_events": 12234
+        "total_events": 12258
       },
       {
         "date": "2026-08-31",
         "active_users": 1779,
         "new_users": 976,
         "sessions": 2402,
-        "total_events": 12618
+        "total_events": 12638
       },
       {
         "date": "2026-09-01",
@@ -4311,35 +4311,35 @@
         "active_users": 1688,
         "new_users": 815,
         "sessions": 2279,
-        "total_events": 12259
+        "total_events": 12285
       },
       {
         "date": "2026-09-03",
         "active_users": 1447,
         "new_users": 736,
         "sessions": 1953,
-        "total_events": 10312
+        "total_events": 10349
       },
       {
         "date": "2026-09-04",
         "active_users": 1459,
         "new_users": 677,
         "sessions": 1970,
-        "total_events": 10424
+        "total_events": 10445
       },
       {
         "date": "2026-09-05",
         "active_users": 1674,
         "new_users": 911,
         "sessions": 2260,
-        "total_events": 12277
+        "total_events": 12299
       },
       {
         "date": "2026-09-06",
         "active_users": 1495,
         "new_users": 805,
         "sessions": 2018,
-        "total_events": 11187
+        "total_events": 11222
       },
       {
         "date": "2026-09-07",
@@ -4353,35 +4353,35 @@
         "active_users": 1611,
         "new_users": 865,
         "sessions": 2175,
-        "total_events": 11346
+        "total_events": 11365
       },
       {
         "date": "2026-09-09",
         "active_users": 1585,
         "new_users": 784,
         "sessions": 2140,
-        "total_events": 11336
+        "total_events": 11363
       },
       {
         "date": "2026-09-10",
         "active_users": 1494,
         "new_users": 735,
         "sessions": 2017,
-        "total_events": 11051
+        "total_events": 11080
       },
       {
         "date": "2026-09-11",
         "active_users": 1427,
         "new_users": 694,
         "sessions": 1926,
-        "total_events": 10309
+        "total_events": 10334
       },
       {
         "date": "2026-09-12",
         "active_users": 1168,
         "new_users": 632,
         "sessions": 1577,
-        "total_events": 8251
+        "total_events": 8275
       }
     ],
     "traffic_sources": [
@@ -8824,8 +8824,8 @@
         "event_name": "content_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 11,
-        "users": 10
+        "event_count": 12,
+        "users": 11
       },
       {
         "date": "2026-08-15",
@@ -8848,7 +8848,7 @@
         "event_name": "content_publish",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 5,
+        "event_count": 4,
         "users": 4
       },
       {
@@ -8864,15 +8864,15 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 224,
-        "users": 169
+        "event_count": 227,
+        "users": 171
       },
       {
         "date": "2026-08-15",
         "event_name": "docs_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 141,
+        "event_count": 142,
         "users": 107
       },
       {
@@ -8976,8 +8976,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 208,
-        "users": 135
+        "event_count": 209,
+        "users": 136
       },
       {
         "date": "2026-08-15",
@@ -9032,8 +9032,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 26,
-        "users": 22
+        "event_count": 27,
+        "users": 23
       },
       {
         "date": "2026-08-15",
@@ -9136,8 +9136,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 221,
-        "users": 174
+        "event_count": 222,
+        "users": 175
       },
       {
         "date": "2026-08-15",
@@ -9248,8 +9248,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 126,
-        "users": 109
+        "event_count": 127,
+        "users": 110
       },
       {
         "date": "2026-08-15",
@@ -9392,15 +9392,15 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 374,
-        "users": 289
+        "event_count": 375,
+        "users": 290
       },
       {
         "date": "2026-08-15",
         "event_name": "login_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 207,
+        "event_count": 206,
         "users": 160
       },
       {
@@ -9448,8 +9448,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 280,
-        "users": 243
+        "event_count": 283,
+        "users": 245
       },
       {
         "date": "2026-08-15",
@@ -9504,8 +9504,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 123,
-        "users": 81
+        "event_count": 124,
+        "users": 82
       },
       {
         "date": "2026-08-15",
@@ -9560,8 +9560,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 48,
-        "users": 44
+        "event_count": 49,
+        "users": 45
       },
       {
         "date": "2026-08-15",
@@ -9752,8 +9752,8 @@
         "event_name": "ask_send",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 8,
-        "users": 7
+        "event_count": 9,
+        "users": 8
       },
       {
         "date": "2026-08-16",
@@ -9960,8 +9960,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 259,
-        "users": 200
+        "event_count": 261,
+        "users": 202
       },
       {
         "date": "2026-08-16",
@@ -10016,8 +10016,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 111,
-        "users": 88
+        "event_count": 113,
+        "users": 89
       },
       {
         "date": "2026-08-16",
@@ -10040,7 +10040,7 @@
         "event_name": "explore_item_click",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 41,
+        "event_count": 40,
         "users": 32
       },
       {
@@ -10072,8 +10072,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 219,
-        "users": 147
+        "event_count": 220,
+        "users": 148
       },
       {
         "date": "2026-08-16",
@@ -10184,8 +10184,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 194,
-        "users": 128
+        "event_count": 195,
+        "users": 129
       },
       {
         "date": "2026-08-16",
@@ -10240,8 +10240,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 234,
-        "users": 189
+        "event_count": 235,
+        "users": 190
       },
       {
         "date": "2026-08-16",
@@ -10352,15 +10352,15 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 146,
-        "users": 130
+        "event_count": 147,
+        "users": 131
       },
       {
         "date": "2026-08-16",
         "event_name": "install_copy",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 79,
+        "event_count": 78,
         "users": 70
       },
       {
@@ -10408,8 +10408,8 @@
         "event_name": "item_favorite",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 20,
-        "users": 19
+        "event_count": 21,
+        "users": 20
       },
       {
         "date": "2026-08-16",
@@ -10456,8 +10456,8 @@
         "event_name": "item_share",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 8,
-        "users": 7
+        "event_count": 9,
+        "users": 8
       },
       {
         "date": "2026-08-16",
@@ -10496,8 +10496,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 421,
-        "users": 340
+        "event_count": 423,
+        "users": 341
       },
       {
         "date": "2026-08-16",
@@ -10552,8 +10552,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 324,
-        "users": 287
+        "event_count": 326,
+        "users": 289
       },
       {
         "date": "2026-08-16",
@@ -10608,8 +10608,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 144,
-        "users": 97
+        "event_count": 146,
+        "users": 98
       },
       {
         "date": "2026-08-16",
@@ -10632,7 +10632,7 @@
         "event_name": "settings_view",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 54,
+        "event_count": 53,
         "users": 36
       },
       {
@@ -10664,8 +10664,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 58,
-        "users": 53
+        "event_count": 59,
+        "users": 54
       },
       {
         "date": "2026-08-16",
@@ -11064,8 +11064,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 229,
-        "users": 181
+        "event_count": 231,
+        "users": 183
       },
       {
         "date": "2026-08-17",
@@ -11232,8 +11232,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 28,
-        "users": 25
+        "event_count": 29,
+        "users": 26
       },
       {
         "date": "2026-08-17",
@@ -11456,15 +11456,15 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 136,
-        "users": 118
+        "event_count": 138,
+        "users": 120
       },
       {
         "date": "2026-08-17",
         "event_name": "install_copy",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 58,
+        "event_count": 57,
         "users": 50
       },
       {
@@ -11608,8 +11608,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 383,
-        "users": 302
+        "event_count": 384,
+        "users": 303
       },
       {
         "date": "2026-08-17",
@@ -11664,8 +11664,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 295,
-        "users": 258
+        "event_count": 297,
+        "users": 259
       },
       {
         "date": "2026-08-17",
@@ -11720,8 +11720,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 129,
-        "users": 89
+        "event_count": 130,
+        "users": 90
       },
       {
         "date": "2026-08-17",
@@ -11776,8 +11776,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 53,
-        "users": 49
+        "event_count": 54,
+        "users": 50
       },
       {
         "date": "2026-08-17",
@@ -13064,8 +13064,8 @@
         "event_name": "ask_send",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 7,
-        "users": 6
+        "event_count": 8,
+        "users": 7
       },
       {
         "date": "2026-08-19",
@@ -13272,8 +13272,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 229,
-        "users": 173
+        "event_count": 232,
+        "users": 175
       },
       {
         "date": "2026-08-19",
@@ -13328,8 +13328,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 94,
-        "users": 73
+        "event_count": 95,
+        "users": 74
       },
       {
         "date": "2026-08-19",
@@ -13384,8 +13384,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 199,
-        "users": 133
+        "event_count": 201,
+        "users": 134
       },
       {
         "date": "2026-08-19",
@@ -13440,8 +13440,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 23,
-        "users": 22
+        "event_count": 24,
+        "users": 23
       },
       {
         "date": "2026-08-19",
@@ -13464,7 +13464,7 @@
         "event_name": "feature_use",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 10,
+        "event_count": 9,
         "users": 9
       },
       {
@@ -13496,8 +13496,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 183,
-        "users": 123
+        "event_count": 184,
+        "users": 124
       },
       {
         "date": "2026-08-19",
@@ -13552,8 +13552,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 214,
-        "users": 173
+        "event_count": 215,
+        "users": 174
       },
       {
         "date": "2026-08-19",
@@ -13664,8 +13664,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 123,
-        "users": 111
+        "event_count": 125,
+        "users": 113
       },
       {
         "date": "2026-08-19",
@@ -13808,8 +13808,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 384,
-        "users": 297
+        "event_count": 386,
+        "users": 299
       },
       {
         "date": "2026-08-19",
@@ -13864,8 +13864,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 282,
-        "users": 250
+        "event_count": 284,
+        "users": 252
       },
       {
         "date": "2026-08-19",
@@ -13920,8 +13920,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 123,
-        "users": 83
+        "event_count": 124,
+        "users": 84
       },
       {
         "date": "2026-08-19",
@@ -13976,8 +13976,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 51,
-        "users": 45
+        "event_count": 52,
+        "users": 46
       },
       {
         "date": "2026-08-19",
@@ -14032,8 +14032,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 13,
-        "users": 10
+        "event_count": 14,
+        "users": 11
       },
       {
         "date": "2026-08-19",
@@ -14048,7 +14048,7 @@
         "event_name": "upgrade_click",
         "source_medium": "bing / organic",
         "channel": "organic",
-        "event_count": 3,
+        "event_count": 2,
         "users": 2
       },
       {
@@ -14080,8 +14080,8 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 7,
-        "users": 5
+        "event_count": 8,
+        "users": 6
       },
       {
         "date": "2026-08-19",
@@ -14120,8 +14120,8 @@
         "event_name": "upgrade_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 1,
-        "users": 1
+        "event_count": 2,
+        "users": 2
       },
       {
         "date": "2026-08-19",
@@ -15480,8 +15480,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 256,
-        "users": 197
+        "event_count": 259,
+        "users": 199
       },
       {
         "date": "2026-08-21",
@@ -15536,8 +15536,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 97,
-        "users": 77
+        "event_count": 98,
+        "users": 78
       },
       {
         "date": "2026-08-21",
@@ -15592,8 +15592,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 180,
-        "users": 119
+        "event_count": 181,
+        "users": 120
       },
       {
         "date": "2026-08-21",
@@ -15704,8 +15704,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 178,
-        "users": 116
+        "event_count": 179,
+        "users": 117
       },
       {
         "date": "2026-08-21",
@@ -15760,15 +15760,15 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 208,
-        "users": 163
+        "event_count": 209,
+        "users": 164
       },
       {
         "date": "2026-08-21",
         "event_name": "featured_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 109,
+        "event_count": 110,
         "users": 86
       },
       {
@@ -15784,7 +15784,7 @@
         "event_name": "featured_click",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 85,
+        "event_count": 86,
         "users": 67
       },
       {
@@ -15872,8 +15872,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 138,
-        "users": 131
+        "event_count": 140,
+        "users": 132
       },
       {
         "date": "2026-08-21",
@@ -16024,8 +16024,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 402,
-        "users": 319
+        "event_count": 403,
+        "users": 320
       },
       {
         "date": "2026-08-21",
@@ -16080,8 +16080,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 290,
-        "users": 277
+        "event_count": 291,
+        "users": 278
       },
       {
         "date": "2026-08-21",
@@ -16136,8 +16136,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 146,
-        "users": 100
+        "event_count": 148,
+        "users": 101
       },
       {
         "date": "2026-08-21",
@@ -16192,8 +16192,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 62,
-        "users": 56
+        "event_count": 63,
+        "users": 57
       },
       {
         "date": "2026-08-21",
@@ -16576,8 +16576,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 223,
-        "users": 177
+        "event_count": 225,
+        "users": 179
       },
       {
         "date": "2026-08-22",
@@ -16960,8 +16960,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 135,
-        "users": 117
+        "event_count": 137,
+        "users": 119
       },
       {
         "date": "2026-08-22",
@@ -17160,8 +17160,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 285,
-        "users": 249
+        "event_count": 286,
+        "users": 250
       },
       {
         "date": "2026-08-22",
@@ -17216,8 +17216,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 139,
-        "users": 89
+        "event_count": 142,
+        "users": 91
       },
       {
         "date": "2026-08-22",
@@ -17272,8 +17272,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 55,
-        "users": 50
+        "event_count": 56,
+        "users": 51
       },
       {
         "date": "2026-08-22",
@@ -17328,8 +17328,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 16,
-        "users": 13
+        "event_count": 17,
+        "users": 14
       },
       {
         "date": "2026-08-22",
@@ -17664,8 +17664,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 235,
-        "users": 174
+        "event_count": 237,
+        "users": 176
       },
       {
         "date": "2026-08-23",
@@ -17720,8 +17720,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 115,
-        "users": 88
+        "event_count": 116,
+        "users": 89
       },
       {
         "date": "2026-08-23",
@@ -17744,7 +17744,7 @@
         "event_name": "explore_item_click",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 41,
+        "event_count": 40,
         "users": 31
       },
       {
@@ -17776,8 +17776,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 232,
-        "users": 150
+        "event_count": 234,
+        "users": 151
       },
       {
         "date": "2026-08-23",
@@ -17888,8 +17888,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 224,
-        "users": 146
+        "event_count": 228,
+        "users": 148
       },
       {
         "date": "2026-08-23",
@@ -17944,8 +17944,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 227,
-        "users": 171
+        "event_count": 228,
+        "users": 172
       },
       {
         "date": "2026-08-23",
@@ -18056,15 +18056,15 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 127,
-        "users": 114
+        "event_count": 129,
+        "users": 116
       },
       {
         "date": "2026-08-23",
         "event_name": "install_copy",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 74,
+        "event_count": 73,
         "users": 66
       },
       {
@@ -18200,8 +18200,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 360,
-        "users": 286
+        "event_count": 361,
+        "users": 287
       },
       {
         "date": "2026-08-23",
@@ -18256,8 +18256,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 270,
-        "users": 246
+        "event_count": 271,
+        "users": 247
       },
       {
         "date": "2026-08-23",
@@ -18312,8 +18312,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 132,
-        "users": 86
+        "event_count": 135,
+        "users": 88
       },
       {
         "date": "2026-08-23",
@@ -18368,8 +18368,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 54,
-        "users": 48
+        "event_count": 55,
+        "users": 49
       },
       {
         "date": "2026-08-23",
@@ -18760,15 +18760,15 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 269,
-        "users": 209
+        "event_count": 272,
+        "users": 211
       },
       {
         "date": "2026-08-24",
         "event_name": "docs_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 119,
+        "event_count": 120,
         "users": 93
       },
       {
@@ -19144,8 +19144,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 145,
-        "users": 137
+        "event_count": 147,
+        "users": 138
       },
       {
         "date": "2026-08-24",
@@ -19288,8 +19288,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 429,
-        "users": 347
+        "event_count": 431,
+        "users": 348
       },
       {
         "date": "2026-08-24",
@@ -19344,8 +19344,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 338,
-        "users": 297
+        "event_count": 339,
+        "users": 298
       },
       {
         "date": "2026-08-24",
@@ -19400,8 +19400,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 162,
-        "users": 103
+        "event_count": 165,
+        "users": 105
       },
       {
         "date": "2026-08-24",
@@ -19456,8 +19456,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 64,
-        "users": 57
+        "event_count": 65,
+        "users": 58
       },
       {
         "date": "2026-08-24",
@@ -20872,8 +20872,8 @@
         "event_name": "content_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 12,
-        "users": 11
+        "event_count": 13,
+        "users": 12
       },
       {
         "date": "2026-08-26",
@@ -20920,8 +20920,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 247,
-        "users": 187
+        "event_count": 250,
+        "users": 189
       },
       {
         "date": "2026-08-26",
@@ -20976,8 +20976,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 124,
-        "users": 93
+        "event_count": 125,
+        "users": 94
       },
       {
         "date": "2026-08-26",
@@ -21032,8 +21032,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 244,
-        "users": 158
+        "event_count": 245,
+        "users": 159
       },
       {
         "date": "2026-08-26",
@@ -21088,8 +21088,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 25,
-        "users": 24
+        "event_count": 26,
+        "users": 25
       },
       {
         "date": "2026-08-26",
@@ -21144,8 +21144,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 224,
-        "users": 156
+        "event_count": 227,
+        "users": 158
       },
       {
         "date": "2026-08-26",
@@ -21200,8 +21200,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 246,
-        "users": 195
+        "event_count": 248,
+        "users": 196
       },
       {
         "date": "2026-08-26",
@@ -21312,8 +21312,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 133,
-        "users": 119
+        "event_count": 134,
+        "users": 120
       },
       {
         "date": "2026-08-26",
@@ -21464,8 +21464,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 407,
-        "users": 327
+        "event_count": 408,
+        "users": 328
       },
       {
         "date": "2026-08-26",
@@ -21520,8 +21520,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 290,
-        "users": 272
+        "event_count": 292,
+        "users": 274
       },
       {
         "date": "2026-08-26",
@@ -21576,8 +21576,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 132,
-        "users": 87
+        "event_count": 135,
+        "users": 89
       },
       {
         "date": "2026-08-26",
@@ -21632,8 +21632,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 50,
-        "users": 47
+        "event_count": 51,
+        "users": 48
       },
       {
         "date": "2026-08-26",
@@ -22024,8 +22024,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 222,
-        "users": 176
+        "event_count": 225,
+        "users": 178
       },
       {
         "date": "2026-08-27",
@@ -22192,8 +22192,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 23,
-        "users": 21
+        "event_count": 24,
+        "users": 22
       },
       {
         "date": "2026-08-27",
@@ -22408,8 +22408,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 120,
-        "users": 113
+        "event_count": 122,
+        "users": 115
       },
       {
         "date": "2026-08-27",
@@ -22552,8 +22552,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 375,
-        "users": 300
+        "event_count": 376,
+        "users": 301
       },
       {
         "date": "2026-08-27",
@@ -22584,7 +22584,7 @@
         "event_name": "login_click",
         "source_medium": "github.com / referral",
         "channel": "referral",
-        "event_count": 18,
+        "event_count": 19,
         "users": 15
       },
       {
@@ -22600,7 +22600,7 @@
         "event_name": "login_click",
         "source_medium": "news.ycombinator.com / referral",
         "channel": "referral",
-        "event_count": 7,
+        "event_count": 8,
         "users": 6
       },
       {
@@ -22608,8 +22608,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 282,
-        "users": 253
+        "event_count": 284,
+        "users": 255
       },
       {
         "date": "2026-08-27",
@@ -22664,8 +22664,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 121,
-        "users": 84
+        "event_count": 123,
+        "users": 86
       },
       {
         "date": "2026-08-27",
@@ -22720,8 +22720,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 53,
-        "users": 46
+        "event_count": 54,
+        "users": 47
       },
       {
         "date": "2026-08-27",
@@ -22776,8 +22776,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 16,
-        "users": 12
+        "event_count": 17,
+        "users": 13
       },
       {
         "date": "2026-08-27",
@@ -22912,8 +22912,8 @@
         "event_name": "ask_send",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 6,
-        "users": 5
+        "event_count": 7,
+        "users": 6
       },
       {
         "date": "2026-08-28",
@@ -23144,8 +23144,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 219,
-        "users": 176
+        "event_count": 222,
+        "users": 178
       },
       {
         "date": "2026-08-28",
@@ -23312,15 +23312,15 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 25,
-        "users": 23
+        "event_count": 27,
+        "users": 24
       },
       {
         "date": "2026-08-28",
         "event_name": "feature_use",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 14,
+        "event_count": 15,
         "users": 13
       },
       {
@@ -23536,8 +23536,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 125,
-        "users": 117
+        "event_count": 126,
+        "users": 118
       },
       {
         "date": "2026-08-28",
@@ -23696,8 +23696,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 385,
-        "users": 285
+        "event_count": 386,
+        "users": 286
       },
       {
         "date": "2026-08-28",
@@ -23752,8 +23752,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 272,
-        "users": 247
+        "event_count": 274,
+        "users": 249
       },
       {
         "date": "2026-08-28",
@@ -23808,8 +23808,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 134,
-        "users": 89
+        "event_count": 137,
+        "users": 91
       },
       {
         "date": "2026-08-28",
@@ -23864,8 +23864,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 53,
-        "users": 50
+        "event_count": 54,
+        "users": 51
       },
       {
         "date": "2026-08-28",
@@ -24064,8 +24064,8 @@
         "event_name": "ask_send",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 6,
-        "users": 5
+        "event_count": 7,
+        "users": 6
       },
       {
         "date": "2026-08-29",
@@ -24224,8 +24224,8 @@
         "event_name": "content_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 9,
-        "users": 8
+        "event_count": 10,
+        "users": 9
       },
       {
         "date": "2026-08-29",
@@ -24264,8 +24264,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 209,
-        "users": 164
+        "event_count": 211,
+        "users": 166
       },
       {
         "date": "2026-08-29",
@@ -24432,8 +24432,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 23,
-        "users": 20
+        "event_count": 24,
+        "users": 21
       },
       {
         "date": "2026-08-29",
@@ -24648,8 +24648,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 118,
-        "users": 107
+        "event_count": 119,
+        "users": 108
       },
       {
         "date": "2026-08-29",
@@ -24792,8 +24792,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 367,
-        "users": 276
+        "event_count": 368,
+        "users": 277
       },
       {
         "date": "2026-08-29",
@@ -24848,15 +24848,15 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 262,
-        "users": 234
+        "event_count": 264,
+        "users": 236
       },
       {
         "date": "2026-08-29",
         "event_name": "login_success",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 178,
+        "event_count": 177,
         "users": 159
       },
       {
@@ -24904,8 +24904,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 118,
-        "users": 80
+        "event_count": 121,
+        "users": 82
       },
       {
         "date": "2026-08-29",
@@ -24960,8 +24960,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 50,
-        "users": 44
+        "event_count": 51,
+        "users": 45
       },
       {
         "date": "2026-08-29",
@@ -25304,8 +25304,8 @@
         "event_name": "content_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 11,
-        "users": 11
+        "event_count": 12,
+        "users": 12
       },
       {
         "date": "2026-08-30",
@@ -25344,8 +25344,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 230,
-        "users": 179
+        "event_count": 232,
+        "users": 181
       },
       {
         "date": "2026-08-30",
@@ -25512,8 +25512,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 27,
-        "users": 25
+        "event_count": 28,
+        "users": 26
       },
       {
         "date": "2026-08-30",
@@ -25736,8 +25736,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 128,
-        "users": 116
+        "event_count": 129,
+        "users": 117
       },
       {
         "date": "2026-08-30",
@@ -25880,8 +25880,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 406,
-        "users": 306
+        "event_count": 408,
+        "users": 307
       },
       {
         "date": "2026-08-30",
@@ -25936,8 +25936,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 286,
-        "users": 258
+        "event_count": 288,
+        "users": 260
       },
       {
         "date": "2026-08-30",
@@ -25992,8 +25992,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 129,
-        "users": 86
+        "event_count": 132,
+        "users": 88
       },
       {
         "date": "2026-08-30",
@@ -26048,8 +26048,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 50,
-        "users": 47
+        "event_count": 51,
+        "users": 48
       },
       {
         "date": "2026-08-30",
@@ -26104,8 +26104,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 15,
-        "users": 11
+        "event_count": 16,
+        "users": 12
       },
       {
         "date": "2026-08-30",
@@ -26152,8 +26152,8 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 8,
-        "users": 6
+        "event_count": 9,
+        "users": 7
       },
       {
         "date": "2026-08-30",
@@ -26448,8 +26448,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 236,
-        "users": 180
+        "event_count": 239,
+        "users": 182
       },
       {
         "date": "2026-08-31",
@@ -26840,15 +26840,15 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 130,
-        "users": 116
+        "event_count": 132,
+        "users": 118
       },
       {
         "date": "2026-08-31",
         "event_name": "install_copy",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 71,
+        "event_count": 72,
         "users": 64
       },
       {
@@ -26992,8 +26992,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 408,
-        "users": 308
+        "event_count": 410,
+        "users": 309
       },
       {
         "date": "2026-08-31",
@@ -27048,8 +27048,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 274,
-        "users": 259
+        "event_count": 276,
+        "users": 261
       },
       {
         "date": "2026-08-31",
@@ -27104,8 +27104,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 135,
-        "users": 86
+        "event_count": 138,
+        "users": 88
       },
       {
         "date": "2026-08-31",
@@ -27160,8 +27160,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 49,
-        "users": 47
+        "event_count": 50,
+        "users": 48
       },
       {
         "date": "2026-08-31",
@@ -28616,8 +28616,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 221,
-        "users": 167
+        "event_count": 224,
+        "users": 169
       },
       {
         "date": "2026-09-02",
@@ -28728,8 +28728,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 182,
-        "users": 123
+        "event_count": 184,
+        "users": 124
       },
       {
         "date": "2026-09-02",
@@ -28888,8 +28888,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 212,
-        "users": 166
+        "event_count": 213,
+        "users": 167
       },
       {
         "date": "2026-09-02",
@@ -29000,8 +29000,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 122,
-        "users": 108
+        "event_count": 124,
+        "users": 110
       },
       {
         "date": "2026-09-02",
@@ -29144,8 +29144,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 376,
-        "users": 284
+        "event_count": 378,
+        "users": 285
       },
       {
         "date": "2026-09-02",
@@ -29200,8 +29200,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 262,
-        "users": 240
+        "event_count": 264,
+        "users": 242
       },
       {
         "date": "2026-09-02",
@@ -29256,8 +29256,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 123,
-        "users": 80
+        "event_count": 126,
+        "users": 82
       },
       {
         "date": "2026-09-02",
@@ -29312,8 +29312,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 50,
-        "users": 44
+        "event_count": 52,
+        "users": 45
       },
       {
         "date": "2026-09-02",
@@ -29544,8 +29544,8 @@
         "event_name": "clone_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 13,
-        "users": 10
+        "event_count": 14,
+        "users": 11
       },
       {
         "date": "2026-09-03",
@@ -29584,8 +29584,8 @@
         "event_name": "clone_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 8,
-        "users": 7
+        "event_count": 9,
+        "users": 8
       },
       {
         "date": "2026-09-03",
@@ -29624,15 +29624,15 @@
         "event_name": "clone_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 2,
-        "users": 2
+        "event_count": 3,
+        "users": 3
       },
       {
         "date": "2026-09-03",
         "event_name": "clone_publish",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 3,
+        "event_count": 2,
         "users": 2
       },
       {
@@ -29696,8 +29696,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 190,
-        "users": 150
+        "event_count": 191,
+        "users": 151
       },
       {
         "date": "2026-09-03",
@@ -29752,8 +29752,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 73,
-        "users": 57
+        "event_count": 75,
+        "users": 58
       },
       {
         "date": "2026-09-03",
@@ -29808,15 +29808,15 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 152,
-        "users": 99
+        "event_count": 153,
+        "users": 100
       },
       {
         "date": "2026-09-03",
         "event_name": "explore_view",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 119,
+        "event_count": 118,
         "users": 77
       },
       {
@@ -29864,8 +29864,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 22,
-        "users": 20
+        "event_count": 24,
+        "users": 21
       },
       {
         "date": "2026-09-03",
@@ -29912,8 +29912,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 143,
-        "users": 95
+        "event_count": 146,
+        "users": 97
       },
       {
         "date": "2026-09-03",
@@ -29968,8 +29968,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 173,
-        "users": 134
+        "event_count": 175,
+        "users": 135
       },
       {
         "date": "2026-09-03",
@@ -30080,8 +30080,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 110,
-        "users": 97
+        "event_count": 112,
+        "users": 99
       },
       {
         "date": "2026-09-03",
@@ -30136,8 +30136,8 @@
         "event_name": "item_favorite",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 17,
-        "users": 15
+        "event_count": 18,
+        "users": 16
       },
       {
         "date": "2026-09-03",
@@ -30208,8 +30208,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 327,
-        "users": 252
+        "event_count": 328,
+        "users": 253
       },
       {
         "date": "2026-09-03",
@@ -30264,15 +30264,15 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 243,
-        "users": 214
+        "event_count": 246,
+        "users": 216
       },
       {
         "date": "2026-09-03",
         "event_name": "login_success",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 168,
+        "event_count": 169,
         "users": 148
       },
       {
@@ -30320,8 +30320,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 109,
-        "users": 73
+        "event_count": 110,
+        "users": 74
       },
       {
         "date": "2026-09-03",
@@ -30376,8 +30376,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 46,
-        "users": 40
+        "event_count": 47,
+        "users": 41
       },
       {
         "date": "2026-09-03",
@@ -30760,8 +30760,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 201,
-        "users": 155
+        "event_count": 204,
+        "users": 157
       },
       {
         "date": "2026-09-04",
@@ -31152,8 +31152,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 111,
-        "users": 100
+        "event_count": 112,
+        "users": 101
       },
       {
         "date": "2026-09-04",
@@ -31296,8 +31296,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 352,
-        "users": 269
+        "event_count": 353,
+        "users": 270
       },
       {
         "date": "2026-09-04",
@@ -31352,8 +31352,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 242,
-        "users": 225
+        "event_count": 244,
+        "users": 227
       },
       {
         "date": "2026-09-04",
@@ -31408,15 +31408,15 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 115,
-        "users": 74
+        "event_count": 117,
+        "users": 75
       },
       {
         "date": "2026-09-04",
         "event_name": "settings_view",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 54,
+        "event_count": 55,
         "users": 35
       },
       {
@@ -31464,15 +31464,15 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 42,
-        "users": 40
+        "event_count": 44,
+        "users": 41
       },
       {
         "date": "2026-09-04",
         "event_name": "signup",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 20,
+        "event_count": 21,
         "users": 19
       },
       {
@@ -31520,8 +31520,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 13,
-        "users": 10
+        "event_count": 14,
+        "users": 11
       },
       {
         "date": "2026-09-04",
@@ -31560,8 +31560,8 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 7,
-        "users": 6
+        "event_count": 8,
+        "users": 7
       },
       {
         "date": "2026-09-04",
@@ -31856,8 +31856,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 204,
-        "users": 158
+        "event_count": 207,
+        "users": 160
       },
       {
         "date": "2026-09-05",
@@ -32248,8 +32248,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 119,
-        "users": 104
+        "event_count": 121,
+        "users": 106
       },
       {
         "date": "2026-09-05",
@@ -32392,8 +32392,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 353,
-        "users": 259
+        "event_count": 355,
+        "users": 260
       },
       {
         "date": "2026-09-05",
@@ -32448,8 +32448,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 247,
-        "users": 223
+        "event_count": 249,
+        "users": 225
       },
       {
         "date": "2026-09-05",
@@ -32504,8 +32504,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 117,
-        "users": 79
+        "event_count": 120,
+        "users": 81
       },
       {
         "date": "2026-09-05",
@@ -32560,8 +32560,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 48,
-        "users": 44
+        "event_count": 49,
+        "users": 45
       },
       {
         "date": "2026-09-05",
@@ -32616,8 +32616,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 13,
-        "users": 10
+        "event_count": 14,
+        "users": 11
       },
       {
         "date": "2026-09-05",
@@ -32904,8 +32904,8 @@
         "event_name": "content_publish",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 10,
-        "users": 10
+        "event_count": 11,
+        "users": 11
       },
       {
         "date": "2026-09-06",
@@ -32944,8 +32944,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 222,
-        "users": 165
+        "event_count": 225,
+        "users": 167
       },
       {
         "date": "2026-09-06",
@@ -33000,8 +33000,8 @@
         "event_name": "explore_item_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 98,
-        "users": 72
+        "event_count": 99,
+        "users": 73
       },
       {
         "date": "2026-09-06",
@@ -33056,8 +33056,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 167,
-        "users": 109
+        "event_count": 169,
+        "users": 110
       },
       {
         "date": "2026-09-06",
@@ -33168,8 +33168,8 @@
         "event_name": "feature_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 181,
-        "users": 119
+        "event_count": 184,
+        "users": 121
       },
       {
         "date": "2026-09-06",
@@ -33224,8 +33224,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 197,
-        "users": 147
+        "event_count": 199,
+        "users": 148
       },
       {
         "date": "2026-09-06",
@@ -33336,8 +33336,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 114,
-        "users": 108
+        "event_count": 115,
+        "users": 109
       },
       {
         "date": "2026-09-06",
@@ -33392,8 +33392,8 @@
         "event_name": "item_favorite",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 20,
-        "users": 18
+        "event_count": 21,
+        "users": 19
       },
       {
         "date": "2026-09-06",
@@ -33480,8 +33480,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 366,
-        "users": 274
+        "event_count": 367,
+        "users": 275
       },
       {
         "date": "2026-09-06",
@@ -33536,8 +33536,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 255,
-        "users": 234
+        "event_count": 258,
+        "users": 236
       },
       {
         "date": "2026-09-06",
@@ -33592,8 +33592,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 115,
-        "users": 81
+        "event_count": 118,
+        "users": 83
       },
       {
         "date": "2026-09-06",
@@ -33616,7 +33616,7 @@
         "event_name": "settings_view",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 38,
+        "event_count": 39,
         "users": 27
       },
       {
@@ -33648,8 +33648,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 49,
-        "users": 45
+        "event_count": 50,
+        "users": 46
       },
       {
         "date": "2026-09-06",
@@ -33704,8 +33704,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 13,
-        "users": 10
+        "event_count": 14,
+        "users": 11
       },
       {
         "date": "2026-09-06",
@@ -33744,8 +33744,8 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 8,
-        "users": 6
+        "event_count": 9,
+        "users": 7
       },
       {
         "date": "2026-09-06",
@@ -35152,8 +35152,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 200,
-        "users": 148
+        "event_count": 203,
+        "users": 150
       },
       {
         "date": "2026-09-08",
@@ -35320,8 +35320,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 24,
-        "users": 21
+        "event_count": 25,
+        "users": 22
       },
       {
         "date": "2026-09-08",
@@ -35544,8 +35544,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 104,
-        "users": 96
+        "event_count": 105,
+        "users": 97
       },
       {
         "date": "2026-09-08",
@@ -35688,15 +35688,15 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 317,
-        "users": 252
+        "event_count": 318,
+        "users": 253
       },
       {
         "date": "2026-09-08",
         "event_name": "login_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 222,
+        "event_count": 221,
         "users": 176
       },
       {
@@ -35744,8 +35744,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 227,
-        "users": 213
+        "event_count": 229,
+        "users": 215
       },
       {
         "date": "2026-09-08",
@@ -35800,8 +35800,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 101,
-        "users": 71
+        "event_count": 104,
+        "users": 73
       },
       {
         "date": "2026-09-08",
@@ -35856,8 +35856,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 44,
-        "users": 39
+        "event_count": 45,
+        "users": 40
       },
       {
         "date": "2026-09-08",
@@ -36248,8 +36248,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 180,
-        "users": 141
+        "event_count": 183,
+        "users": 143
       },
       {
         "date": "2026-09-09",
@@ -36264,7 +36264,7 @@
         "event_name": "docs_click",
         "source_medium": "bing / organic",
         "channel": "organic",
-        "event_count": 34,
+        "event_count": 35,
         "users": 27
       },
       {
@@ -36416,8 +36416,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 17,
-        "users": 16
+        "event_count": 18,
+        "users": 17
       },
       {
         "date": "2026-09-09",
@@ -36632,8 +36632,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 94,
-        "users": 89
+        "event_count": 96,
+        "users": 91
       },
       {
         "date": "2026-09-09",
@@ -36776,8 +36776,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 330,
-        "users": 248
+        "event_count": 331,
+        "users": 249
       },
       {
         "date": "2026-09-09",
@@ -36832,8 +36832,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 232,
-        "users": 206
+        "event_count": 234,
+        "users": 208
       },
       {
         "date": "2026-09-09",
@@ -36888,8 +36888,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 98,
-        "users": 65
+        "event_count": 101,
+        "users": 67
       },
       {
         "date": "2026-09-09",
@@ -36944,8 +36944,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 38,
-        "users": 35
+        "event_count": 40,
+        "users": 36
       },
       {
         "date": "2026-09-09",
@@ -37000,8 +37000,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 10,
-        "users": 8
+        "event_count": 12,
+        "users": 9
       },
       {
         "date": "2026-09-09",
@@ -37024,7 +37024,7 @@
         "event_name": "upgrade_click",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 6,
+        "event_count": 7,
         "users": 5
       },
       {
@@ -37040,8 +37040,8 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 7,
-        "users": 5
+        "event_count": 8,
+        "users": 6
       },
       {
         "date": "2026-09-09",
@@ -37080,8 +37080,8 @@
         "event_name": "upgrade_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 1,
-        "users": 1
+        "event_count": 2,
+        "users": 2
       },
       {
         "date": "2026-09-09",
@@ -37328,8 +37328,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 183,
-        "users": 135
+        "event_count": 185,
+        "users": 137
       },
       {
         "date": "2026-09-10",
@@ -37608,8 +37608,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 169,
-        "users": 135
+        "event_count": 171,
+        "users": 136
       },
       {
         "date": "2026-09-10",
@@ -37720,8 +37720,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 96,
-        "users": 87
+        "event_count": 98,
+        "users": 89
       },
       {
         "date": "2026-09-10",
@@ -37864,8 +37864,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 300,
-        "users": 233
+        "event_count": 302,
+        "users": 234
       },
       {
         "date": "2026-09-10",
@@ -37920,8 +37920,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 211,
-        "users": 196
+        "event_count": 213,
+        "users": 198
       },
       {
         "date": "2026-09-10",
@@ -37976,8 +37976,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 92,
-        "users": 64
+        "event_count": 95,
+        "users": 66
       },
       {
         "date": "2026-09-10",
@@ -38032,8 +38032,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 38,
-        "users": 35
+        "event_count": 39,
+        "users": 36
       },
       {
         "date": "2026-09-10",
@@ -38088,8 +38088,8 @@
         "event_name": "upgrade_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 11,
-        "users": 8
+        "event_count": 12,
+        "users": 9
       },
       {
         "date": "2026-09-10",
@@ -38136,15 +38136,15 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 5,
-        "users": 4
+        "event_count": 7,
+        "users": 5
       },
       {
         "date": "2026-09-10",
         "event_name": "upgrade_plan_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 5,
+        "event_count": 6,
         "users": 4
       },
       {
@@ -38160,7 +38160,7 @@
         "event_name": "upgrade_plan_click",
         "source_medium": "(direct) / (none)",
         "channel": "direct",
-        "event_count": 6,
+        "event_count": 7,
         "users": 5
       },
       {
@@ -38176,8 +38176,8 @@
         "event_name": "upgrade_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 1,
-        "users": 1
+        "event_count": 2,
+        "users": 2
       },
       {
         "date": "2026-09-10",
@@ -38440,8 +38440,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 149,
-        "users": 117
+        "event_count": 152,
+        "users": 119
       },
       {
         "date": "2026-09-11",
@@ -38552,8 +38552,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 139,
-        "users": 96
+        "event_count": 141,
+        "users": 97
       },
       {
         "date": "2026-09-11",
@@ -38608,8 +38608,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 15,
-        "users": 14
+        "event_count": 16,
+        "users": 15
       },
       {
         "date": "2026-09-11",
@@ -38720,8 +38720,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 150,
-        "users": 113
+        "event_count": 151,
+        "users": 114
       },
       {
         "date": "2026-09-11",
@@ -38832,15 +38832,15 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 85,
-        "users": 75
+        "event_count": 87,
+        "users": 77
       },
       {
         "date": "2026-09-11",
         "event_name": "install_copy",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 71,
+        "event_count": 70,
         "users": 62
       },
       {
@@ -38976,8 +38976,8 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 272,
-        "users": 203
+        "event_count": 273,
+        "users": 204
       },
       {
         "date": "2026-09-11",
@@ -39032,8 +39032,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 182,
-        "users": 170
+        "event_count": 184,
+        "users": 172
       },
       {
         "date": "2026-09-11",
@@ -39088,8 +39088,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 81,
-        "users": 55
+        "event_count": 84,
+        "users": 57
       },
       {
         "date": "2026-09-11",
@@ -39144,8 +39144,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 34,
-        "users": 30
+        "event_count": 35,
+        "users": 31
       },
       {
         "date": "2026-09-11",
@@ -39528,8 +39528,8 @@
         "event_name": "docs_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 115,
-        "users": 87
+        "event_count": 117,
+        "users": 89
       },
       {
         "date": "2026-09-12",
@@ -39640,8 +39640,8 @@
         "event_name": "explore_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 95,
-        "users": 62
+        "event_count": 96,
+        "users": 63
       },
       {
         "date": "2026-09-12",
@@ -39696,8 +39696,8 @@
         "event_name": "feature_use",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 12,
-        "users": 11
+        "event_count": 13,
+        "users": 12
       },
       {
         "date": "2026-09-12",
@@ -39800,8 +39800,8 @@
         "event_name": "featured_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 97,
-        "users": 76
+        "event_count": 99,
+        "users": 77
       },
       {
         "date": "2026-09-12",
@@ -39912,8 +39912,8 @@
         "event_name": "install_copy",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 62,
-        "users": 56
+        "event_count": 64,
+        "users": 58
       },
       {
         "date": "2026-09-12",
@@ -40064,15 +40064,15 @@
         "event_name": "login_click",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 184,
-        "users": 147
+        "event_count": 185,
+        "users": 148
       },
       {
         "date": "2026-09-12",
         "event_name": "login_click",
         "source_medium": "google / organic",
         "channel": "organic",
-        "event_count": 182,
+        "event_count": 181,
         "users": 145
       },
       {
@@ -40120,8 +40120,8 @@
         "event_name": "login_success",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 142,
-        "users": 124
+        "event_count": 144,
+        "users": 126
       },
       {
         "date": "2026-09-12",
@@ -40176,8 +40176,8 @@
         "event_name": "settings_view",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 60,
-        "users": 42
+        "event_count": 62,
+        "users": 43
       },
       {
         "date": "2026-09-12",
@@ -40232,8 +40232,8 @@
         "event_name": "signup",
         "source_medium": "google / cpc",
         "channel": "paid",
-        "event_count": 25,
-        "users": 23
+        "event_count": 26,
+        "users": 24
       },
       {
         "date": "2026-09-12",
@@ -40396,58 +40396,58 @@
       },
       {
         "event_name": "ask_send",
-        "event_count": 458,
-        "users": 401
+        "event_count": 462,
+        "users": 404
       },
       {
         "event_name": "clone_click",
-        "event_count": 1252,
-        "users": 816
+        "event_count": 1253,
+        "users": 817
       },
       {
         "event_name": "clone_copy",
-        "event_count": 733,
-        "users": 643
+        "event_count": 734,
+        "users": 644
       },
       {
         "event_name": "clone_publish",
-        "event_count": 240,
-        "users": 211
+        "event_count": 241,
+        "users": 212
       },
       {
         "event_name": "content_publish",
-        "event_count": 757,
-        "users": 672
+        "event_count": 762,
+        "users": 677
       },
       {
         "event_name": "docs_click",
-        "event_count": 15027,
-        "users": 9837
+        "event_count": 15090,
+        "users": 9877
       },
       {
         "event_name": "explore_item_click",
-        "event_count": 6598,
-        "users": 4306
+        "event_count": 6605,
+        "users": 4312
       },
       {
         "event_name": "explore_view",
-        "event_count": 12734,
-        "users": 6595
+        "event_count": 12752,
+        "users": 6603
       },
       {
         "event_name": "feature_use",
-        "event_count": 1687,
-        "users": 1493
+        "event_count": 1702,
+        "users": 1505
       },
       {
         "event_name": "feature_view",
-        "event_count": 12165,
-        "users": 6316
+        "event_count": 12182,
+        "users": 6325
       },
       {
         "event_name": "featured_click",
-        "event_count": 13808,
-        "users": 9032
+        "event_count": 13825,
+        "users": 9042
       },
       {
         "event_name": "homepage_view",
@@ -40456,53 +40456,53 @@
       },
       {
         "event_name": "install_copy",
-        "event_count": 8281,
-        "users": 7292
+        "event_count": 8319,
+        "users": 7328
       },
       {
         "event_name": "item_favorite",
-        "event_count": 1355,
-        "users": 1184
+        "event_count": 1358,
+        "users": 1187
       },
       {
         "event_name": "item_share",
-        "event_count": 544,
-        "users": 476
+        "event_count": 545,
+        "users": 477
       },
       {
         "event_name": "login_click",
-        "event_count": 24966,
-        "users": 16464
+        "event_count": 24999,
+        "users": 16485
       },
       {
         "event_name": "login_success",
-        "event_count": 18182,
-        "users": 15976
+        "event_count": 18227,
+        "users": 16018
       },
       {
         "event_name": "settings_view",
-        "event_count": 8414,
-        "users": 4377
+        "event_count": 8472,
+        "users": 4409
       },
       {
         "event_name": "signup",
-        "event_count": 3414,
-        "users": 3014
+        "event_count": 3440,
+        "users": 3037
       },
       {
         "event_name": "upgrade_click",
-        "event_count": 996,
-        "users": 655
+        "event_count": 1006,
+        "users": 663
       },
       {
         "event_name": "upgrade_plan_click",
-        "event_count": 618,
-        "users": 401
+        "event_count": 625,
+        "users": 406
       },
       {
         "event_name": "upgrade_success",
-        "event_count": 147,
-        "users": 130
+        "event_count": 150,
+        "users": 133
       }
     ],
     "geo": [
@@ -40590,73 +40590,73 @@
           {
             "step": 3,
             "event_name": "login_click",
-            "event_count": 24966,
-            "users": 19370,
+            "event_count": 24999,
+            "users": 19394,
             "step_conversion_rate": 46.0,
-            "overall_conversion_rate": 99.1
+            "overall_conversion_rate": 99.2
           },
           {
             "step": 4,
             "event_name": "login_success",
-            "event_count": 18182,
-            "users": 16470,
-            "step_conversion_rate": 85.0,
-            "overall_conversion_rate": 84.3
+            "event_count": 18227,
+            "users": 16513,
+            "step_conversion_rate": 85.1,
+            "overall_conversion_rate": 84.5
           },
           {
             "step": 5,
             "event_name": "docs_click",
-            "event_count": 15027,
-            "users": 11573,
-            "step_conversion_rate": 70.3,
-            "overall_conversion_rate": 59.2
+            "event_count": 15090,
+            "users": 11620,
+            "step_conversion_rate": 70.4,
+            "overall_conversion_rate": 59.5
           },
           {
             "step": 6,
             "event_name": "install_copy",
-            "event_count": 8281,
-            "users": 7518,
+            "event_count": 8319,
+            "users": 7555,
             "step_conversion_rate": 65.0,
-            "overall_conversion_rate": 38.5
+            "overall_conversion_rate": 38.7
           },
           {
             "step": 7,
             "event_name": "settings_view",
-            "event_count": 8414,
-            "users": 5612,
-            "step_conversion_rate": 74.6,
-            "overall_conversion_rate": 28.7
+            "event_count": 8472,
+            "users": 5652,
+            "step_conversion_rate": 74.8,
+            "overall_conversion_rate": 28.9
           },
           {
             "step": 8,
             "event_name": "signup",
-            "event_count": 3414,
-            "users": 3107,
+            "event_count": 3440,
+            "users": 3131,
             "step_conversion_rate": 55.4,
-            "overall_conversion_rate": 15.9
+            "overall_conversion_rate": 16.0
           },
           {
             "step": 9,
             "event_name": "feature_use",
-            "event_count": 1687,
-            "users": 1539,
-            "step_conversion_rate": 49.5,
+            "event_count": 1702,
+            "users": 1552,
+            "step_conversion_rate": 49.6,
             "overall_conversion_rate": 7.9
           },
           {
             "step": 10,
             "event_name": "content_publish",
-            "event_count": 757,
-            "users": 693,
+            "event_count": 762,
+            "users": 698,
             "step_conversion_rate": 45.0,
-            "overall_conversion_rate": 3.5
+            "overall_conversion_rate": 3.6
           },
           {
             "step": 11,
             "event_name": "ask_send",
-            "event_count": 458,
-            "users": 413,
-            "step_conversion_rate": 59.6,
+            "event_count": 462,
+            "users": 417,
+            "step_conversion_rate": 59.7,
             "overall_conversion_rate": 2.1
           }
         ]
@@ -40683,56 +40683,56 @@
           {
             "step": 3,
             "event_name": "login_click",
-            "event_count": 24966,
-            "users": 19370,
+            "event_count": 24999,
+            "users": 19394,
             "step_conversion_rate": 46.0,
-            "overall_conversion_rate": 99.1
+            "overall_conversion_rate": 99.2
           },
           {
             "step": 4,
             "event_name": "featured_click",
-            "event_count": 13808,
-            "users": 10626,
+            "event_count": 13825,
+            "users": 10638,
             "step_conversion_rate": 54.9,
             "overall_conversion_rate": 54.4
           },
           {
             "step": 5,
             "event_name": "explore_view",
-            "event_count": 12734,
-            "users": 8455,
+            "event_count": 12752,
+            "users": 8466,
             "step_conversion_rate": 79.6,
             "overall_conversion_rate": 43.3
           },
           {
             "step": 6,
             "event_name": "explore_item_click",
-            "event_count": 6598,
-            "users": 5066,
+            "event_count": 6605,
+            "users": 5073,
             "step_conversion_rate": 59.9,
-            "overall_conversion_rate": 25.9
+            "overall_conversion_rate": 26.0
           },
           {
             "step": 7,
             "event_name": "feature_view",
-            "event_count": 12165,
-            "users": 8098,
+            "event_count": 12182,
+            "users": 8109,
             "step_conversion_rate": 159.8,
-            "overall_conversion_rate": 41.4
+            "overall_conversion_rate": 41.5
           },
           {
             "step": 8,
             "event_name": "item_favorite",
-            "event_count": 1355,
-            "users": 1221,
+            "event_count": 1358,
+            "users": 1224,
             "step_conversion_rate": 15.1,
-            "overall_conversion_rate": 6.2
+            "overall_conversion_rate": 6.3
           },
           {
             "step": 9,
             "event_name": "item_share",
-            "event_count": 544,
-            "users": 491,
+            "event_count": 545,
+            "users": 492,
             "step_conversion_rate": 40.2,
             "overall_conversion_rate": 2.5
           }
@@ -40744,26 +40744,26 @@
           {
             "step": 1,
             "event_name": "clone_click",
-            "event_count": 1252,
-            "users": 960,
+            "event_count": 1253,
+            "users": 961,
             "step_conversion_rate": 100.0,
             "overall_conversion_rate": 100.0
           },
           {
             "step": 2,
             "event_name": "clone_copy",
-            "event_count": 733,
-            "users": 663,
+            "event_count": 734,
+            "users": 664,
             "step_conversion_rate": 69.1,
             "overall_conversion_rate": 69.1
           },
           {
             "step": 3,
             "event_name": "clone_publish",
-            "event_count": 240,
-            "users": 218,
-            "step_conversion_rate": 32.9,
-            "overall_conversion_rate": 22.7
+            "event_count": 241,
+            "users": 219,
+            "step_conversion_rate": 33.0,
+            "overall_conversion_rate": 22.8
           }
         ]
       },
@@ -40773,26 +40773,26 @@
           {
             "step": 1,
             "event_name": "upgrade_click",
-            "event_count": 996,
-            "users": 771,
+            "event_count": 1006,
+            "users": 780,
             "step_conversion_rate": 100.0,
             "overall_conversion_rate": 100.0
           },
           {
             "step": 2,
             "event_name": "upgrade_plan_click",
-            "event_count": 618,
-            "users": 472,
-            "step_conversion_rate": 61.2,
-            "overall_conversion_rate": 61.2
+            "event_count": 625,
+            "users": 478,
+            "step_conversion_rate": 61.3,
+            "overall_conversion_rate": 61.3
           },
           {
             "step": 3,
             "event_name": "upgrade_success",
-            "event_count": 147,
-            "users": 134,
-            "step_conversion_rate": 28.4,
-            "overall_conversion_rate": 17.4
+            "event_count": 150,
+            "users": 137,
+            "step_conversion_rate": 28.7,
+            "overall_conversion_rate": 17.6
           }
         ]
       }
@@ -40808,11 +40808,11 @@
       "total_cost": 20595.36,
       "total_clicks": 21726,
       "total_impressions": 963734,
-      "total_conversions": 1413.0,
+      "total_conversions": 1439.9,
       "avg_cpc": 0.95,
       "avg_ctr": 2.25,
-      "cpa": 14.58,
-      "cvr": 6.5
+      "cpa": 14.3,
+      "cvr": 6.63
     },
     "daily_totals": [
       {
@@ -40820,7 +40820,7 @@
         "impressions": 32795,
         "clicks": 734,
         "cost": 714.78,
-        "conversions": 47.9,
+        "conversions": 48.8,
         "ctr": 2.24,
         "avg_cpc": 0.97
       },
@@ -40829,7 +40829,7 @@
         "impressions": 29896,
         "clicks": 735,
         "cost": 740.47,
-        "conversions": 46.4,
+        "conversions": 47.4,
         "ctr": 2.46,
         "avg_cpc": 1.01
       },
@@ -40838,7 +40838,7 @@
         "impressions": 37880,
         "clicks": 861,
         "cost": 771.57,
-        "conversions": 56.1,
+        "conversions": 57.1,
         "ctr": 2.27,
         "avg_cpc": 0.9
       },
@@ -40847,7 +40847,7 @@
         "impressions": 34907,
         "clicks": 760,
         "cost": 764.32,
-        "conversions": 50.3,
+        "conversions": 51.4,
         "ctr": 2.18,
         "avg_cpc": 1.01
       },
@@ -40856,7 +40856,7 @@
         "impressions": 34887,
         "clicks": 769,
         "cost": 732.52,
-        "conversions": 52.0,
+        "conversions": 52.8,
         "ctr": 2.2,
         "avg_cpc": 0.95
       },
@@ -40865,7 +40865,7 @@
         "impressions": 32257,
         "clicks": 759,
         "cost": 750.15,
-        "conversions": 47.8,
+        "conversions": 48.6,
         "ctr": 2.35,
         "avg_cpc": 0.99
       },
@@ -40874,7 +40874,7 @@
         "impressions": 35213,
         "clicks": 779,
         "cost": 759.73,
-        "conversions": 56.1,
+        "conversions": 57.1,
         "ctr": 2.21,
         "avg_cpc": 0.98
       },
@@ -40883,7 +40883,7 @@
         "impressions": 36611,
         "clicks": 791,
         "cost": 743.67,
-        "conversions": 59.2,
+        "conversions": 60.2,
         "ctr": 2.16,
         "avg_cpc": 0.94
       },
@@ -40892,7 +40892,7 @@
         "impressions": 30508,
         "clicks": 714,
         "cost": 710.16,
-        "conversions": 50.7,
+        "conversions": 51.6,
         "ctr": 2.34,
         "avg_cpc": 0.99
       },
@@ -40901,7 +40901,7 @@
         "impressions": 31407,
         "clicks": 716,
         "cost": 696.39,
-        "conversions": 50.7,
+        "conversions": 51.5,
         "ctr": 2.28,
         "avg_cpc": 0.97
       },
@@ -40910,7 +40910,7 @@
         "impressions": 36548,
         "clicks": 871,
         "cost": 778.65,
-        "conversions": 58.5,
+        "conversions": 59.6,
         "ctr": 2.38,
         "avg_cpc": 0.89
       },
@@ -40919,7 +40919,7 @@
         "impressions": 32487,
         "clicks": 734,
         "cost": 735.79,
-        "conversions": 48.8,
+        "conversions": 49.5,
         "ctr": 2.26,
         "avg_cpc": 1.0
       },
@@ -40928,7 +40928,7 @@
         "impressions": 36516,
         "clicks": 843,
         "cost": 757.97,
-        "conversions": 50.1,
+        "conversions": 51.1,
         "ctr": 2.31,
         "avg_cpc": 0.9
       },
@@ -40937,7 +40937,7 @@
         "impressions": 34176,
         "clicks": 764,
         "cost": 752.08,
-        "conversions": 47.6,
+        "conversions": 48.5,
         "ctr": 2.24,
         "avg_cpc": 0.98
       },
@@ -40946,7 +40946,7 @@
         "impressions": 30050,
         "clicks": 707,
         "cost": 710.38,
-        "conversions": 52.3,
+        "conversions": 53.0,
         "ctr": 2.35,
         "avg_cpc": 1.0
       },
@@ -40955,7 +40955,7 @@
         "impressions": 29071,
         "clicks": 697,
         "cost": 691.84,
-        "conversions": 45.2,
+        "conversions": 46.0,
         "ctr": 2.4,
         "avg_cpc": 0.99
       },
@@ -40964,7 +40964,7 @@
         "impressions": 33349,
         "clicks": 779,
         "cost": 753.99,
-        "conversions": 49.6,
+        "conversions": 50.6,
         "ctr": 2.34,
         "avg_cpc": 0.97
       },
@@ -40973,7 +40973,7 @@
         "impressions": 33735,
         "clicks": 784,
         "cost": 750.46,
-        "conversions": 48.2,
+        "conversions": 49.2,
         "ctr": 2.32,
         "avg_cpc": 0.96
       },
@@ -40982,7 +40982,7 @@
         "impressions": 37689,
         "clicks": 844,
         "cost": 770.88,
-        "conversions": 48.7,
+        "conversions": 49.6,
         "ctr": 2.24,
         "avg_cpc": 0.91
       },
@@ -40991,7 +40991,7 @@
         "impressions": 31526,
         "clicks": 720,
         "cost": 716.35,
-        "conversions": 47.0,
+        "conversions": 47.8,
         "ctr": 2.28,
         "avg_cpc": 0.99
       },
@@ -41000,7 +41000,7 @@
         "impressions": 26867,
         "clicks": 636,
         "cost": 604.83,
-        "conversions": 40.4,
+        "conversions": 41.3,
         "ctr": 2.37,
         "avg_cpc": 0.95
       },
@@ -41009,7 +41009,7 @@
         "impressions": 31555,
         "clicks": 688,
         "cost": 629.55,
-        "conversions": 42.8,
+        "conversions": 43.8,
         "ctr": 2.18,
         "avg_cpc": 0.92
       },
@@ -41018,7 +41018,7 @@
         "impressions": 27591,
         "clicks": 647,
         "cost": 573.05,
-        "conversions": 45.1,
+        "conversions": 46.0,
         "ctr": 2.34,
         "avg_cpc": 0.89
       },
@@ -41027,7 +41027,7 @@
         "impressions": 33189,
         "clicks": 688,
         "cost": 652.59,
-        "conversions": 45.8,
+        "conversions": 46.7,
         "ctr": 2.07,
         "avg_cpc": 0.95
       },
@@ -41036,7 +41036,7 @@
         "impressions": 27815,
         "clicks": 630,
         "cost": 534.41,
-        "conversions": 37.6,
+        "conversions": 38.4,
         "ctr": 2.26,
         "avg_cpc": 0.85
       },
@@ -41045,7 +41045,7 @@
         "impressions": 31025,
         "clicks": 640,
         "cost": 554.58,
-        "conversions": 40.6,
+        "conversions": 41.5,
         "ctr": 2.06,
         "avg_cpc": 0.87
       },
@@ -41054,7 +41054,7 @@
         "impressions": 30873,
         "clicks": 642,
         "cost": 600.07,
-        "conversions": 36.5,
+        "conversions": 37.3,
         "ctr": 2.08,
         "avg_cpc": 0.93
       },
@@ -41063,7 +41063,7 @@
         "impressions": 26008,
         "clicks": 596,
         "cost": 563.34,
-        "conversions": 36.1,
+        "conversions": 36.9,
         "ctr": 2.29,
         "avg_cpc": 0.95
       },
@@ -41072,7 +41072,7 @@
         "impressions": 27310,
         "clicks": 577,
         "cost": 527.2,
-        "conversions": 35.7,
+        "conversions": 36.5,
         "ctr": 2.11,
         "avg_cpc": 0.91
       },
@@ -41081,7 +41081,7 @@
         "impressions": 29993,
         "clicks": 621,
         "cost": 553.59,
-        "conversions": 39.2,
+        "conversions": 40.1,
         "ctr": 2.07,
         "avg_cpc": 0.89
       }
@@ -43257,8 +43257,8 @@
         "cost": 379.93,
         "ctr": 1.8,
         "avg_cpc": 0.86,
-        "conversions": 16.6,
-        "conversions_value": 630.8,
+        "conversions": 17.5,
+        "conversions_value": 665.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43272,8 +43272,8 @@
         "cost": 385.17,
         "ctr": 2.04,
         "avg_cpc": 0.86,
-        "conversions": 19.5,
-        "conversions_value": 741.0,
+        "conversions": 20.5,
+        "conversions_value": 779.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43287,8 +43287,8 @@
         "cost": 398.52,
         "ctr": 1.87,
         "avg_cpc": 0.74,
-        "conversions": 20.9,
-        "conversions_value": 794.2,
+        "conversions": 21.9,
+        "conversions_value": 832.2,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43302,8 +43302,8 @@
         "cost": 405.75,
         "ctr": 1.77,
         "avg_cpc": 0.87,
-        "conversions": 20.2,
-        "conversions_value": 767.6,
+        "conversions": 21.3,
+        "conversions_value": 809.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43317,8 +43317,8 @@
         "cost": 367.21,
         "ctr": 1.79,
         "avg_cpc": 0.79,
-        "conversions": 16.4,
-        "conversions_value": 623.2,
+        "conversions": 17.2,
+        "conversions_value": 653.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43332,8 +43332,8 @@
         "cost": 377.18,
         "ctr": 1.89,
         "avg_cpc": 0.86,
-        "conversions": 15.3,
-        "conversions_value": 581.4,
+        "conversions": 16.1,
+        "conversions_value": 611.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43347,8 +43347,8 @@
         "cost": 408.6,
         "ctr": 1.82,
         "avg_cpc": 0.83,
-        "conversions": 18.7,
-        "conversions_value": 710.6,
+        "conversions": 19.7,
+        "conversions_value": 748.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43362,8 +43362,8 @@
         "cost": 384.66,
         "ctr": 1.76,
         "avg_cpc": 0.8,
-        "conversions": 20.8,
-        "conversions_value": 790.4,
+        "conversions": 21.8,
+        "conversions_value": 828.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43377,8 +43377,8 @@
         "cost": 350.27,
         "ctr": 1.86,
         "avg_cpc": 0.84,
-        "conversions": 17.9,
-        "conversions_value": 680.2,
+        "conversions": 18.8,
+        "conversions_value": 714.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43392,8 +43392,8 @@
         "cost": 341.01,
         "ctr": 1.79,
         "avg_cpc": 0.85,
-        "conversions": 16.0,
-        "conversions_value": 608.0,
+        "conversions": 16.8,
+        "conversions_value": 638.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43407,8 +43407,8 @@
         "cost": 411.19,
         "ctr": 1.98,
         "avg_cpc": 0.75,
-        "conversions": 21.4,
-        "conversions_value": 813.2,
+        "conversions": 22.5,
+        "conversions_value": 855.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43422,8 +43422,8 @@
         "cost": 366.42,
         "ctr": 1.8,
         "avg_cpc": 0.87,
-        "conversions": 14.1,
-        "conversions_value": 535.8,
+        "conversions": 14.8,
+        "conversions_value": 562.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43437,8 +43437,8 @@
         "cost": 394.96,
         "ctr": 1.92,
         "avg_cpc": 0.75,
-        "conversions": 20.2,
-        "conversions_value": 767.6,
+        "conversions": 21.2,
+        "conversions_value": 805.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43452,8 +43452,8 @@
         "cost": 392.1,
         "ctr": 1.83,
         "avg_cpc": 0.83,
-        "conversions": 17.4,
-        "conversions_value": 661.2,
+        "conversions": 18.3,
+        "conversions_value": 695.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43467,8 +43467,8 @@
         "cost": 363.44,
         "ctr": 1.91,
         "avg_cpc": 0.88,
-        "conversions": 15.0,
-        "conversions_value": 570.0,
+        "conversions": 15.7,
+        "conversions_value": 596.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43482,8 +43482,8 @@
         "cost": 346.98,
         "ctr": 1.94,
         "avg_cpc": 0.86,
-        "conversions": 16.3,
-        "conversions_value": 619.4,
+        "conversions": 17.1,
+        "conversions_value": 649.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43497,8 +43497,8 @@
         "cost": 415.92,
         "ctr": 1.96,
         "avg_cpc": 0.84,
-        "conversions": 19.9,
-        "conversions_value": 756.2,
+        "conversions": 20.9,
+        "conversions_value": 794.2,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43512,8 +43512,8 @@
         "cost": 393.08,
         "ctr": 1.88,
         "avg_cpc": 0.82,
-        "conversions": 19.2,
-        "conversions_value": 729.6,
+        "conversions": 20.2,
+        "conversions_value": 767.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43527,8 +43527,8 @@
         "cost": 412.76,
         "ctr": 1.87,
         "avg_cpc": 0.76,
-        "conversions": 18.7,
-        "conversions_value": 710.6,
+        "conversions": 19.6,
+        "conversions_value": 744.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43542,8 +43542,8 @@
         "cost": 358.1,
         "ctr": 1.81,
         "avg_cpc": 0.85,
-        "conversions": 16.3,
-        "conversions_value": 619.4,
+        "conversions": 17.1,
+        "conversions_value": 649.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43557,8 +43557,8 @@
         "cost": 363.11,
         "ctr": 1.99,
         "avg_cpc": 0.86,
-        "conversions": 16.6,
-        "conversions_value": 630.8,
+        "conversions": 17.5,
+        "conversions_value": 665.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43572,8 +43572,8 @@
         "cost": 392.78,
         "ctr": 1.88,
         "avg_cpc": 0.8,
-        "conversions": 21.7,
-        "conversions_value": 824.6,
+        "conversions": 22.7,
+        "conversions_value": 862.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43587,8 +43587,8 @@
         "cost": 344.7,
         "ctr": 2.02,
         "avg_cpc": 0.76,
-        "conversions": 18.4,
-        "conversions_value": 699.2,
+        "conversions": 19.3,
+        "conversions_value": 733.4,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43602,8 +43602,8 @@
         "cost": 418.32,
         "ctr": 1.76,
         "avg_cpc": 0.86,
-        "conversions": 19.5,
-        "conversions_value": 741.0,
+        "conversions": 20.4,
+        "conversions_value": 775.2,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43617,8 +43617,8 @@
         "cost": 340.57,
         "ctr": 1.97,
         "avg_cpc": 0.74,
-        "conversions": 16.7,
-        "conversions_value": 634.6,
+        "conversions": 17.5,
+        "conversions_value": 665.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43632,8 +43632,8 @@
         "cost": 353.13,
         "ctr": 1.77,
         "avg_cpc": 0.76,
-        "conversions": 17.3,
-        "conversions_value": 657.4,
+        "conversions": 18.2,
+        "conversions_value": 691.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43647,8 +43647,8 @@
         "cost": 408.84,
         "ctr": 1.78,
         "avg_cpc": 0.86,
-        "conversions": 16.3,
-        "conversions_value": 619.4,
+        "conversions": 17.1,
+        "conversions_value": 649.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43662,8 +43662,8 @@
         "cost": 365.46,
         "ctr": 1.96,
         "avg_cpc": 0.87,
-        "conversions": 15.7,
-        "conversions_value": 596.6,
+        "conversions": 16.5,
+        "conversions_value": 627.0,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43677,8 +43677,8 @@
         "cost": 342.5,
         "ctr": 1.77,
         "avg_cpc": 0.84,
-        "conversions": 17.3,
-        "conversions_value": 657.4,
+        "conversions": 18.1,
+        "conversions_value": 687.8,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -43692,8 +43692,8 @@
         "cost": 365.43,
         "ctr": 1.76,
         "avg_cpc": 0.8,
-        "conversions": 17.8,
-        "conversions_value": 676.4,
+        "conversions": 18.7,
+        "conversions_value": 710.6,
         "landing_type": "pmax",
         "use_case": "all"
       },
@@ -44308,11 +44308,11 @@
         "impressions": 743741,
         "clicks": 13851,
         "cost": 11348.09,
-        "conversions": 538.1,
+        "conversions": 565.0,
         "ctr": 1.86,
         "avg_cpc": 0.82,
-        "cvr": 3.88,
-        "cpa": 21.09
+        "cvr": 4.08,
+        "cpa": 20.09
       },
       {
         "campaign_name": "search-single-trading-us",
@@ -44429,11 +44429,11 @@
         "impressions": 743741,
         "clicks": 13851,
         "cost": 11348.09,
-        "conversions": 538.1,
+        "conversions": 565.0,
         "campaign_count": 1,
         "ctr": 1.86,
-        "cvr": 3.88,
-        "cpa": 21.09
+        "cvr": 4.08,
+        "cpa": 20.09
       },
       {
         "landing_type": "usecase_page",
@@ -44504,11 +44504,11 @@
         "impressions": 743741,
         "clicks": 13851,
         "cost": 11348.09,
-        "conversions": 538.1,
+        "conversions": 565.0,
         "campaign_count": 1,
         "ctr": 1.86,
-        "cvr": 3.88,
-        "cpa": 21.09
+        "cvr": 4.08,
+        "cpa": 20.09
       },
       {
         "use_case": "trading",

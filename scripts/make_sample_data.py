@@ -56,7 +56,7 @@ CAMPAIGNS = [
     ("search-usecase-research-global",   35, 1.05, 4.5, 0.135, 0.12, (0, 30), "ENABLED"),
     ("search-single-trading-us",         65, 1.20, 3.0, 0.085, 0.45, (0, 30), "ENABLED"),
     ("search-single-research-global",    50, 1.25, 2.7, 0.075, 0.50, (0, 24), "PAUSED"),
-    ("pmax-all-us",                     400, 0.80, 1.9, 0.040, 0.08, (0, 30), "ENABLED"),
+    ("pmax-all-us",                     400, 0.80, 1.9, 0.042, 0.08, (0, 30), "ENABLED"),
     ("search-home-brand-us",             75, 1.30, 3.3, 0.090, 0.15, (0, 20), "PAUSED"),
     ("search-skill-quant-global",        50, 1.20, 3.6, 0.100, 0.15, (0, 20), "PAUSED"),
 ]

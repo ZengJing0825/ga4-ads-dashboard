@@ -77,7 +77,7 @@ id       landing_type  status   days      cost  clicks    conv   CTR%   CVR%    
 EXP-001  homepage      killed     20   1452.91    1125   102.0   3.27   9.07   14.24     KILL
 EXP-002  usecase_page  scaled     30   3842.98    3513   491.2   4.49  13.98    7.82    SCALE
 EXP-003  single_page   running    30   2986.06    2442   202.5   2.86   8.29   14.75     KILL
-EXP-004  pmax          baseline   30  11348.09   13851   538.1   1.86   3.88   21.09     HOLD
+EXP-004  pmax          baseline   30  11348.09   13851   565.0   1.86   4.08   20.09     HOLD
 ```
 
 (Synthetic sample data. The four records are fictional examples.)
