@@ -6,12 +6,15 @@ subset used by this repo takes over:
   - block mappings          key: value
   - block sequences         - item  /  - key: value (mapping items)
   - flow sequences          [a, b, c]  (scalars only)
+  - flow mappings           {k: v, k2: v2}  (scalar values only)
   - scalars                 int, float, true/false, null, 'single' and
                             "double" quoted strings, bare strings
   - comments                # ...
 
-Multi-line scalars, anchors, tags and flow mappings are not supported; keep
-the config files inside this subset so both loaders agree.
+Multi-line scalars, anchors, tags and nested flow collections are not
+supported; keep the config files inside this subset so both loaders agree.
+Note that PyYAML turns unquoted dates (2026-08-14) into datetime.date while
+the fallback keeps them as strings; callers normalise with str().
 """
 
 import os
@@ -155,6 +158,14 @@ def _scalar(s):
     if s.startswith("[") and s.endswith("]"):
         inner = s[1:-1].strip()
         return [_scalar(p) for p in _split_flow(inner)] if inner else []
+    if s.startswith("{") and s.endswith("}"):
+        out = {}
+        for part in _split_flow(s[1:-1].strip()):
+            if ":" not in part:
+                raise ConfigError("Bad flow mapping entry: %r" % part)
+            k, v = part.split(":", 1)
+            out[k.strip()] = _scalar(v)
+        return out
     low = s.lower()
     if low in ("true", "yes"):
         return True
