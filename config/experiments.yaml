@@ -1,0 +1,72 @@
+# Experiment log for the paid-acquisition decision loop (docs/decision-loop.md).
+#
+# One record per landing-type arm. scripts/experiments.py joins each record to
+# the campaigns it covers (ads.campaign_daily in dashboard/data.json) for the
+# window [date, end_date] and prints cost / CTR / CVR / CPA next to the
+# kill / scale rules, so the decision is read off the table, not argued.
+#
+# Fields
+#   id               EXP-nnn
+#   date             start of the test window (YYYY-MM-DD)
+#   end_date         optional; omit while the arm is still running
+#   hypothesis       what you expect and why (one sentence)
+#   landing_type     homepage | skill_page | usecase_page | single_page | pmax
+#   campaigns        campaign names covered (exact, as in Google Ads)
+#   daily_budget     USD per day across the covered campaigns
+#   conversion_event GA4 event the campaigns optimise for
+#   kill_rule        {metric, above, min_spend}: kill when metric > above once spend >= min_spend
+#   scale_rule       {metric, below, min_conversions}: scale when metric < below once conversions >= min_conversions
+#   status           planned | running | killed | scaled | baseline
+#   conclusion       what was decided and why (filled in at the weekly review)
+#
+# All records below are FICTIONAL examples matching the synthetic sample data.
+
+experiments:
+  - id: EXP-001
+    date: 2026-08-14
+    end_date: 2026-09-02
+    hypothesis: "Generic search traffic landing on the homepage converts poorly because the search terms are mostly trading and quant intent the homepage does not answer."
+    landing_type: homepage
+    campaigns: [search-home-brand-us]
+    daily_budget: 75
+    conversion_event: signup
+    kill_rule: {metric: cpa, above: 12, min_spend: 400}
+    scale_rule: {metric: cpa, below: 9, min_conversions: 40}
+    status: killed
+    conclusion: "CPA stayed around $14 with CTR ~3.3%; search-term report showed the same intent mismatch. Paused after 20 days, budget moved to EXP-002."
+
+  - id: EXP-002
+    date: 2026-08-14
+    hypothesis: "A page that aggregates the content of one scenario (trading, quant, research) answers the search intent directly and should beat both the homepage and single content pages on CPA and CTR."
+    landing_type: usecase_page
+    campaigns: [search-usecase-trading-us, search-usecase-quant-us, search-usecase-research-global]
+    daily_budget: 135
+    conversion_event: signup
+    kill_rule: {metric: cpa, above: 12, min_spend: 400}
+    scale_rule: {metric: cpa, below: 9, min_conversions: 40}
+    status: scaled
+    conclusion: "CPA $7-9 and CTR ~4.5% across all three scenarios, stable day to day. Scale rule met; budget raised and the arm kept as the default landing type for search."
+
+  - id: EXP-003
+    date: 2026-08-14
+    hypothesis: "Sending a scenario's search traffic to its single best content page converts as well as the aggregated page, as long as the content is strong."
+    landing_type: single_page
+    campaigns: [search-single-trading-us, search-single-research-global]
+    daily_budget: 115
+    conversion_event: signup
+    kill_rule: {metric: cpa, above: 12, min_spend: 400}
+    scale_rule: {metric: cpa, below: 9, min_conversions: 40}
+    status: running
+    conclusion: "Highly content-dependent: daily CPA swings between roughly $7 and $40 on the same budget, so the kill rule fires on the blended number. The research page was paused on day 24; the trading page runs two more weeks as an explicit override, as a control against EXP-002."
+
+  - id: EXP-004
+    date: 2026-08-14
+    hypothesis: "Performance Max delivers volume, but without a scenario-specific landing page its CPA will land well above the search scenario pages."
+    landing_type: pmax
+    campaigns: [pmax-all-us]
+    daily_budget: 400
+    conversion_event: signup
+    kill_rule: {metric: cpa, above: 25, min_spend: 2000}
+    scale_rule: {metric: cpa, below: 12, min_conversions: 100}
+    status: baseline
+    conclusion: "CPA ~$20 and CTR ~1.9%. Kept as the volume baseline; no additional budget until a scenario page is wired in as its landing page."
