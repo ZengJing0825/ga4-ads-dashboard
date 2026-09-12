@@ -2,6 +2,8 @@
 
 [中文版](README.zh.md)
 
+An attribution dashboard and decision loop for **small teams acquiring users with Google Ads whose product has a signup → activation → key-action funnel**: GA4 and Google Ads data in one place, cost and conversion split by landing type, reconciliation against first-party data, and every change run as diagnose → hypothesis → small budget → compare → kill or scale. All sample data is synthetic.
+
 **What problem it solves.** Paid acquisition produces two kinds of waste: money
 spent without knowing where the users went, and an ad algorithm trained on
 the wrong conversion goal. This repo is a small, self-hosted loop that closes
