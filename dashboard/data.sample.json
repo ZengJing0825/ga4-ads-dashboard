@@ -40392,117 +40392,117 @@
       {
         "event_name": "ad_click",
         "event_count": 25691,
-        "users": 16024
+        "users": 16611
       },
       {
         "event_name": "ask_send",
         "event_count": 458,
-        "users": 339
+        "users": 401
       },
       {
         "event_name": "clone_click",
         "event_count": 1252,
-        "users": 787
+        "users": 816
       },
       {
         "event_name": "clone_copy",
         "event_count": 733,
-        "users": 544
+        "users": 643
       },
       {
         "event_name": "clone_publish",
         "event_count": 240,
-        "users": 179
+        "users": 211
       },
       {
         "event_name": "content_publish",
         "event_count": 757,
-        "users": 568
+        "users": 672
       },
       {
         "event_name": "docs_click",
         "event_count": 15027,
-        "users": 9490
+        "users": 9837
       },
       {
         "event_name": "explore_item_click",
         "event_count": 6598,
-        "users": 4154
+        "users": 4306
       },
       {
         "event_name": "explore_view",
         "event_count": 12734,
-        "users": 6933
+        "users": 6595
       },
       {
         "event_name": "feature_use",
         "event_count": 1687,
-        "users": 1262
+        "users": 1493
       },
       {
         "event_name": "feature_view",
         "event_count": 12165,
-        "users": 6640
+        "users": 6316
       },
       {
         "event_name": "featured_click",
         "event_count": 13808,
-        "users": 8713
+        "users": 9032
       },
       {
         "event_name": "homepage_view",
         "event_count": 63294,
-        "users": 34540
+        "users": 32855
       },
       {
         "event_name": "install_copy",
         "event_count": 8281,
-        "users": 6165
+        "users": 7292
       },
       {
         "event_name": "item_favorite",
         "event_count": 1355,
-        "users": 1001
+        "users": 1184
       },
       {
         "event_name": "item_share",
         "event_count": 544,
-        "users": 403
+        "users": 476
       },
       {
         "event_name": "login_click",
         "event_count": 24966,
-        "users": 15883
+        "users": 16464
       },
       {
         "event_name": "login_success",
         "event_count": 18182,
-        "users": 13505
+        "users": 15976
       },
       {
         "event_name": "settings_view",
         "event_count": 8414,
-        "users": 4602
+        "users": 4377
       },
       {
         "event_name": "signup",
         "event_count": 3414,
-        "users": 2548
+        "users": 3014
       },
       {
         "event_name": "upgrade_click",
         "event_count": 996,
-        "users": 632
+        "users": 655
       },
       {
         "event_name": "upgrade_plan_click",
         "event_count": 618,
-        "users": 387
+        "users": 401
       },
       {
         "event_name": "upgrade_success",
         "event_count": 147,
-        "users": 110
+        "users": 130
       }
     ],
     "geo": [

@@ -75,6 +75,8 @@ CHANNEL_SOURCES = {
 ORGANIC_CHANNELS = {"organic": (420, 1.10), "direct": (260, 1.00), "referral": (90, 0.90)}
 
 EVENT_COUNT_MULT = {"_view": 1.5, "_click": 1.3}
+# period users / sum of daily users: views and clicks repeat across days, actions mostly do not
+PERIOD_DEDUPE = {"_view": 0.78, "_click": 0.85, "default": 0.97}
 
 GEO = [("United States", 0.34), ("India", 0.12), ("United Kingdom", 0.08), ("Germany", 0.06),
        ("Canada", 0.06), ("Singapore", 0.05), ("Australia", 0.04), ("Brazil", 0.04),
@@ -225,6 +227,13 @@ def _event_count(ev, users):
     return int(round(users * mult * rng.uniform(0.95, 1.05)))
 
 
+def _dedupe(ev):
+    for suffix, f in PERIOD_DEDUPE.items():
+        if suffix != "default" and ev.endswith(suffix):
+            return f
+    return PERIOD_DEDUPE["default"]
+
+
 def _split(total, shares):
     """Split an integer across (label, share) pairs, remainder to the first."""
     out, used = [], 0
@@ -302,7 +311,7 @@ def gen_ga4(dates, campaign_daily):
         })
 
     period_uv = [{"event_name": ev, "event_count": period_counts[ev],
-                  "users": int(round(period_users[ev] * 0.82))} for ev in all_events]
+                  "users": int(round(period_users[ev] * _dedupe(ev)))} for ev in all_events]
 
     total_active = sum(o["active_users"] for o in overall)
     geo = []
