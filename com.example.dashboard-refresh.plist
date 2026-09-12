@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  launchd agent template. install.sh replaces __PROJECT_DIR__ with the
+  absolute path of this project and copies the result to
+  ~/Library/LaunchAgents/com.example.dashboard-refresh.plist
+-->
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.example.dashboard-refresh</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>__PROJECT_DIR__/refresh.sh</string>
+	</array>
+
+	<key>WorkingDirectory</key>
+	<string>__PROJECT_DIR__</string>
+
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>9</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Hour</key>
+			<integer>14</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+
+	<key>StandardOutPath</key>
+	<string>__PROJECT_DIR__/logs/launchd-stdout.log</string>
+
+	<key>StandardErrorPath</key>
+	<string>__PROJECT_DIR__/logs/launchd-stderr.log</string>
+
+	<key>RunAtLoad</key>
+	<false/>
+
+	<key>KeepAlive</key>
+	<false/>
+
+	<key>ProcessType</key>
+	<string>Background</string>
+
+	<key>ThrottleInterval</key>
+	<integer>300</integer>
+
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,11 @@
+.env
+credentials/
+data/
+backups/
+logs/
+*.lock
+.health
+__pycache__/
+*.pyc
+.DS_Store
+dashboard/data.json

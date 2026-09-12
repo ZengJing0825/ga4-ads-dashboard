@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f6f9; --bg2: #ffffff; --card: #ffffff; --card-h: #f8f9fb;
+    --border: #e2e6ed; --border2: #d0d5dd;
+    --text: #1a1d26; --text2: #4a5068; --text3: #8891a5;
+    --accent: #49A3A6; --accent2: #3a8c8f; --accent-g: rgba(73,163,166,0.10);
+    --green: #0d9668; --green-d: rgba(13,150,104,0.10);
+    --red: #dc2626; --red-d: rgba(220,38,38,0.08);
+    --orange: #d97706; --orange-d: rgba(217,119,6,0.08);
+    --blue: #2563eb; --blue-d: rgba(37,99,235,0.08);
+    --pink: #db2777; --teal: #49A3A6;
+    --r: 14px; --rs: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+
+  /* HEADER */
+  .header { padding:24px 32px 16px; display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; }
+  .header h1 { font-size:24px; font-weight:700; letter-spacing:-0.5px; background:linear-gradient(135deg,#1a1d26,#49A3A6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .header .sub { font-size:12px; color:var(--text3); margin-top:2px; }
+  .hdr-right { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .badge { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:16px; font-size:10px; font-weight:600; border:1px solid var(--border); background:var(--bg2); }
+  .badge .d { width:5px;height:5px;border-radius:50%;animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  /* DATE PICKER */
+  .date-bar { padding:0 32px 12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .dp-btn { padding:5px 14px; border-radius:16px; border:1px solid var(--border); background:var(--bg2); color:var(--text2); font-size:11px; font-weight:600; cursor:pointer; transition:all .15s; white-space:nowrap; }
+  .dp-btn:hover { border-color:var(--accent); color:var(--text); }
+  .dp-btn.active { background:var(--accent-g); border-color:var(--accent); color:var(--accent2); }
+  .dp-custom { display:flex; align-items:center; gap:6px; margin-left:8px; }
+  .dp-custom input { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:4px 8px; color:var(--text); font-size:11px; font-family:inherit; }
+  .dp-custom input:focus { outline:none; border-color:var(--accent); }
+  .dp-apply { padding:4px 12px; border-radius:8px; border:none; background:var(--accent); color:white; font-size:11px; font-weight:600; cursor:pointer; }
+
+  /* TABS */
+  .tabs { display:flex; gap:2px; padding:0 32px; border-bottom:1px solid var(--border); overflow-x:auto; }
+  .tab { padding:12px 18px; cursor:pointer; color:var(--text3); font-size:13px; font-weight:600; border-bottom:2px solid transparent; transition:all .2s; white-space:nowrap; }
+  .tab:hover { color:var(--text2); }
+  .tab.active { color:var(--accent2); border-bottom-color:var(--accent); }
+
+  /* PAGE */
+  .page { display:none; padding:24px 32px; }
+  .page.active { display:block; animation:fadeIn .2s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+  .sec-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+  .sec-hdr h2 { font-size:15px; font-weight:600; }
+  .dtag { font-size:9px; color:var(--text3); padding:2px 8px; border-radius:10px; border:1px solid var(--border); font-weight:600; letter-spacing:.3px; }
+
+  /* KPI */
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:10px; margin-bottom:24px; }
+  .kpi { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:16px 18px; transition:all .15s; position:relative; box-shadow:var(--shadow); }
+  .kpi:hover { border-color:var(--border2); transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+  .kpi .l { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:.7px; font-weight:700; }
+  .kpi .v { font-size:26px; font-weight:700; margin-top:4px; letter-spacing:-.5px; }
+  .kpi .s { font-size:10px; color:var(--text3); margin-top:3px; }
+  .kpi .src { position:absolute; top:8px; right:10px; font-size:8px; padding:1px 6px; border-radius:6px; background:var(--accent-g); color:var(--accent2); font-weight:700; }
+
+  /* CHART */
+  .crow { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+  .cbox { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:18px; box-shadow:var(--shadow); }
+  .cbox.full { grid-column:1/-1; }
+  .cbox .ct { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+  .cbox .ct h3 { font-size:13px; font-weight:600; }
+  .cbox .ct .tag { font-size:8px; padding:2px 7px; border-radius:6px; background:var(--accent-g); color:var(--accent2); font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+
+  /* FUNNEL */
+  .fn-step { display:flex; align-items:center; padding:8px 0; border-radius:var(--rs); }
+  .fn-step:hover { background:rgba(73,163,166,.06); }
+  .fn-step .num { width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0; }
+  .fn-step .info { flex:0 0 160px; margin-left:12px; }
+  .fn-step .info .n { font-size:12px; font-weight:600; }
+  .fn-step .info .e { font-size:9px; color:var(--text3); font-family:'JetBrains Mono',monospace; }
+  .fn-step .bar-w { flex:2; margin-left:14px; height:26px; background:rgba(0,0,0,.04); border-radius:5px; overflow:hidden; }
+  .fn-step .bar-stack { height:100%; display:flex; align-items:stretch; border-radius:5px; overflow:hidden; position:relative; transition:width .7s cubic-bezier(.25,.46,.45,.94); }
+  .fn-step .bar-seg { height:100%; min-width:0; transition:width .5s ease; }
+  .fn-step .bar-seg:first-child { border-radius:5px 0 0 5px; }
+  .fn-step .bar-seg:last-of-type { border-radius:0 5px 5px 0; }
+  .fn-step .bar-seg:only-of-type { border-radius:5px; }
+  .fn-step .bar-total { position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:10px; font-weight:700; color:white; text-shadow:0 1px 2px rgba(0,0,0,.4); pointer-events:none; }
+  .fn-step .dt { width:140px; text-align:right; margin-left:12px; flex-shrink:0; }
+  .fn-step .dt .c { font-size:14px; font-weight:700; }
+  .fn-step .dt .r { font-size:9px; color:var(--text3); }
+  .fn-step .ch-line { font-size:9px; color:var(--text2); margin-top:2px; line-height:1.4; font-variant-numeric:tabular-nums; }
+  .fn-step .ch-line span { margin-right:1px; }
+  .fn-legend { display:flex; gap:14px; margin-bottom:10px; padding:6px 12px; background:rgba(0,0,0,.02); border-radius:6px; font-size:10px; color:var(--text2); }
+  .fn-legend .lg-item { display:flex; align-items:center; gap:4px; }
+  .fn-legend .lg-dot { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+  .fn-arr { display:flex; align-items:center; margin-left:38px; padding:1px 0; gap:5px; }
+  .fn-arr .line { width:1px; height:10px; background:var(--border); }
+  .fn-arr .cv { font-size:9px; font-weight:700; padding:1px 6px; border-radius:6px; }
+  .fn-arr .cv.g { background:var(--green-d); color:var(--green); }
+  .fn-arr .cv.w { background:var(--orange-d); color:var(--orange); }
+  .fn-arr .cv.b { background:var(--red-d); color:var(--red); }
+  .fn-note { font-size:10px; color:var(--text3); margin-top:8px; padding:6px 10px; border-left:2px solid var(--accent); background:rgba(73,163,166,.05); border-radius:0 6px 6px 0; }
+  .info-tip { position:relative; display:inline-flex; align-items:center; margin-left:6px; cursor:help; }
+  .info-tip .info-icon { width:16px;height:16px;border-radius:50%;background:var(--orange-d);color:var(--orange);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1; }
+  .info-tip .info-icon.ok { background:var(--green-d); color:var(--green); }
+  .info-tip .tip-box { display:none; position:absolute; left:24px; top:50%; transform:translateY(-50%); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 14px; font-size:11px; color:var(--text2); line-height:1.6; width:380px; box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:100; white-space:normal; }
+  .info-tip:hover .tip-box { display:block; }
+
+  /* TABLE */
+  .dtable { width:100%; border-collapse:separate; border-spacing:0; font-size:11px; }
+  .dtable th { text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--text3); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:.5px; }
+  .dtable td { padding:10px 12px; border-bottom:1px solid var(--border); }
+  .dtable tr:hover td { background:rgba(73,163,166,.06); }
+  .st { display:inline-block; padding:2px 7px; border-radius:6px; font-size:9px; font-weight:700; }
+  .st-a { background:var(--green-d); color:var(--green); }
+  .st-p { background:var(--orange-d); color:var(--orange); }
+
+  /* FOOTER */
+  .footer { padding:24px 32px; border-top:1px solid var(--border); margin-top:32px; font-size:11px; color:var(--text3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  @media(max-width:900px) { .crow{grid-template-columns:1fr} .kpi-grid{grid-template-columns:repeat(2,1fr)} .header,.page,.tabs,.date-bar{padding-left:16px;padding-right:16px} .fn-step .info{flex:0 0 100px} .fn-step .dt{width:100px} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Growth Dashboard</h1>
+    <div class="sub">Full-Funnel Analytics: Ads &rarr; Acquisition &rarr; Activation &rarr; Retention</div>
+  </div>
+  <div class="hdr-right">
+    <div class="badge"><span class="d" style="background:var(--green)"></span> <span id="upTime">-</span></div>
+    <div class="badge"><span class="d" style="background:var(--orange)"></span> GA4 API</div>
+    <div class="badge"><span class="d" style="background:var(--blue)"></span> Google Ads API</div>
+    <div class="badge" style="color:var(--text3);font-size:9px">Auto-refresh daily via launchd</div>
+  </div>
+</div>
+
+<!-- DATE PICKER -->
+<div class="date-bar">
+  <button class="dp-btn" data-days="1">Today</button>
+  <button class="dp-btn" data-days="7">7 Days</button>
+  <button class="dp-btn" data-days="14">14 Days</button>
+  <button class="dp-btn active" data-days="30">30 Days</button>
+  <button class="dp-btn" data-days="0">All</button>
+  <div class="dp-custom">
+    <input type="date" id="dp-start"> &ndash; <input type="date" id="dp-end">
+    <button class="dp-apply" id="dp-apply-btn">Apply</button>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" data-page="overview">Overview</div>
+  <div class="tab" data-page="creator">Creator Funnel</div>
+  <div class="tab" data-page="consumer">Consumer Funnel</div>
+  <div class="tab" data-page="ads">Ad Campaigns</div>
+  <div class="tab" data-page="sources">Data Sources</div>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div class="page active" id="page-overview">
+  <div class="sec-hdr"><h2>Key Metrics</h2><span class="dtag" id="dateTag">Last 30 days</span></div>
+  <div class="kpi-grid" id="kpi-cards"></div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Daily Active Users & New Users<span id="ov-tip" class="info-tip" style="display:none"><span class="info-icon">!</span><span class="tip-box" id="ov-tip-text"></span></span></h3><span class="tag">GA4 Data API</span></div><canvas id="c-overview" height="100"></canvas></div>
+  </div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Key Events: Paid vs Organic vs Direct vs Referral (UV)</h3><span class="tag">GA4 · sessionSourceMedium</span></div><canvas id="c-channel" height="140"></canvas><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px;font-size:10px;color:var(--text3);line-height:1.5"><div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#dc2626;margin-right:4px;vertical-align:middle"></span><b style="color:var(--text2)">Paid</b><br>Paid ads (e.g. Google Ads)<br>e.g. google / cpc</div><div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#0d9668;margin-right:4px;vertical-align:middle"></span><b style="color:var(--text2)">Organic</b><br>Organic search results<br>e.g. google / organic</div><div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#2563eb;margin-right:4px;vertical-align:middle"></span><b style="color:var(--text2)">Direct</b><br>Typed URL / bookmark / no referrer<br>e.g. (direct) / (none)</div><div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#d97706;margin-right:4px;vertical-align:middle"></span><b style="color:var(--text2)">Referral</b><br>Links from other sites<br>e.g. t.co, github.com</div></div></div>
+  </div>
+  <div class="crow">
+    <div class="cbox"><div class="ct"><h3>Traffic Sources (Sessions)</h3><span class="tag">GA4</span></div><canvas id="c-traffic" height="160"></canvas></div>
+    <div class="cbox"><div class="ct"><h3>Top Countries</h3><span class="tag">GA4</span></div><canvas id="c-geo" height="160"></canvas></div>
+  </div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Daily Ad Spend & Clicks</h3><span class="tag">Google Ads API</span></div><canvas id="c-ov-ads" height="100"></canvas></div>
+  </div>
+</div>
+
+<!-- ===== CREATOR FUNNEL ===== -->
+<div class="page" id="page-creator">
+  <div class="sec-hdr"><h2>Creator Funnel &mdash; Ads &rarr; Content Publish</h2><span class="dtag">GA4 Events + Google Ads</span></div>
+  <div class="cbox" style="margin-bottom:14px">
+    <div class="ct"><h3>Full Pipeline Conversion</h3><span class="tag" id="cr-conv"></span></div>
+    <div id="cr-funnel"></div>
+  </div>
+  <div class="crow">
+    <div class="cbox"><div class="ct"><h3>Clone Funnel</h3><span class="tag">GA4</span></div><div id="clone-funnel"></div></div>
+    <div class="cbox"><div class="ct"><h3>Subscription Funnel</h3><span class="tag">GA4</span></div><div id="sub-funnel"></div></div>
+  </div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Creator Funnel Daily Trend</h3><span class="tag">GA4 Data API</span></div><canvas id="c-cr-trend" height="100"></canvas></div>
+  </div>
+</div>
+
+<!-- ===== CONSUMER FUNNEL ===== -->
+<div class="page" id="page-consumer">
+  <div class="sec-hdr"><h2>Consumer Funnel &mdash; Discovery &rarr; Engagement</h2><span class="dtag">GA4 Events</span></div>
+  <div class="cbox" style="margin-bottom:14px">
+    <div class="ct"><h3>User Journey</h3><span class="tag" id="co-conv"></span></div>
+    <div id="co-funnel"></div>
+    <div class="fn-note">feature_view can exceed explore_view because users may land on a detail page directly via SEO or shared links, skipping Explore</div>
+  </div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Consumer Funnel Daily Trend</h3><span class="tag">GA4 Data API</span></div><canvas id="c-co-trend" height="100"></canvas></div>
+  </div>
+</div>
+
+<!-- ===== ADS ===== -->
+<div class="page" id="page-ads">
+  <div class="sec-hdr"><h2>Google Ads Performance</h2><span class="dtag">Google Ads API / GAQL</span></div>
+  <div class="kpi-grid" id="ads-kpis"></div>
+  <div class="crow">
+    <div class="cbox full"><div class="ct"><h3>Daily Spend & Clicks</h3><span class="tag">Google Ads API</span></div><canvas id="c-ads" height="100"></canvas></div>
+  </div>
+  <div class="cbox">
+    <div class="ct"><h3>Campaign Performance</h3><span class="tag">Google Ads API / GAQL</span></div>
+    <table class="dtable" id="camp-tbl"><thead><tr><th>Campaign</th><th>Status</th><th>Spend</th><th>Clicks</th><th>Imp.</th><th>CTR</th><th>CPC</th><th>Conv.</th></tr></thead><tbody></tbody></table>
+  </div>
+</div>
+
+<!-- ===== DATA SOURCES ===== -->
+<div class="page" id="page-sources">
+  <div class="sec-hdr"><h2>Data Sources & Methodology</h2></div>
+  <div class="crow">
+    <div class="cbox">
+      <div class="ct"><h3>Google Analytics 4</h3><span class="tag">GA4</span></div>
+      <div style="font-size:11px;color:var(--text2);line-height:2">
+        <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">API</span><br>GA4 Data API (v1beta)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Auth</span><br>Service Account (JSON Key)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Property</span><br><span id="s-ga4-pid" style="font-family:monospace">-</span></div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Data</span><br>Daily events, users, sessions, traffic sources, geo, funnel events</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Events</span><br><span id="s-events" style="font-family:monospace;font-size:10px;color:var(--text3)"></span></div>
+      </div>
+    </div>
+    <div class="cbox">
+      <div class="ct"><h3>Google Ads</h3><span class="tag">Ads</span></div>
+      <div style="font-size:11px;color:var(--text2);line-height:2">
+        <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">API</span><br>Google Ads API (GAQL queries)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Auth</span><br>OAuth2 (Developer Token + Refresh Token)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Account</span><br><span id="s-ads-cid" style="font-family:monospace">-</span> (MCC: <span id="s-ads-mcc" style="font-family:monospace">-</span>)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Data</span><br>Campaign daily metrics (impressions, clicks, cost, CTR, CPC, conversions)</div>
+        <div style="margin-top:8px"><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Campaigns</span><br><span id="s-ads-cnt">-</span> active</div>
+      </div>
+    </div>
+  </div>
+  <div class="cbox" style="margin-top:0">
+    <div class="ct"><h3>Timezone</h3></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;font-size:11px;color:var(--text2);line-height:1.8">
+      <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">GA4</span><br>REPORT_TZ_OFFSET_HOURS (default UTC-7)<br><span style="color:var(--text3);font-size:10px">Set to match your GA4 property timezone</span></div>
+      <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Google Ads</span><br>REPORT_TZ_OFFSET_HOURS (default UTC-7)<br><span style="color:var(--text3);font-size:10px">Set to match your Ads account timezone</span></div>
+      <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">generated_at</span><br>Local machine time<br><span style="color:var(--text3);font-size:10px">datetime.now()</span></div>
+    </div>
+    <div class="fn-note" style="margin-top:10px">Keep both sources on the same timezone offset so that a given day&#39;s GA4 events and Ads spend cover the same real-world period</div>
+  </div>
+  <div class="cbox" style="margin-top:10px">
+    <div class="ct"><h3>Data Refresh Pipeline</h3></div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.9">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:12px">
+        <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Trigger</span><br>Daily 09:00 / 14:00 (local) via macOS launchd</div>
+        <div><span style="color:var(--text3);font-size:9px;text-transform:uppercase;font-weight:700">Scope</span><br>Regenerates dashboard/data.json only; index.html is static</div>
+      </div>
+      <div style="font-family:monospace;font-size:10px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;line-height:2.2;color:var(--text2)">
+        <div>09:00 launchd trigger</div>
+        <div>&nbsp;&nbsp;├─ Lock file check (PID-based, stale detection)</div>
+        <div>&nbsp;&nbsp;├─ 300s timeout watchdog</div>
+        <div>&nbsp;&nbsp;├─ Backup data.json (keep last 7)</div>
+        <div>&nbsp;&nbsp;│</div>
+        <div>&nbsp;&nbsp;├─ <span style="color:var(--accent)">[1/4]</span> fetch_ga4.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&larr; GA4 Data API, 30 days, funnel events</div>
+        <div>&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fail &rarr; retry 3x (10s/20s/40s) &rarr; exit</div>
+        <div>&nbsp;&nbsp;│</div>
+        <div>&nbsp;&nbsp;├─ <span style="color:var(--accent)">[2/4]</span> fetch_google_ads.py &nbsp;&larr; Ads API, 30 days, campaigns</div>
+        <div>&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fail &rarr; retry 3x &rarr; soft-fail (use cache)</div>
+        <div>&nbsp;&nbsp;│</div>
+        <div>&nbsp;&nbsp;├─ <span style="color:var(--accent)">[3/4]</span> Merge &rarr; dashboard/data.json</div>
+        <div>&nbsp;&nbsp;│</div>
+        <div>&nbsp;&nbsp;└─ <span style="color:var(--accent)">[4/4]</span> validate_data.py</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fail &rarr; restore backup + macOS notification</div>
+      </div>
+    </div>
+  </div>
+  <div class="crow" style="margin-top:10px">
+    <div class="cbox full">
+      <div class="ct"><h3>Funnel Definitions</h3></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:11px;color:var(--text2);line-height:2">
+        <div>
+          <div style="color:var(--accent2);font-weight:700">Creator Funnel</div>
+          <div style="font-family:monospace;font-size:10px;color:var(--text3)">ad_click &rarr; homepage_view &rarr; login_click &rarr; login_success &rarr; docs_click &rarr; install_copy &rarr; settings_view &rarr; signup &rarr; feature_use &rarr; content_publish &rarr; ask_send</div>
+          <div style="color:var(--accent2);font-weight:700;margin-top:8px">Clone Funnel</div>
+          <div style="font-family:monospace;font-size:10px;color:var(--text3)">clone_click &rarr; clone_copy &rarr; clone_publish</div>
+        </div>
+        <div>
+          <div style="color:var(--blue);font-weight:700">Consumer Funnel</div>
+          <div style="font-family:monospace;font-size:10px;color:var(--text3)">ad_click &rarr; homepage_view &rarr; login_click &rarr; featured_click &rarr; explore_view &rarr; explore_item_click &rarr; feature_view &rarr; item_favorite &rarr; item_share</div>
+          <div style="color:var(--green);font-weight:700;margin-top:8px">Subscription Funnel</div>
+          <div style="font-family:monospace;font-size:10px;color:var(--text3)">upgrade_click &rarr; upgrade_plan_click &rarr; upgrade_success</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Growth Dashboard &mdash; GA4 Data API + Google Ads API</span>
+  <span id="ftr-time"></span>
+</div>
+
+<script>
+// ================================================================
+// GLOBALS
+// ================================================================
+let RAW = null;          // full loaded data
+let CHARTS = {};         // chart instances for destroy/re-create
+const COLORS = ['#49A3A6','#2563eb','#0d9668','#d97706','#dc2626','#db2777','#3a8c8f','#0891b2','#ea580c','#7c3aed'];
+const GPAIRS = [['#49A3A6','#3a8c8f'],['#2563eb','#3b82f6'],['#0d9668','#059669'],['#d97706','#b45309'],['#dc2626','#ef4444'],['#db2777','#ec4899']];
+
+Chart.defaults.color = '#8891a5';
+Chart.defaults.borderColor = '#e2e6ed';
+Chart.defaults.font.family = "'Inter',-apple-system,system-ui,sans-serif";
+Chart.defaults.font.size = 11;
+
+// ================================================================
+// TABS
+// ================================================================
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('page-'+t.dataset.page).classList.add('active');
+}));
+
+// ================================================================
+// DATE FILTER
+// ================================================================
+let filterStart = null, filterEnd = null;
+
+document.querySelectorAll('.dp-btn[data-days]').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.dp-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const days = parseInt(btn.dataset.days);
+  const end = new Date(); const start = new Date();
+  if (days === 0) { filterStart = null; filterEnd = null;
+    const om=RAW?.ga4?.overall_metrics||[]; if(om.length){const d=om.map(x=>x.date).sort();document.getElementById('dp-start').value=d[0];document.getElementById('dp-end').value=d[d.length-1];}
+  }
+  else if (days >= (RAW?.date_range_days||30)) {
+    filterStart = null; filterEnd = null;
+    start.setDate(end.getDate() - days + 1);
+    document.getElementById('dp-start').value = fmt(start);
+    document.getElementById('dp-end').value = fmt(end);
+  } else {
+    start.setDate(end.getDate() - days + 1);
+    filterStart = fmt(start); filterEnd = fmt(end);
+    document.getElementById('dp-start').value = filterStart;
+    document.getElementById('dp-end').value = filterEnd;
+  }
+  if (RAW) renderAll();
+}));
+
+document.getElementById('dp-apply-btn').addEventListener('click', () => {
+  const s = document.getElementById('dp-start').value;
+  const e = document.getElementById('dp-end').value;
+  if (s && e) { filterStart = s; filterEnd = e; document.querySelectorAll('.dp-btn').forEach(b => b.classList.remove('active')); if(RAW) renderAll(); }
+});
+
+function fmt(d) { return d.toISOString().slice(0,10); }
+function inRange(date) {
+  if (!filterStart || !filterEnd) return true;
+  return date >= filterStart && date <= filterEnd;
+}
+
+// ================================================================
+// LOAD DATA
+// ================================================================
+// Loads data.json (generated by refresh.sh / run_all.py). If it is missing,
+// falls back to data.sample.json, which ships with synthetic demo data.
+async function loadData() {
+  const urls = ['data.json','data.sample.json'];
+  for (const u of urls) { try { const r=await fetch(u); if(r.ok){const t=await r.text();return JSON.parse(t);} } catch(e){} }
+  return null;
+}
+
+// ================================================================
+// HELPERS
+// ================================================================
+// Event name -> human-readable step label. Keep in sync with scripts/fetch_ga4.py.
+const NAME_MAP = {
+  // Creator Funnel
+  'ad_click':'Ad / UTM click','homepage_view':'Homepage view','login_click':'Click Log in',
+  'login_success':'Logged in','docs_click':'Open docs','install_copy':'Copy install command',
+  'settings_view':'Open settings','signup':'Signup complete',
+  'feature_use':'Feature used','content_publish':'Content published','ask_send':'Ask sent',
+  // Consumer Funnel
+  'featured_click':'Featured click','explore_view':'Explore view',
+  'explore_item_click':'Explore card click','feature_view':'Detail view',
+  'item_favorite':'Favorite','item_share':'Share',
+  // Clone
+  'clone_click':'Click Clone','clone_copy':'Clone copy','clone_publish':'Clone published',
+  // Subscription
+  'upgrade_click':'Click Upgrade','upgrade_plan_click':'Select plan','upgrade_success':'Upgrade success',
+};
+function fmtEv(n) { return NAME_MAP[n] || n; }
+
+function autoScale(datasets) {
+  let v=[]; datasets.forEach(d=>{if(d.data)v.push(...d.data.filter(x=>x!=null))});
+  if(!v.length) return {};
+  const mn=Math.min(...v), mx=Math.max(...v), pad=Math.max((mx-mn)*.15,1);
+  return { suggestedMin:Math.max(0,Math.floor(mn-pad)), suggestedMax:Math.ceil(mx+pad) };
+}
+
+function mkChart(id, type, data, opts) {
+  if(CHARTS[id]) { CHARTS[id].destroy(); }
+  const ctx=document.getElementById(id); if(!ctx)return;
+  CHARTS[id]=new Chart(ctx,{type,data,options:opts});
+}
+
+// Build the full date sequence (zero-filled) so days with no data are not skipped
+function fullDateRange(start, end) {
+  const dates=[]; const d=new Date(start);
+  const e=new Date(end);
+  while(d<=e){dates.push(d.toISOString().slice(0,10));d.setDate(d.getDate()+1);}
+  return dates;
+}
+
+function lineDS(label,data,color,fill=true) {
+  return {label,data,borderColor:color,backgroundColor:color+'18',borderWidth:2.5,pointRadius:2,pointHoverRadius:5,tension:.35,fill};
+}
+
+function dualOpts(dsL,dsR) {
+  const sL=dsL?autoScale([dsL]):{}, sR=dsR?autoScale([dsR]):{};
+  return {responsive:true,interaction:{intersect:false,mode:'index'},plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,usePointStyle:true,pointStyle:'circle'}}},scales:{x:{grid:{display:false}},y:{grid:{color:'#e8eaef'},position:'left',ticks:{precision:0},...sL},y1:{grid:{display:false},position:'right',ticks:{precision:0},...sR}}};
+}
+
+function trendOpts(datasets) {
+  const s=autoScale(datasets);
+  return {responsive:true,interaction:{intersect:false,mode:'index'},plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,usePointStyle:true,pointStyle:'circle'}}},scales:{x:{grid:{display:false}},y:{grid:{color:'#e8eaef'},ticks:{precision:0},...s}}};
+}
+
+// Build funnel: with no date filter and period_uv available, use true deduplicated UV; otherwise sum daily rows
+function buildFunnel(dailyEvents, eventList, periodUV, eventBySource) {
+  const useFullPeriod = (!filterStart || !filterEnd) && periodUV && periodUV.length;
+  const fEBS = eventBySource ? eventBySource.filter(e => inRange(e.date)) : [];
+  const steps = eventList.map((ev,i) => {
+    let users, evtCnt;
+    if (useFullPeriod) {
+      const pRec = periodUV.find(r => r.event_name === ev);
+      users = pRec ? pRec.users : 0;
+      evtCnt = pRec ? pRec.event_count : 0;
+    } else {
+      const filtered = dailyEvents.filter(e => inRange(e.date) && e.event_name === ev);
+      users = filtered.reduce((s,e) => s + e.users, 0);
+      evtCnt = filtered.reduce((s,e) => s + e.event_count, 0);
+    }
+    // Channel breakdown
+    const chRaw = {paid:0, organic:0, direct:0, referral:0};
+    fEBS.filter(r => r.event_name === ev).forEach(r => { if(r.channel in chRaw) chRaw[r.channel] += r.users; });
+    const rawT = Object.values(chRaw).reduce((s,v) => s+v, 0);
+    const channels = {};
+    if (rawT > 0) {
+      ['paid','organic','direct','referral'].forEach(ch => { channels[ch] = Math.round(users * chRaw[ch] / rawT); });
+    } else {
+      channels.direct = users; channels.paid = 0; channels.organic = 0; channels.referral = 0;
+    }
+    return { step:i+1, event_name:ev, event_count:evtCnt, users, channels };
+  });
+  steps.forEach((s,i) => {
+    s.step_conversion_rate = i===0 ? 100 : (steps[i-1].users>0 ? Math.round(s.users/steps[i-1].users*1000)/10 : 0);
+    s.overall_conversion_rate = steps[0].users>0 ? Math.round(s.users/steps[0].users*1000)/10 : 0;
+  });
+  return { steps, metric: useFullPeriod ? 'UV (period, deduplicated)' : 'UV (daily sum)' };
+}
+
+const CH_COLORS={paid:'#dc2626',organic:'#0d9668',direct:'#2563eb',referral:'#d97706'};
+const CH_LABELS={paid:'Paid',organic:'Organic',direct:'Direct',referral:'Referral'};
+const CH_ORDER=['paid','organic','direct','referral'];
+
+function renderFunnel(elId, funnel) {
+  const el=document.getElementById(elId);
+  if(!funnel?.steps?.length){el.innerHTML='<div style="text-align:center;color:var(--text3);padding:20px">No data</div>';return;}
+  const mx=Math.max(...funnel.steps.map(s=>s.users),1);
+  // Legend
+  let h='<div class="fn-legend">';
+  CH_ORDER.forEach(ch=>{h+=`<div class="lg-item"><div class="lg-dot" style="background:${CH_COLORS[ch]}"></div>${CH_LABELS[ch]}</div>`;});
+  h+='</div>';
+  funnel.steps.forEach((s,i)=>{
+    const pct=Math.max(4,(s.users/mx)*100);
+    const [c1,c2]=GPAIRS[i%GPAIRS.length];
+    if(i>0){
+      const cls=s.step_conversion_rate>=50?'g':s.step_conversion_rate>=20?'w':'b';
+      h+=`<div class="fn-arr"><div class="line"></div><span class="cv ${cls}">${s.step_conversion_rate}%</span></div>`;
+    }
+    const isView=s.event_name.endsWith('_view');
+    const uLabel=isView?'UV':'Users';
+    // Stacked bar segments
+    let segs='';
+    if(s.channels && s.users>0){
+      CH_ORDER.forEach(ch=>{
+        const v=s.channels[ch]||0;
+        if(v>0){const sp=(v/s.users)*100; segs+=`<div class="bar-seg" style="width:${sp}%;background:${CH_COLORS[ch]}" title="${CH_LABELS[ch]}: ${v}"></div>`;}
+      });
+    }
+    // Channel breakdown line
+    let chLine='';
+    if(s.channels && s.users>0){
+      const parts=[];
+      CH_ORDER.forEach(ch=>{
+        const v=s.channels[ch]||0;
+        if(v>0){const p=Math.round(v/s.users*100); parts.push(`<span style="color:${CH_COLORS[ch]}">●</span>${v}<span style="opacity:.6">(${p}%)</span>`);}
+      });
+      if(parts.length) chLine=`<div class="ch-line">${parts.join(' ')}</div>`;
+    }
+    h+=`<div class="fn-step"><div class="num" style="background:linear-gradient(135deg,${c1},${c2})">${s.step}</div><div class="info"><div class="n">${fmtEv(s.event_name)}</div><div class="e">${s.event_name}</div></div><div class="bar-w"><div class="bar-stack" style="width:${pct}%">${segs}<span class="bar-total">${s.users}</span></div></div><div class="dt"><div class="c">${s.users.toLocaleString()} <span style="font-size:9px;color:var(--text3);font-weight:400">${uLabel}</span></div><div class="r">${s.event_count.toLocaleString()} events &middot; ${s.overall_conversion_rate}%</div>${chLine}</div></div>`;
+  });
+  el.innerHTML=h;
+}
+
+function buildTrend(dailyEvents, evts) {
+  const dates=[...new Set(dailyEvents.filter(e=>inRange(e.date)&&evts.includes(e.event_name)).map(e=>e.date))].sort();
+  const ds=evts.map((ev,i)=>{
+    const m={};dailyEvents.filter(e=>e.event_name===ev&&inRange(e.date)).forEach(e=>{m[e.date]=e.users});
+    return lineDS(fmtEv(ev),dates.map(d=>m[d]||0),COLORS[i%COLORS.length],false);
+  });
+  return {dates,datasets:ds};
+}
+
+// ================================================================
+// RENDER ALL (called on load and date filter change)
+// ================================================================
+function renderAll() {
+  const data=RAW, ga4=data.ga4, ads=data.ads;
+  const de=ga4?.daily_events||[], om=(ga4?.overall_metrics||[]).filter(d=>inRange(d.date));
+  const ts=(ga4?.traffic_sources||[]).filter(d=>inRange(d.date));
+  const adsDt=(ads?.daily_totals||[]).filter(d=>inRange(d.date));
+  const adsCd=(ads?.campaign_daily||[]).filter(d=>inRange(d.date));
+  const puv=ga4?.period_uv||[];  // deduplicated period UV
+  const ebs=ga4?.event_by_source||[];  // event x channel breakdown
+
+  // Header
+  document.getElementById('upTime').textContent=data.generated_at||'-';
+  document.getElementById('ftr-time').textContent='Updated: '+(data.generated_at||'-');
+  const label=filterStart&&filterEnd?`${filterStart} ~ ${filterEnd}`:`Last ${data.date_range_days||30} days`;
+  document.getElementById('dateTag').textContent=label;
+
+  // Set custom date inputs (only when empty; do not override values set by the preset buttons)
+  if(om.length){
+    const dpS=document.getElementById('dp-start'), dpE=document.getElementById('dp-end');
+    if(!dpS.value||!dpE.value){
+      const allDates=om.map(d=>d.date).sort();
+      dpS.value=allDates[0]; dpE.value=allDates[allDates.length-1];
+    }
+  }
+
+  // ---- OVERVIEW KPIs ----
+  const totNew=om.reduce((s,d)=>s+d.new_users,0);
+  const avgDAU=om.length?Math.round(om.reduce((s,d)=>s+d.active_users,0)/om.length):0;
+  const totSess=om.reduce((s,d)=>s+d.sessions,0);
+  const fde=de.filter(e=>inRange(e.date));
+  const useP=(!filterStart||!filterEnd)&&puv.length;
+  const getUV=(ev)=>useP?(puv.find(r=>r.event_name===ev)||{}).users||0:fde.filter(e=>e.event_name===ev).reduce((s,e)=>s+e.users,0);
+  const totLogin=getUV('login_success');
+  const totInstall=getUV('install_copy');
+  const totPB=getUV('content_publish');
+  const adsSpend=adsDt.reduce((s,d)=>s+d.cost,0);
+  const adsClicks=adsDt.reduce((s,d)=>s+d.clicks,0);
+  const adsImp=adsDt.reduce((s,d)=>s+d.impressions,0);
+  const adsCpc=adsClicks>0?Math.round(adsSpend/adsClicks*100)/100:0;
+  const adsCtr=adsImp>0?Math.round(adsClicks/adsImp*10000)/100:0;
+
+  const totHomepage=getUV('homepage_view');
+  const totSignup=getUV('signup');
+
+  const getPV=(ev)=>useP?(puv.find(r=>r.event_name===ev)||{}).event_count||0:fde.filter(e=>e.event_name===ev).reduce((s,e)=>s+e.event_count,0);
+
+  // Paid users per event (proportional to period UV)
+  const ebsF_all=ebs.filter(e=>inRange(e.date));
+  const getPaid=(ev)=>{
+    const chRaw={paid:0,total:0};
+    ebsF_all.filter(r=>r.event_name===ev).forEach(r=>{chRaw.total+=r.users; if(r.channel==='paid') chRaw.paid+=r.users;});
+    const uv=getUV(ev);
+    return chRaw.total>0?Math.round(uv*chRaw.paid/chRaw.total):0;
+  };
+  const paidHome=getPaid('homepage_view'), paidLogin=getPaid('login_success'), paidInstall=getPaid('install_copy'), paidSignup=getPaid('signup');
+  const paidTag=(n,total)=>n>0?`<span style="color:#dc2626;font-weight:600">Paid ${n}</span><span style="opacity:.5">(${Math.round(n/total*100)}%)</span>`:'';
+
+  document.getElementById('kpi-cards').innerHTML=[
+    {l:'Google Ads',v:`$${adsSpend.toLocaleString(undefined,{minimumFractionDigits:2})}`,c:'var(--orange)',s:`${adsClicks} clicks / CPC $${adsCpc}`,src:'Ads API',u:''},
+    {l:'homepage_view · Homepage view',v:totHomepage.toLocaleString(),c:'var(--accent2)',s:`${getPV('homepage_view').toLocaleString()} events · DAU ${avgDAU}`,s2:paidTag(paidHome,totHomepage),src:'GA4',u:'UV'},
+    {l:'login_success · Logged in',v:totLogin.toLocaleString(),c:'var(--green)',s:`${getPV('login_success').toLocaleString()} events · ${totNew>0?Math.round(totLogin/totNew*100):0}% of new`,s2:paidTag(paidLogin,totLogin),src:'GA4',u:'Users'},
+    {l:'install_copy · Copy install command',v:totInstall.toLocaleString(),c:'var(--teal)',s:`${getPV('install_copy').toLocaleString()} events · ${totLogin>0?Math.round(totInstall/totLogin*100):0}% of login`,s2:paidTag(paidInstall,totInstall),src:'GA4',u:'Users'},
+    {l:'signup · Signup complete',v:totSignup.toLocaleString(),c:'var(--blue)',s:`${getPV('signup').toLocaleString()} events · ${totInstall>0?Math.round(totSignup/totInstall*100):0}% of install`,s2:paidTag(paidSignup,totSignup),src:'GA4',u:'Users'},
+    {l:'content_publish · Content published',v:totPB.toLocaleString(),c:'var(--pink)',s:'Core conversion goal',src:'GA4',u:'Users'},
+    {l:'New Users',v:totNew.toLocaleString(),c:'var(--green)',s:`Sessions ${totSess.toLocaleString()}`,src:'GA4',u:''},
+    {l:'Impressions',v:adsImp.toLocaleString(),c:'var(--text)',s:`CPC $${adsCpc} / CTR ${adsCtr}%`,src:'Ads API',u:''},
+  ].map(c=>`<div class="kpi"><div class="src">${c.src}</div><div class="l">${c.l}</div><div class="v" style="color:${c.c||'var(--text)'}">${c.v}${c.u?` <span style="font-size:11px;color:var(--text3);font-weight:400">${c.u}</span>`:''}</div><div class="s">${c.s||''}</div>${c.s2?`<div class="s" style="margin-top:2px;font-size:10px">${c.s2}</div>`:''}</div>`).join('');
+
+  // Overview daily chart (full date range, missing days shown as 0)
+  if(om.length||filterStart){
+    const omMap={};om.forEach(d=>{omMap[d.date]=d});
+    const rangeStart=filterStart||om[0]?.date||(new Date(Date.now()-29*86400000)).toISOString().slice(0,10);
+    const rangeEnd=filterEnd||(new Date()).toISOString().slice(0,10);
+    const allDates=fullDateRange(rangeStart,rangeEnd);
+    const dsL=lineDS('Active Users',allDates.map(d=>(omMap[d]||{}).active_users||0),'#49A3A6');
+    const dsR=lineDS('New Users',allDates.map(d=>(omMap[d]||{}).new_users||0),'#0d9668');
+    // Paid Users per day (homepage_view paid channel)
+    const paidByDate={};
+    ebs.filter(r=>r.event_name==='homepage_view'&&r.channel==='paid').forEach(r=>{paidByDate[r.date]=(paidByDate[r.date]||0)+r.users;});
+    const dsP={...lineDS('Paid Users',allDates.map(d=>paidByDate[d]||0),'#dc2626'),borderDash:[4,3],borderWidth:2,pointRadius:2,fill:false,yAxisID:'y'};
+    mkChart('c-overview','line',{labels:allDates.map(d=>d.slice(5)),datasets:[{...dsL,yAxisID:'y'},{...dsR,yAxisID:'y1'},dsP]},dualOpts(dsL,dsR));
+    // Recent-data-lag hover tooltip
+    const tipWrap=document.getElementById('ov-tip');
+    const tipText=document.getElementById('ov-tip-text');
+    const delayDates=[];
+    const recentN=Math.min(3,allDates.length);
+    for(let i=allDates.length-1;i>=allDates.length-recentN&&i>=0;i--){
+      const dd=allDates[i],pp=paidByDate[dd]||0,aa=adsDt.find(r=>r.date===dd);
+      if(aa && aa.clicks>10 && pp<aa.clicks*0.3) delayDates.push({date:dd,paid:pp,clicks:aa.clicks});
+    }
+    if(delayDates.length){
+      tipWrap.style.display='inline-flex';
+      const lines=delayDates.map(x=>`<b>${x.date.slice(5)}</b> Paid Users(${x.paid}) vs Ads Clicks(${x.clicks})`).join('<br>');
+      tipText.innerHTML=`${lines}<br><br>Reason: GA4 processing lags 24-48h; the next refresh will backfill these days.<br>Refresh schedule: daily via launchd`;
+    } else { tipWrap.style.display='none'; }
+  }
+
+  // Channel breakdown (Paid vs Organic vs Direct vs Referral)
+  const ebsF=ebs.filter(e=>inRange(e.date));
+  if(ebsF.length){
+    const keyEvts=['homepage_view','login_click','explore_view','feature_view','install_copy'];
+    const channels=['paid','organic','direct','referral'];
+    const chColors={'paid':'#dc2626','organic':'#0d9668','direct':'#2563eb','referral':'#d97706'};
+    const chData={};
+    channels.forEach(ch=>{chData[ch]=[]});
+    keyEvts.forEach(ev=>{
+      const evRecs=ebsF.filter(r=>r.event_name===ev);
+      channels.forEach(ch=>{
+        const u=evRecs.filter(r=>r.channel===ch).reduce((s,r)=>s+r.users,0);
+        chData[ch].push(u);
+      });
+    });
+    mkChart('c-channel','bar',{
+      labels:keyEvts.map(e=>fmtEv(e)),
+      datasets:channels.map(ch=>({label:ch,data:chData[ch],backgroundColor:chColors[ch],borderRadius:3,barThickness:16}))
+    },{responsive:true,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12}}},scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{grid:{color:'#e8eaef'},ticks:{precision:0}}}});
+  }
+
+  // Traffic
+  if(ts.length){
+    const m={};ts.forEach(t=>{m[t.source_medium]=(m[t.source_medium]||0)+t.sessions});
+    const sorted=Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    mkChart('c-traffic','bar',{labels:sorted.map(s=>s[0]),datasets:[{data:sorted.map(s=>s[1]),backgroundColor:'#2563eb',borderRadius:4,barThickness:18}]},{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#e8eaef'}},y:{grid:{display:false}}}});
+  }
+
+  // Geo
+  if(ga4?.geo){
+    const g=ga4.geo.slice(0,10);
+    mkChart('c-geo','bar',{labels:g.map(x=>x.country),datasets:[{data:g.map(x=>x.active_users),backgroundColor:'#49A3A6',borderRadius:4,barThickness:18}]},{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#e8eaef'}},y:{grid:{display:false}}}});
+  }
+
+  // Overview ads (full date range)
+  if(adsDt.length||filterStart){
+    const adsMap={};adsDt.forEach(d=>{adsMap[d.date]=d});
+    const rangeStart=filterStart||adsDt[0]?.date||(new Date(Date.now()-29*86400000)).toISOString().slice(0,10);
+    const rangeEnd=filterEnd||(new Date()).toISOString().slice(0,10);
+    const allDates=fullDateRange(rangeStart,rangeEnd);
+    const dS=lineDS('Spend ($)',allDates.map(d=>(adsMap[d]||{}).cost||0),'#d97706');
+    const dC=lineDS('Clicks',allDates.map(d=>(adsMap[d]||{}).clicks||0),'#2563eb');
+    mkChart('c-ov-ads','line',{labels:allDates.map(d=>d.slice(5)),datasets:[{...dS,yAxisID:'y'},{...dC,yAxisID:'y1'}]},dualOpts(dS,dC));
+  }
+
+  // ---- CREATOR FUNNEL (ad_click is omitted here until that event is instrumented) ----
+  const crEvts=['homepage_view','login_click','login_success','docs_click','install_copy','settings_view','signup','feature_use','content_publish','ask_send'];
+  const crF=buildFunnel(de,crEvts,puv,ebs); renderFunnel('cr-funnel',crF);
+  if(crF.steps.length>1){const s=crF.steps;document.getElementById('cr-conv').textContent=`${s[0].users} → ${s[s.length-1].users} (${s[s.length-1].overall_conversion_rate}%) [${crF.metric}]`;}
+
+  const rmF=buildFunnel(de,['clone_click','clone_copy','clone_publish'],puv,ebs); renderFunnel('clone-funnel',rmF);
+  const sbF=buildFunnel(de,['upgrade_click','upgrade_plan_click','upgrade_success'],puv,ebs); renderFunnel('sub-funnel',sbF);
+
+  if(de.length){
+    const t=buildTrend(de,['homepage_view','login_click','login_success','install_copy','signup','content_publish']);
+    mkChart('c-cr-trend','line',{labels:t.dates.map(d=>d.slice(5)),datasets:t.datasets},trendOpts(t.datasets));
+  }
+
+  // ---- CONSUMER FUNNEL (ad_click is omitted here until that event is instrumented) ----
+  const coEvts=['homepage_view','feature_view','login_click','featured_click','explore_view','explore_item_click','item_favorite','item_share'];
+  const coF=buildFunnel(de,coEvts,puv,ebs); renderFunnel('co-funnel',coF);
+  if(coF.steps.length>1){const s=coF.steps;document.getElementById('co-conv').textContent=`${s[0].users} → ${s[s.length-1].users} (${s[s.length-1].overall_conversion_rate}%) [${coF.metric}]`;}
+
+  if(de.length){
+    const t=buildTrend(de,['homepage_view','explore_view','feature_view','item_favorite','item_share']);
+    mkChart('c-co-trend','line',{labels:t.dates.map(d=>d.slice(5)),datasets:t.datasets},trendOpts(t.datasets));
+  }
+
+  // ---- ADS PAGE ----
+  if(adsDt.length||adsCd.length){
+    document.getElementById('ads-kpis').innerHTML=[
+      {l:'Total Spend',v:`$${adsSpend.toLocaleString(undefined,{minimumFractionDigits:2})}`,c:'var(--orange)',src:'Ads API'},
+      {l:'Total Clicks',v:adsClicks.toLocaleString(),c:'var(--blue)',src:'Ads API'},
+      {l:'Impressions',v:adsImp.toLocaleString(),src:'Ads API'},
+      {l:'CTR',v:`${adsCtr}%`,c:'var(--green)',src:'Ads API'},
+      {l:'Avg CPC',v:`$${adsCpc}`,src:'Ads API'},
+      {l:'Conversions',v:`${adsDt.reduce((s,d)=>s+(d.conversions||0),0)}`,src:'Ads API'},
+    ].map(c=>`<div class="kpi"><div class="src">${c.src||''}</div><div class="l">${c.l}</div><div class="v" style="color:${c.c||'var(--text)'}">${c.v}</div></div>`).join('');
+  }
+
+  if(adsDt.length){
+    const dates=adsDt.map(d=>d.date.slice(5));
+    const dS=lineDS('Spend ($)',adsDt.map(d=>d.cost),'#d97706');
+    const dC=lineDS('Clicks',adsDt.map(d=>d.clicks),'#2563eb');
+    mkChart('c-ads','line',{labels:dates,datasets:[{...dS,yAxisID:'y'},{...dC,yAxisID:'y1'}]},dualOpts(dS,dC));
+  }
+
+  // Campaign table (recalculated from filtered daily data)
+  const campMap={};
+  adsCd.forEach(r=>{
+    if(!campMap[r.campaign_name])campMap[r.campaign_name]={campaign_name:r.campaign_name,status:r.status,impressions:0,clicks:0,cost:0,conversions:0};
+    const c=campMap[r.campaign_name]; c.impressions+=r.impressions; c.clicks+=r.clicks; c.cost+=r.cost; c.conversions+=(r.conversions||0);
+  });
+  const camps=Object.values(campMap).sort((a,b)=>b.cost-a.cost);
+  camps.forEach(c=>{c.ctr=c.impressions>0?Math.round(c.clicks/c.impressions*10000)/100:0;c.avg_cpc=c.clicks>0?Math.round(c.cost/c.clicks*100)/100:0;c.cost=Math.round(c.cost*100)/100;});
+  const tbody=document.querySelector('#camp-tbl tbody');
+  tbody.innerHTML=camps.length?camps.map(c=>`<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.campaign_name}">${c.campaign_name}</td><td><span class="st st-${c.status==='ENABLED'?'a':'p'}">${c.status==='ENABLED'?'Active':'Paused'}</span></td><td style="font-weight:700">$${c.cost.toLocaleString()}</td><td>${c.clicks.toLocaleString()}</td><td>${c.impressions.toLocaleString()}</td><td>${c.ctr}%</td><td>$${c.avg_cpc}</td><td>${c.conversions}</td></tr>`).join(''):'<tr><td colspan="8" style="text-align:center;color:var(--text3)">No data</td></tr>';
+
+  // ---- DATA SOURCES PAGE ----
+  if(data.data_sources){
+    const ds=data.data_sources;
+    if(ds.ga4?.property_id) document.getElementById('s-ga4-pid').textContent=ds.ga4.property_id;
+    if(ds.google_ads?.customer_id) document.getElementById('s-ads-cid').textContent=ds.google_ads.customer_id;
+    if(ds.google_ads?.mcc_id) document.getElementById('s-ads-mcc').textContent=ds.google_ads.mcc_id;
+  }
+  document.getElementById('s-ads-cnt').textContent=camps.length;
+  const allEvts=[...new Set(de.map(e=>e.event_name))].sort();
+  document.getElementById('s-events').textContent=allEvts.join(', ');
+}
+
+// ================================================================
+// INIT
+// ================================================================
+(async()=>{
+  RAW=await loadData();
+  if(!RAW){document.getElementById('upTime').textContent='No data';return;}
+  // Initialise the date inputs to the last N days
+  const days=RAW.date_range_days||30;
+  const end=new Date(), start=new Date();
+  start.setDate(end.getDate()-days+1);
+  document.getElementById('dp-start').value=start.toISOString().slice(0,10);
+  document.getElementById('dp-end').value=end.toISOString().slice(0,10);
+  renderAll();
+})();
+</script>
+</body>
+</html>
