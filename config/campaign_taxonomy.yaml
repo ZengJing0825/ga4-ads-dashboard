@@ -1,0 +1,37 @@
+# Campaign taxonomy: derive scenario dimensions from campaign names.
+#
+# Both maps are lists of {pattern, value}. Patterns are Python regexes,
+# matched case-insensitively against the campaign name with re.search;
+# the first match wins. Names that match nothing get the default.
+#
+# The synthetic sample data uses the convention
+#   <network>-<landing>-<use_case>-<geo>      e.g. search-usecase-trading-us
+# but any naming scheme works as long as the regexes below describe it.
+
+landing_type:
+  - pattern: '\bpmax\b|performance[ _-]?max'
+    value: pmax
+  - pattern: '\busecase\b|use[_-]?case|\bscenario\b'
+    value: usecase_page
+  - pattern: '\bsingle\b|\bitem\b|\bdetail\b'
+    value: single_page
+  - pattern: '\bskill\b'
+    value: skill_page
+  - pattern: '\bhome\b|homepage|\bbrand\b'
+    value: homepage
+
+use_case:
+  - pattern: '\btrading\b|\btrade\b'
+    value: trading
+  - pattern: '\bquant\b|backtest'
+    value: quant
+  - pattern: '\bresearch\b|\banalysis\b'
+    value: research
+  - pattern: '\bbrand\b'
+    value: brand
+  - pattern: '\ball\b|\bgeneric\b'
+    value: all
+
+defaults:
+  landing_type: unknown
+  use_case: unknown

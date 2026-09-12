@@ -1,15 +1,22 @@
 """
 Google Ads data fetcher.
 Pulls daily campaign-level spend, clicks, impressions and conversions,
-then aggregates daily totals and per-campaign summaries.
+tags every campaign with landing_type / use_case parsed from its name
+(config/campaign_taxonomy.yaml), then aggregates daily totals, per-campaign
+summaries and per-dimension summaries.
 Writes everything to <OUTPUT_DIR>/google_ads_data.json.
 """
 
 import json
 import os
+import sys
 from datetime import datetime, timedelta, timezone
 
 from google.ads.googleads.client import GoogleAdsClient
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from taxonomy import Taxonomy, summarize_by  # noqa: E402
+from kpi import cpa, cvr  # noqa: E402
 
 
 def report_tz() -> timezone:
@@ -121,6 +128,8 @@ def fetch_campaign_summary(campaign_daily: list[dict]) -> list[dict]:
                 "campaign_name": name,
                 "campaign_id": row["campaign_id"],
                 "status": row["status"],
+                "landing_type": row.get("landing_type", "unknown"),
+                "use_case": row.get("use_case", "unknown"),
                 "impressions": 0,
                 "clicks": 0,
                 "cost": 0.0,
@@ -136,6 +145,9 @@ def fetch_campaign_summary(campaign_daily: list[dict]) -> list[dict]:
         camp["ctr"] = round(camp["clicks"] / camp["impressions"] * 100, 2) if camp["impressions"] > 0 else 0.0
         camp["avg_cpc"] = round(camp["cost"] / camp["clicks"], 2) if camp["clicks"] > 0 else 0.0
         camp["cost"] = round(camp["cost"], 2)
+        camp["conversions"] = round(camp["conversions"], 1)
+        camp["cvr"] = cvr(camp["conversions"], camp["clicks"])
+        camp["cpa"] = cpa(camp["cost"], camp["conversions"])
         summaries.append(camp)
     return summaries
 
@@ -159,8 +171,13 @@ def run(customer_id: str = None, days: int = 30, output_dir: str = "./data"):
     campaign_daily = fetch_campaign_daily(client, customer_id, days)
     print(f"  -> {len(campaign_daily)} rows")
 
+    print("[Google Ads] Tagging campaigns with landing_type / use_case...")
+    Taxonomy.load().tag_rows(campaign_daily)
+
     daily_totals = fetch_daily_totals(campaign_daily)
     campaign_summary = fetch_campaign_summary(campaign_daily)
+    by_landing_type = summarize_by(campaign_daily, "landing_type")
+    by_use_case = summarize_by(campaign_daily, "use_case")
 
     total_cost = sum(d["cost"] for d in daily_totals)
     total_clicks = sum(d["clicks"] for d in daily_totals)
@@ -174,6 +191,8 @@ def run(customer_id: str = None, days: int = 30, output_dir: str = "./data"):
         "total_conversions": round(total_conversions, 1),
         "avg_cpc": round(total_cost / total_clicks, 2) if total_clicks > 0 else 0.0,
         "avg_ctr": round(total_clicks / total_impressions * 100, 2) if total_impressions > 0 else 0.0,
+        "cpa": cpa(total_cost, total_conversions),
+        "cvr": cvr(total_conversions, total_clicks),
     }
 
     ads_data = {
@@ -184,6 +203,8 @@ def run(customer_id: str = None, days: int = 30, output_dir: str = "./data"):
         "daily_totals": daily_totals,
         "campaign_daily": campaign_daily,
         "campaign_summary": campaign_summary,
+        "by_landing_type": by_landing_type,
+        "by_use_case": by_use_case,
     }
 
     output_path = os.path.join(output_dir, "google_ads_data.json")
