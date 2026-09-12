@@ -38,6 +38,10 @@ from taxonomy import Taxonomy, summarize_by  # noqa: E402
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_OUT = os.path.join(ROOT_DIR, "dashboard", "data.sample.json")
+DEFAULT_EXPORT = os.path.join(ROOT_DIR, "examples", "first_party_signups.csv")
+# The fictional first-party export runs ~12% above GA4: the gap you see when
+# server-side hits arrive without client_id / session_id.
+EXPORT_OVER_GA4 = 1.12
 
 SEED = 20260912
 DAYS = 30
@@ -369,15 +373,31 @@ def build():
     }
 
 
+def write_export_csv(data, path, event="signup"):
+    """Fictional first-party export for scripts/reconcile.py (date,event_name,count)."""
+    rows = [r for r in data["ga4"]["daily_events"] if r["event_name"] == event]
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        f.write("date,event_name,count\n")
+        for r in rows:
+            count = int(round(r["event_count"] * EXPORT_OVER_GA4 * rng.uniform(0.97, 1.03)))
+            f.write("%s,%s,%d\n" % (r["date"], event, count))
+    return len(rows)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate synthetic dashboard sample data")
     parser.add_argument("--out", default=DEFAULT_OUT)
+    parser.add_argument("--export-csv", default=DEFAULT_EXPORT,
+                        help="also write the fictional first-party export used by reconcile.py")
     args = parser.parse_args()
     data = build()
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
     print("wrote %s (%d bytes)" % (args.out, os.path.getsize(args.out)))
+    if args.export_csv:
+        n = write_export_csv(data, args.export_csv)
+        print("wrote %s (%d rows)" % (args.export_csv, n))
     from taxonomy import format_table
     print(format_table(data["ads"]["by_landing_type"], "landing_type"))
     print("blended CPA (ads): %s" % data["ads"]["kpi"]["cpa"])
