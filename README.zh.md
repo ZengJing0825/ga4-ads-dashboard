@@ -10,6 +10,22 @@
 
 **范围和边界。** 只做 Google Ads + GA4，不做 Meta / TikTok 投放；示例数据合成，事件名、场景维度、实验记录都是配置，结构可直接迁到自己的产品。
 
+## 效果预览
+
+下面全部在合成样例上离线跑出（30 天、8 个 campaign、两条漏斗）。数字只用来说明口径，不代表任何真实账户。
+
+**看板。** 花费、转化、两种口径的 CPA（Ads 上报的，和 GA4 里看到的每个付费注册的成本）、激活率、每个漏斗事件及其付费占比、日活对付费用户。
+
+![看板总览：核心指标和日活](docs/preview/dashboard.png)
+
+**按承接页类型和使用场景拆看成本与转化**，两个维度都从 campaign 命名解析出来，旁边是 campaign 明细表。样例里场景聚合页每个转化约 8 美元，Performance Max 约 20 美元，整个仓库就是围绕这组对比搭起来的。
+
+![Ad Campaigns 页：按 landing_type 和 use_case 的 CPA、campaign 明细](docs/preview/campaigns.png)
+
+**周复盘背后的两条命令行检查：** 实验记录与实际指标联表，按每条记录自己的规则给出 KILL / SCALE / HOLD；GA4 与你自己的注册导出逐日对账。样例刻意复现了那个 10% 的缺口，它意味着后端上报缺了会话参数。
+
+![experiments compare 与 reconcile 的输出](docs/preview/experiments.png)
+
 ## 和 GA4 自带报表不一样的五点
 
 GA4 和 Google Ads 后台各有报表，Looker Studio 也能把它们拼在一起。这个仓库多做的是决策层面的五件事：

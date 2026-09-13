@@ -10,6 +10,22 @@ An ad-spend dashboard and decision log for **small teams acquiring users with Go
 
 **Scope and limits.** Google Ads + GA4 only, no Meta or TikTok; the sample data is synthetic, and event names, scenario dimensions and experiment records are all configuration, so the structure transfers to your own product.
 
+## What you get (preview)
+
+Everything below runs offline on the synthetic sample (30 days, 8 campaigns, two funnels). The numbers illustrate the definitions and represent no real account.
+
+**The dashboard.** Cost, conversions, CPA on two definitions (Ads-reported, and cost per paid signup seen in GA4), activation rate, every funnel event with its paid share, and daily actives against paid users.
+
+![dashboard overview: key metrics and daily actives](docs/preview/dashboard.png)
+
+**Cost and conversion by landing-page type and by use case**, parsed from campaign names, next to the campaign table. In the sample the use-case pages come in at about $8 per conversion against $20 for Performance Max, which is the comparison the whole repository was built around.
+
+![Ad Campaigns tab: CPA by landing_type and use_case, campaign table](docs/preview/campaigns.png)
+
+**The two command-line checks** behind the weekly review: the experiment log joined to actual metrics with a KILL / SCALE / HOLD verdict from each record's own rules, and GA4 reconciled against your own signup export day by day. The sample reproduces the 10% gap that means server-side hits are missing their session parameters.
+
+![experiments compare and reconcile output](docs/preview/experiments.png)
+
 ## Five things the built-in GA4 reports do not do
 
 GA4 and Google Ads each have their own reports, and Looker Studio can stitch them together. What this repository adds is five things at the decision level:
