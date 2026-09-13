@@ -69,25 +69,6 @@ python3 -m http.server 8787 -d dashboard
 
 `dashboard/index.html` 读取 `data.json`，不存在时回退到 `data.sample.json`。`python3 scripts/make_sample_data.py` 用固定种子重新生成示例数据和示例导出。
 
-### 接真实数据
-
-1. `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
-2. **GA4**：在 Google Cloud Console 创建 service account，启用 Google Analytics Data API，在 GA4 → 管理 → 属性访问权限管理中把 service account 邮箱加为 *Viewer*，把 key 存到 `credentials/ga4-service-account.json`（已在 `.gitignore`）。
-3. **Google Ads**：申请 developer token（Google Ads → 工具 → API 中心），创建 *Desktop app* 类型的 OAuth client，把 client id / secret 填进 `.env`，运行 `python3 scripts/get_refresh_token.py`，把打印出的 refresh token 填进 `.env`。只有通过经理账户（MCC）访问时才需要设置 `GOOGLE_ADS_LOGIN_CUSTOMER_ID`。
-4. `cp .env.example .env` 并填好占位符。`REPORT_TZ_OFFSET_HOURS` 设成 GA4 资产和 Ads 账户的时区偏移（见下文时区说明）。
-5. 改 `config/campaign_taxonomy.yaml`，让正则能描述你的 campaign 命名；改 `config/tracking_plan.yaml`，列出你的事件。
-6. 跑一次：`./refresh.sh`（完整流水线，带锁、备份、校验，日志在 `logs/refresh.log`）或 `python3 scripts/run_all.py`（纯 Python）。
-7. 定时（macOS）：`./install.sh` 会收紧凭证文件权限，把项目路径替换进 `com.example.dashboard-refresh.plist`，装到 `~/Library/LaunchAgents/` 并加载。默认本地时间 09:00 和 14:00。
-
-```bash
-launchctl start com.example.dashboard-refresh          # 立即触发
-tail -f logs/refresh.log                                 # 日志
-cat .health | python3 -m json.tool                       # 上次成功运行
-launchctl unload ~/Library/LaunchAgents/com.example.dashboard-refresh.plist   # 卸载
-```
-
-`.env`、`credentials/`、`data/`、`backups/`、`logs/`、`dashboard/data.json` 都在 `.gitignore` 里，不要提交。
-
 ## 它怎么工作
 
 ```
@@ -135,6 +116,25 @@ launchd (本地时间 09:00 / 14:00)
 **决策流程。** 每个改动都走同一条路：先在数据里找到不对劲（比如搜索词全是交易和量化，落地页却讲不了这些），提出假设，用小预算（每天 100 美元量级）验证转化事件真实回传，对照几种承接方式，效果不好的直接关停，好的再加预算。停投不可怕，学习期数据还在；可怕的是带着错误的落地页和关键词继续烧钱。
 
 **和代理怎么分工。** 代理负责账户结构、扩词、出价这些基础搭建，我负责承接页、关键词方向和转化目标定义，每周固定复盘：成本、转化、核心事件趋势、搜索词、承接页状态、下一步预算。服务费和月费结构也是谈出来的，不是默认接受。
+
+## 接真实数据
+
+1. `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
+2. **GA4**：在 Google Cloud Console 创建 service account，启用 Google Analytics Data API，在 GA4 → 管理 → 属性访问权限管理中把 service account 邮箱加为 *Viewer*，把 key 存到 `credentials/ga4-service-account.json`（已在 `.gitignore`）。
+3. **Google Ads**：申请 developer token（Google Ads → 工具 → API 中心），创建 *Desktop app* 类型的 OAuth client，把 client id / secret 填进 `.env`，运行 `python3 scripts/get_refresh_token.py`，把打印出的 refresh token 填进 `.env`。只有通过经理账户（MCC）访问时才需要设置 `GOOGLE_ADS_LOGIN_CUSTOMER_ID`。
+4. `cp .env.example .env` 并填好占位符。`REPORT_TZ_OFFSET_HOURS` 设成 GA4 资产和 Ads 账户的时区偏移（见下文时区说明）。
+5. 改 `config/campaign_taxonomy.yaml`，让正则能描述你的 campaign 命名；改 `config/tracking_plan.yaml`，列出你的事件。
+6. 跑一次：`./refresh.sh`（完整流水线，带锁、备份、校验，日志在 `logs/refresh.log`）或 `python3 scripts/run_all.py`（纯 Python）。
+7. 定时（macOS）：`./install.sh` 会收紧凭证文件权限，把项目路径替换进 `com.example.dashboard-refresh.plist`，装到 `~/Library/LaunchAgents/` 并加载。默认本地时间 09:00 和 14:00。
+
+```bash
+launchctl start com.example.dashboard-refresh          # 立即触发
+tail -f logs/refresh.log                                 # 日志
+cat .health | python3 -m json.tool                       # 上次成功运行
+launchctl unload ~/Library/LaunchAgents/com.example.dashboard-refresh.plist   # 卸载
+```
+
+`.env`、`credentials/`、`data/`、`backups/`、`logs/`、`dashboard/data.json` 都在 `.gitignore` 里，不要提交。
 
 ## 数据流与看板口径
 

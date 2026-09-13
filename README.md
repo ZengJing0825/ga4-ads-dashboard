@@ -74,39 +74,6 @@ python3 -m http.server 8787 -d dashboard
 when it does not exist. `python3 scripts/make_sample_data.py` regenerates the
 sample and the example export from a fixed seed.
 
-### Connecting real data
-
-1. `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
-2. **GA4**: create a service account in Google Cloud Console, enable the
-   Google Analytics Data API, add the service account email as *Viewer* under
-   GA4 → Admin → Property access management, save the key as
-   `credentials/ga4-service-account.json` (git-ignored).
-3. **Google Ads**: get a developer token (Google Ads → Tools → API Center),
-   create an OAuth client of type *Desktop app*, put client id / secret in
-   `.env`, run `python3 scripts/get_refresh_token.py` and paste the refresh
-   token into `.env`. Set `GOOGLE_ADS_LOGIN_CUSTOMER_ID` only if the account is
-   reached through a manager account.
-4. `cp .env.example .env` and fill in the placeholders. Set
-   `REPORT_TZ_OFFSET_HOURS` to the timezone of your GA4 property and Ads
-   account (see the timezone note below).
-5. Edit `config/campaign_taxonomy.yaml` so the regexes describe your campaign
-   names, and `config/tracking_plan.yaml` so it lists your events.
-6. Run once: `./refresh.sh` (full pipeline with lock, backup, validation,
-   logs to `logs/refresh.log`) or `python3 scripts/run_all.py` (Python only).
-7. Schedule (macOS): `./install.sh` hardens credential permissions, fills the
-   project path into `com.example.dashboard-refresh.plist`, installs it under
-   `~/Library/LaunchAgents/` and loads it. Default 09:00 and 14:00 local time.
-
-```bash
-launchctl start com.example.dashboard-refresh          # trigger now
-tail -f logs/refresh.log                                 # logs
-cat .health | python3 -m json.tool                       # last successful run
-launchctl unload ~/Library/LaunchAgents/com.example.dashboard-refresh.plist   # uninstall
-```
-
-Never commit `.env`, `credentials/`, `data/`, `backups/`, `logs/` or
-`dashboard/data.json`; all of them are in `.gitignore`.
-
 ## How it works
 
 ```
@@ -154,6 +121,39 @@ I did not build this dashboard to have one more chart page. I built it so that e
 **Decision flow.** Every change walks the same path: find something in the data that does not add up (the search terms are all trading and quant while the landing page cannot speak to either), state a hypothesis, verify with a small budget (in the order of $100 a day) that the conversion event really arrives, compare several landing strategies, stop what does not work, add budget to what does. Pausing is not scary; the learning-phase data is still there. Burning money with the wrong landing page and the wrong keywords is.
 
 **Working with the agency.** The agency owns the foundations: account structure, keyword expansion, bidding. I own the landing pages, the keyword direction and the definition of the conversion goal, with a fixed weekly review: cost, conversions, trend of the core events, search terms, landing page status, next budget moves. The service fee and the monthly fee structure were negotiated too, not accepted by default.
+
+## Connecting real data
+
+1. `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
+2. **GA4**: create a service account in Google Cloud Console, enable the
+   Google Analytics Data API, add the service account email as *Viewer* under
+   GA4 → Admin → Property access management, save the key as
+   `credentials/ga4-service-account.json` (git-ignored).
+3. **Google Ads**: get a developer token (Google Ads → Tools → API Center),
+   create an OAuth client of type *Desktop app*, put client id / secret in
+   `.env`, run `python3 scripts/get_refresh_token.py` and paste the refresh
+   token into `.env`. Set `GOOGLE_ADS_LOGIN_CUSTOMER_ID` only if the account is
+   reached through a manager account.
+4. `cp .env.example .env` and fill in the placeholders. Set
+   `REPORT_TZ_OFFSET_HOURS` to the timezone of your GA4 property and Ads
+   account (see the timezone note below).
+5. Edit `config/campaign_taxonomy.yaml` so the regexes describe your campaign
+   names, and `config/tracking_plan.yaml` so it lists your events.
+6. Run once: `./refresh.sh` (full pipeline with lock, backup, validation,
+   logs to `logs/refresh.log`) or `python3 scripts/run_all.py` (Python only).
+7. Schedule (macOS): `./install.sh` hardens credential permissions, fills the
+   project path into `com.example.dashboard-refresh.plist`, installs it under
+   `~/Library/LaunchAgents/` and loads it. Default 09:00 and 14:00 local time.
+
+```bash
+launchctl start com.example.dashboard-refresh          # trigger now
+tail -f logs/refresh.log                                 # logs
+cat .health | python3 -m json.tool                       # last successful run
+launchctl unload ~/Library/LaunchAgents/com.example.dashboard-refresh.plist   # uninstall
+```
+
+Never commit `.env`, `credentials/`, `data/`, `backups/`, `logs/` or
+`dashboard/data.json`; all of them are in `.gitignore`.
 
 ## Data flow and dashboard definitions
 
