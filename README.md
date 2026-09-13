@@ -8,6 +8,8 @@ An ad-spend dashboard and decision log for **small teams acquiring users with Go
 
 **Who it is for.** Founders, growth leads and product marketers who want the weekly review with the agency to be about numbers both sides can reproduce. It runs on a laptop with Python 3.9, no database.
 
+**What you get.** A static dashboard page (cost, conversions, CPA on two definitions, activation rate, both funnels), cost and conversion split by landing-page type and by use case, a day-by-day reconciliation of GA4 against your own database that warns when the gap is too big, and an experiment log that returns a KILL / SCALE / HOLD verdict for every budget decision. The offline demo needs Python 3.9 and the standard library; the Google SDKs are only for real data.
+
 **Scope and limits.** Google Ads + GA4 only, no Meta or TikTok; the sample data is synthetic, and event names, scenario dimensions and experiment records are all configuration, so the structure transfers to your own product.
 
 ## What you get (preview)
@@ -106,17 +108,13 @@ I did not build this dashboard to have one more chart page. I built it so that e
 
 **Align timezones before trusting any daily number.** GA4 reports in the property's timezone, Google Ads in the account's; compute dates with different zones and one day's spend gets compared with another day's signups, and daily CPA becomes noise. Both fetchers therefore share one timezone offset.
 
-**Reconciliation is not optional.** In a real project server-side reporting was missing the session parameters and GA4 came in 10 to 15% below the database, so the ad algorithm had nothing to learn from. The validation layer's two jobs, is the file fresh and complete and do the GA4 counts agree with our database, exist to plug that hole.
+**Reconciliation is not optional.** In a real project server-side reporting was missing the session parameters, so day after day GA4 came in 10 to 15% below the database - always in the same direction, which is what makes a reporting gap different from noise. The ad algorithm had that much less to learn from. The validation layer's two jobs, is the file fresh and complete and do the GA4 counts agree with our database, exist to plug that hole.
 
 **How the conversion goal is chosen.** Pick an event whose step conversion from the previous funnel step is about 50%: deep enough to mean something, frequent enough for the algorithm to learn from. In the sample funnel that step is `settings_view → signup`, so `signup` is the conversion event and `feature_use` is the key action.
 
-**The landing-page comparison: my core experiment.** The dashboard splits campaigns by landing type because the central experiment was a comparison of landing strategies. Conclusion: a single content page depends heavily on content quality, and on the same budget results differ by 50% to 100%; sending a use case's traffic to one page that aggregates that use case's content makes the campaign more stable and the cost lowest. Numbers from the 30-day snapshot of my original dashboard:
+**The landing-page comparison: my core experiment.** The dashboard splits campaigns by landing type because the central experiment was a comparison of landing strategies. Over the three months that experiment ran, cost per signup came down to about a third of where it started. Inside a 30-day window of the live dashboard the ranking was stable: a single content page lives or dies by the quality of that one page and swings widely on the same budget; Performance Max was the most expensive way to buy a signup; and sending a use case's traffic to one page that aggregates that use case's content was both the cheapest and the steadiest, at roughly double the click-through rate of Performance Max.
 
-| Landing strategy | Signup cost | Click-through rate |
-|---|---|---|
-| Use-case aggregation pages | $7 to $9 | about 2.3× PMax |
-| Performance Max (same period) | $19 to $21 | baseline |
-| Blended CPA overall | about $15 | |
+The account's own cost figures are deliberately not in this repository. What transfers is the comparison and the dimension the dashboard is built on - your numbers will be your own, and the sample data here is synthetic.
 
 **Decision flow.** Every change walks the same path: find something in the data that does not add up (the search terms are all trading and quant while the landing page cannot speak to either), state a hypothesis, verify with a small budget (in the order of $100 a day) that the conversion event really arrives, compare several landing strategies, stop what does not work, add budget to what does. Pausing is not scary; the learning-phase data is still there. Burning money with the wrong landing page and the wrong keywords is.
 
@@ -328,3 +326,7 @@ Decisions from the review go into `config/experiments.yaml` the same day.
 ├── requirements.txt             Google SDKs + python-dotenv (only needed for real data)
 └── LICENSE                      MIT
 ```
+
+## License
+
+MIT - see `LICENSE`.
